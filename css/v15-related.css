@@ -1,0 +1,23 @@
+/* 夜の資料室 · 関連する記録と小話の読了 */
+.daily-progress-rail{display:inline-flex;align-items:center;margin:13px 0 5px;padding:10px 14px;border:1px solid #d3c0a0;border-radius:5px;color:#6b543f;background:#fffaf0;font-size:.85rem;line-height:1.65}
+.daily-progress-local{font-size:.85rem;color:#755b42;background:#f6eddd;border-left:3px solid #b19469;padding:9px 12px;margin:8px 0 20px}
+.daily-story-actions{border-top:1px solid #e3d5bd;padding-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.daily-mark{border:1px solid #bca587;background:#fffaf0;color:#57422f;border-radius:5px;padding:9px 15px;min-height:44px;font:inherit;font-size:.87rem;cursor:pointer}
+.daily-mark[aria-pressed="true"]{background:#584632;color:#fff;border-color:#584632}
+.daily-mark:focus-visible,.related-link:focus-visible{outline:3px solid #b48b53;outline-offset:3px}
+.daily-done{font-size:.79rem;color:#796a54}
+.related-records{border-top:1px solid #d7c5a7;margin:36px 0 4px;padding-top:24px;color:#493e34}
+.related-records h4{margin:8px 0 7px;font-family:Georgia,'Yu Mincho',serif;font-size:1.2rem;font-weight:600}
+.related-records>p{font-size:.86rem;line-height:1.85;margin:0 0 13px;color:#796650}
+.related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:15px 0}
+.related-link{display:flex;align-items:center;text-align:left;gap:11px;min-width:0;min-height:72px;padding:11px 12px;background:#fffbf4;border:1px solid #d7c5aa;border-radius:5px;color:#493e34;font:inherit;cursor:pointer}
+.related-link:hover{background:#f5e9d4;border-color:#ad9271}
+.related-link>span:nth-child(2){flex:1;min-width:0;overflow-wrap:anywhere}
+.related-link small{display:block;color:#88725b;font-size:.72rem;margin-bottom:4px}
+.related-link strong{font-size:.87rem;font-weight:600;line-height:1.5}
+.related-link>span:last-child{font-size:1.4rem;color:#967d5b}
+.related-icon{display:grid;place-items:center;width:34px;height:34px;flex:0 0 34px;background:#f3e5ce;color:#80603f;border-radius:50%;font-size:1rem}
+.related-records .related-notice{margin-top:10px;font-size:.76rem;color:#897862}
+.daily-story,.related-records{scroll-margin-top:95px}
+@media(max-width:580px){.related-grid{grid-template-columns:1fr}.related-link{min-height:64px}.daily-progress-rail{font-size:.79rem;width:100%}}
+@media(prefers-reduced-motion:reduce){.related-link{transition:none}}

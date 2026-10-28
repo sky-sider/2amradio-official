@@ -4,7 +4,7 @@
 .first-visit-title{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:18px}
 .first-visit-title h2{color:#f3e1c9;font-size:clamp(1.3rem,2.5vw,1.9rem);margin-top:5px}
 .first-visit-title p{font-size:.88rem;max-width:455px;color:#c6cfda;margin:0}
-.first-visit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.first-visit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .visit-card{display:flex;flex-direction:column;align-items:start;text-align:left;gap:6px;color:#f6e9d5;background:#1f3048;border:1px solid #4b5d72;border-radius:7px;padding:19px 21px;min-height:142px}
 .visit-card:hover,.visit-card:focus-visible{background:#293e58;border-color:#d5ac78}
 .visit-card .visit-step{color:#d6b480;font-size:.72rem;font-weight:700;letter-spacing:.045em}

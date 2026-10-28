@@ -1,0 +1,49 @@
+/* v1.8 深夜の読書案内 — archive-only editorial guidance */
+.guide-shell{background:#eee4d3;color:#322c27;min-height:90vh}
+.guide-wrap{padding-top:27px;padding-bottom:78px}
+.guide-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:15px;font:.75rem Georgia,serif;letter-spacing:.11em;color:#816b50}
+.guide-back{border:0;background:transparent;color:#57483b;text-decoration:underline;text-underline-offset:4px;font-size:.9rem;font-weight:600;min-height:44px}
+.guide-hero{border:1px solid #bba686;border-radius:11px;position:relative;overflow:hidden;padding:48px clamp(22px,5vw,64px) 44px;margin:25px 0 24px;background:radial-gradient(circle at 90% 15%,#816b5738 0,transparent 30%),linear-gradient(135deg,#182b41,#243a50 62%,#28354b);color:#f7ead5;box-shadow:0 10px 26px #3e302b22}
+.guide-hero:before{content:'';position:absolute;inset:11px;border:1px solid #cbac786b;pointer-events:none;border-radius:5px}
+.guide-overline{font:700 .7rem/1.5 Georgia,serif;letter-spacing:.19em;color:#967751}
+.guide-hero .guide-overline{color:#d6ad77}
+.guide-hero h1{font:500 clamp(2rem,4.4vw,3rem)/1.45 'Yu Mincho','Hiragino Mincho ProN',serif;letter-spacing:.09em;margin:15px 0 23px}
+.guide-hero p:not(.guide-overline){max-width:620px;line-height:2.2;margin:0;color:#e0d9cb;font-size:.96rem;position:relative;z-index:1}
+.guide-hero-mark{font:90px/1 Georgia,serif;position:absolute;right:45px;bottom:20px;color:#dcb47d3d;pointer-events:none}
+.guide-hero-mark span{font:13px Georgia,serif;vertical-align:top;letter-spacing:.1em}
+.guide-controls{border:1px solid #d3c4ab;border-radius:10px;background:#fcf8ee;padding:clamp(17px,3vw,29px);box-shadow:0 4px 12px #60503f12}
+.guide-controls h2{margin:0 0 17px;font:600 clamp(1.25rem,3vw,1.5rem) 'Yu Mincho','Hiragino Mincho ProN',serif}
+.guide-moods{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.guide-moods button{border:1px solid #cbbca5;background:#f5eee3;color:#564838;border-radius:7px;padding:17px 9px 15px;min-height:105px;font-weight:700;line-height:1.65;transition:.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px}
+.guide-moods button span{font:28px/1 Georgia,serif;color:#a28359}
+.guide-moods button[aria-pressed=true]{background:#263c4c;border-color:#263c4c;color:#fff4e6;box-shadow:0 3px 0 #bba687}
+.guide-moods button[aria-pressed=true] span{color:#f1c68b}
+.guide-moods button:hover{border-color:#9a754d}
+.guide-preferences{display:flex;align-items:center;gap:17px 28px;flex-wrap:wrap;border-top:1px solid #e0d3c1;margin-top:21px;padding-top:18px;font-size:.86rem;color:#584a3a}
+.guide-amount{border:0;padding:0;margin:0;display:flex;align-items:center;gap:10px 19px;flex-wrap:wrap;min-width:0}
+.guide-amount legend{font-weight:700;margin-bottom:6px}
+.guide-amount label,.guide-unread{display:inline-flex;align-items:center;gap:8px;min-height:40px;cursor:pointer}
+.guide-preferences input{accent-color:#365464;width:18px;height:18px;flex-shrink:0}
+.guide-shuffle{background:#a88356;color:#211d1b;border:1px solid #896c47;border-radius:6px;padding:11px 18px;min-height:46px;font-weight:700;margin-top:13px}
+.guide-shuffle:hover{background:#c89a60}
+.guide-results{margin:32px 0 22px}
+.guide-results-head{display:flex;flex-wrap:wrap;align-items:end;gap:8px 20px;justify-content:space-between;margin-bottom:15px}
+.guide-results h2{font:600 1.6rem 'Yu Mincho','Hiragino Mincho ProN',serif;margin:5px 0 0}
+#guideStatus{font-size:.8rem;color:#74624d}
+.guide-list{display:grid;gap:11px}
+.guide-card{display:grid;grid-template-columns:47px minmax(0,1fr) auto;gap:15px;align-items:center;background:#fffaf0;border:1px solid #d4c4ab;border-radius:8px;padding:21px;box-shadow:2px 3px 0 #ccb99c36}
+.guide-card-number{font:italic 1.55rem Georgia,serif;color:#b69e7a;align-self:start}
+.guide-card-shelf{font-size:.72rem;letter-spacing:.07em;color:#836a4f}
+.guide-card h3{font:600 1.2rem/1.5 'Yu Mincho','Hiragino Mincho ProN',serif;margin:7px 0}
+.guide-card p{font-size:.8rem;line-height:1.75;color:#716253;margin:0}
+.guide-card button{background:#263c4c;border:1px solid #263c4c;color:#fff5e6;border-radius:5px;min-height:44px;padding:10px 14px;font-size:.84rem;font-weight:700}
+.guide-card button:hover{background:#36566d}
+.guide-outro{display:flex;gap:14px;align-items:start;border-top:1px solid #cbb9a0;padding-top:20px;color:#71604f;font-size:.84rem;line-height:2}
+.guide-outro span{font-size:1.8rem;color:#a28762}
+.guide-outro p{margin:0}
+.guide-crosslink{text-align:center;border-top:1px solid #d7c3a9;margin-top:16px;padding-top:17px}
+.guide-crosslink button,.guide-small-link{border:1px solid #a58b70!important;background:#f5eddf!important;border-radius:6px;color:#4e4030!important;padding:10px 15px!important;min-height:44px;line-height:1.5}
+.guide-crosslink button:hover,.guide-small-link:hover{background:#e7d9c5!important}
+@media(max-width:780px){.guide-moods{grid-template-columns:repeat(2,minmax(0,1fr))}.guide-card{grid-template-columns:40px minmax(0,1fr)}.guide-card button{grid-column:2;justify-self:start}.guide-hero-mark{right:17px;bottom:8px}}
+@media(max-width:440px){.guide-hero{padding:35px 25px}.guide-hero p:not(.guide-overline){font-size:.87rem}.guide-moods{gap:8px}.guide-moods button{font-size:.83rem;min-height:100px;padding:10px 6px}.guide-card{padding:16px 12px;gap:8px;grid-template-columns:27px minmax(0,1fr)}.guide-card-number{font-size:1.1rem}.guide-card h3{font-size:1.06rem}.guide-card button{font-size:.82rem}.guide-hero-mark{opacity:.4}}
+@media(prefers-reduced-motion:reduce){.guide-moods button{transition:none}}
