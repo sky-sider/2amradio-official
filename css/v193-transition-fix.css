@@ -1,0 +1,6 @@
+/* v1.9.3: calm archive navigation without brightness flashing.
+   The original .page animation fades from opacity .45 on every route change.
+   Disable just that page-enter animation; leave hover feedback and studio effects intact. */
+.page, .page.active {animation:none !important;}
+/* Route jumps are handled explicitly in JavaScript; no global smooth-scroll tween. */
+html {scroll-behavior:auto;}

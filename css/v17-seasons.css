@@ -1,0 +1,43 @@
+/* v1.7 — four seasons feature, design deliberately scoped */
+.season-shell{background:#eee7d8;color:#3f3631;min-height:90vh;padding:28px 0 75px}
+.season-wrap{max-width:1120px}
+.season-top{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;font:700 .72rem Georgia,'Yu Mincho',serif;letter-spacing:.08em;color:#816c54}
+.season-back{border:0;background:transparent;color:#5f554b;text-decoration:underline;text-underline-offset:4px;padding:10px 4px;cursor:pointer;letter-spacing:0;font:inherit}
+.season-hero{position:relative;isolation:isolate;display:flex;justify-content:space-between;align-items:center;gap:30px;overflow:hidden;margin:22px 0 22px;padding:clamp(24px,4.5vw,54px);background:linear-gradient(118deg,#263b4d,#344f53 65%,#77644c);border-radius:16px;color:#fbf3e3;box-shadow:0 12px 30px #26252119}
+.season-hero-copy{z-index:1;max-width:630px}
+.season-overline{font:700 .7rem Georgia,serif;letter-spacing:.18em;color:#b8a078}
+.season-hero .season-overline{color:#e1c397}
+.season-hero h1{font-family:Georgia,'Yu Mincho',serif;font-size:clamp(1.8rem,4vw,2.8rem);margin:12px 0 19px;line-height:1.3}
+.season-hero p:not(.season-overline){font-size:.95rem;line-height:2;color:#e6e6dc}
+.season-hero .season-hint{font-size:.81rem!important;color:#f2dcb9!important;border-left:2px solid #cda978;padding-left:12px;margin-top:18px}
+.season-wheel{position:relative;width:180px;height:180px;min-width:180px;border:1px solid #ddc8a768;border-radius:50%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;padding:26px;transform:rotate(-12deg);box-shadow:0 0 0 12px #ddc8a716,0 0 0 27px #ddc8a70a}
+.season-wheel span{font:1.4rem Georgia,'Yu Mincho',serif;color:#f0d5a9;text-align:center;align-content:center}
+.season-progress{display:flex;align-items:center;gap:18px;padding:18px 24px;background:#fdf8ed;border:1px solid #d6c7b1;border-radius:12px;margin-bottom:23px;flex-wrap:wrap}
+.season-progress>div:first-child{min-width:155px}.season-progress strong{display:block;font:600 .95rem Georgia,'Yu Mincho',serif;margin-top:4px;color:#4e4437}
+.season-progress-track{height:7px;background:#e8dac5;border-radius:8px;overflow:hidden;flex:1 1 110px}
+.season-progress-track span{display:block;background:#98805e;height:100%;width:0;transition:width .25s}
+#seasonPick{border:1px solid #384d55;background:#384d55;color:#fff8ea;border-radius:9px;padding:12px 17px;cursor:pointer;font-size:.85rem}
+.season-tabs,.season-filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.season-tabs button,.season-filters button{border:1px solid #c3af95;border-radius:40px;padding:10px 17px;background:#fffaf1;color:#544738;cursor:pointer;font-size:.85rem;min-height:42px}
+.season-tabs button[aria-pressed=true],.season-filters button[aria-pressed=true]{background:#374a50;color:#fff8ec;border-color:#374a50}
+.season-filters{margin:7px 0 18px}
+.season-filters button{padding:8px 14px;font-size:.76rem}
+.season-list-status{color:#756657;font-size:.78rem;margin:0 0 10px}
+.season-layout{display:grid;grid-template-columns:minmax(215px,.87fr) minmax(0,1.5fr);gap:18px;align-items:start}
+.season-list{display:grid;grid-template-columns:1fr;gap:9px}
+.season-card{display:flex;align-items:center;gap:14px;border:1px solid #d4c3ae;background:#fffaf1;text-align:left;padding:14px;border-radius:11px;color:#483d34;width:100%;cursor:pointer;min-width:0}
+.season-card:hover,.season-card.selected{background:#f4eadc;border-color:#9a7b58}.season-card[aria-pressed=true]{box-shadow:inset 4px 0 #9c815e}
+.season-card-symbol{font:1.55rem Georgia,serif;color:#a68963;min-width:37px;text-align:center}
+.season-card-copy{display:grid;gap:4px;min-width:0}.season-card-copy small{color:#917658;font-size:.68rem}.season-card-copy strong{font:600 .97rem Georgia,'Yu Mincho',serif;line-height:1.5}.season-card-copy>span{font-size:.69rem;color:#716252}
+.season-article{background:#fffaf1;border:1px solid #d2c0a7;border-top:5px solid #8d987c;border-radius:13px;padding:clamp(20px,3.2vw,41px);min-height:430px;scroll-margin-top:24px;box-shadow:0 10px 25px #4438230c}
+.season-article[data-season=summer]{border-top-color:#b99352}.season-article[data-season=autumn]{border-top-color:#b87854}.season-article[data-season=winter]{border-top-color:#708ea3}
+.season-article h2{font:600 clamp(1.4rem,2.8vw,2rem) Georgia,'Yu Mincho',serif;color:#352d29;margin:13px 0;line-height:1.5}
+.season-article-meta{color:#93785d;font-size:.8rem!important;border-bottom:1px solid #e5d7c4;padding-bottom:17px}
+.season-article>p{line-height:1.8;color:#786656}.season-prose{font:400 1rem/2.22 Georgia,'Yu Mincho','Hiragino Mincho ProN',serif;color:#463b33;margin:23px 0 24px}.season-prose p{margin:0 0 19px}
+.season-actions{border-top:1px solid #e4d4c0;padding-top:20px;display:flex;flex-wrap:wrap;gap:8px}.season-actions button{border:1px solid #b9a58f;border-radius:8px;padding:10px 12px;color:#514536;background:#f6eddf;cursor:pointer;font-size:.8rem}.season-actions button[aria-pressed=true]{background:#e5d7c1;border-color:#947858}
+.season-empty{padding:20px;color:#766756;font-size:.88rem}.season-coda{font-size:.8rem;line-height:1.9;color:#7b6c5c;margin:25px 0}
+.season-outro{background:#293d4b;border-radius:12px;padding:23px 27px;display:flex;gap:20px;align-items:center;justify-content:space-between;color:#f5ebdc;flex-wrap:wrap}.season-outro strong{font:600 1.1rem Georgia,'Yu Mincho',serif}.season-outro p{font-size:.81rem;color:#d4d1ce;margin-top:8px}.season-outro button{border:1px solid #d2bb99;color:#ffead0;background:transparent;border-radius:8px;padding:11px 17px;cursor:pointer}
+.season-shell button:focus-visible{outline:3px solid #bd783e;outline-offset:3px}
+@media(max-width:740px){.season-wheel{width:120px;height:120px;min-width:120px;padding:12px}.season-layout{grid-template-columns:1fr}.season-list{grid-template-columns:repeat(2,minmax(0,1fr))}.season-progress{gap:12px}}
+@media(max-width:480px){.season-shell{padding-top:14px}.season-hero{padding:25px 20px}.season-wheel{display:none}.season-list{grid-template-columns:1fr}.season-tabs button{flex:1;min-width:49px;padding:9px 10px}.season-progress{padding:15px}.season-progress-track{flex-basis:100%}.season-article{min-height:300px}.season-prose{font-size:.94rem}}
+@media(prefers-reduced-motion:reduce){.season-progress-track span{transition:none}}

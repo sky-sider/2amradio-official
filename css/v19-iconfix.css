@@ -1,0 +1,108 @@
+
+/* v1.9.1 icon normalization: replace font-dependent symbols with CSS/SVG-like icons */
+.ui-icon{display:inline-block;position:relative;flex:0 0 auto;color:var(--amber,#dfae70)}
+.tile .ui-icon{width:1.55rem;height:1.55rem;margin-bottom:13px}
+.reading-hub .ui-icon,.guide-moods .ui-icon,.guide-entry-icon.ui-icon,.related-icon.ui-icon,.guide-outro .ui-icon,.guide-hero-mark .ui-icon{width:1.05rem;height:1.05rem;vertical-align:-.12em;margin-right:.45em}
+.guide-hero-mark .ui-icon{width:1.2rem;height:1.2rem;margin-right:.2em}
+.text-end-icon{margin-left:.35em;margin-right:0;vertical-align:-.08em}
+.icon-diamond::before{content:"";position:absolute;inset:18%;border:2px solid currentColor;transform:rotate(45deg)}
+.icon-rings::before,.icon-rings::after{content:"";position:absolute;border:2px solid currentColor;border-radius:50%}
+.icon-rings::before{inset:14%}
+.icon-rings::after{inset:31%}
+.icon-envelope::before,.icon-envelope::after{content:"";position:absolute;left:8%;right:8%}
+.icon-envelope::before{top:18%;bottom:18%;border:2px solid currentColor;border-radius:2px}
+.icon-envelope::after{top:28%;height:40%;background:linear-gradient(135deg,transparent 48%,currentColor 49%,currentColor 51%,transparent 52%),linear-gradient(225deg,transparent 48%,currentColor 49%,currentColor 51%,transparent 52%);}
+.icon-pen::before,.icon-pen::after{content:"";position:absolute}
+.icon-pen::before{width:70%;height:2px;background:currentColor;left:15%;top:58%;transform:rotate(-35deg);transform-origin:left center}
+.icon-pen::after{width:10px;height:10px;border:2px solid currentColor;border-left:none;border-bottom:none;right:15%;top:18%;transform:rotate(10deg) skew(-10deg,-10deg)}
+.icon-mic::before,.icon-mic::after{content:"";position:absolute}
+.icon-mic::before{left:28%;right:28%;top:10%;bottom:34%;border:2px solid currentColor;border-radius:999px}
+.icon-mic::after{left:48%;width:2px;top:58%;bottom:6%;background:currentColor;box-shadow:-8px -2px 0 -1px transparent, 8px -2px 0 -1px transparent}
+.icon-mic{border-bottom:2px solid transparent}
+.icon-mic i{display:none}
+.icon-mic span{display:none}
+.icon-flower::before,.icon-flower::after{content:"";position:absolute}
+.icon-flower::before{inset:0;background:radial-gradient(circle at 50% 15%,currentColor 0 18%,transparent 19% 100%),radial-gradient(circle at 84% 38%,currentColor 0 18%,transparent 19% 100%),radial-gradient(circle at 72% 79%,currentColor 0 18%,transparent 19% 100%),radial-gradient(circle at 28% 79%,currentColor 0 18%,transparent 19% 100%),radial-gradient(circle at 16% 38%,currentColor 0 18%,transparent 19% 100%)}
+.icon-flower::after{left:38%;top:38%;width:24%;height:24%;background:currentColor;border-radius:50%}
+.icon-sparkle::before,.icon-sparkle::after{content:"";position:absolute;left:50%;top:50%;background:currentColor;transform:translate(-50%,-50%)}
+.icon-sparkle::before{width:2px;height:80%}
+.icon-sparkle::after{width:80%;height:2px}
+.icon-spark{background:radial-gradient(circle,currentColor 0 26%,transparent 27% 100%),linear-gradient(currentColor,currentColor),linear-gradient(currentColor,currentColor);background-size:100% 100%,2px 70%,70% 2px;background-position:center center,center center,center center;background-repeat:no-repeat}
+.icon-moon::before,.icon-moon::after{content:"";position:absolute;border-radius:50%}
+.icon-moon::before{inset:10%;background:currentColor}
+.icon-moon::after{width:70%;height:70%;right:4%;top:8%;background:var(--paper,#efe5d2)}
+.paper-zone .icon-moon::after{background:var(--paper,#efe5d2)}
+body:not(.paper-zone) .icon-moon::after{}
+.icon-daily::before,.icon-daily::after{content:"";position:absolute}
+.icon-daily::before{left:18%;right:18%;top:16%;bottom:16%;border:2px solid currentColor;border-radius:2px}
+.icon-daily::after{left:26%;right:26%;top:32%;height:2px;background:currentColor;box-shadow:0 8px 0 currentColor,0 16px 0 currentColor}
+/* nav/icon layout tuning */
+.reading-hub button span.ui-icon,.guide-moods button span.ui-icon{pointer-events:none}
+.guide-outro>.ui-icon{margin-top:.3rem}
+
+.story-secret-mark .ui-icon{width:1.1rem;height:1.1rem}
+.nb-paper-art .ui-icon{width:1.2rem;height:1.2rem;position:absolute}.nb-paper-art .nb-art-moon{left:14px;top:12px}.nb-paper-art .nb-art-envelope{right:16px;top:16px}
+
+/* v1.9.2 - all archive symbols and state glyphs rendered as CSS geometry. */
+.ui-state{display:inline-flex;align-items:center;gap:.33em;vertical-align:middle;line-height:1.45;white-space:normal}
+.ui-state .ui-icon{width:1em;height:1em;margin:0;vertical-align:middle}
+.ui-icon{width:1em;height:1em;min-width:1em;min-height:1em;color:inherit;vertical-align:middle;font-size:inherit}
+.ui-icon::before,.ui-icon::after{box-sizing:border-box}
+/* status mark, 5-point star and unread ring */
+.icon-check::before{content:"";position:absolute;left:22%;top:19%;width:53%;height:60%;border-style:solid;border-color:currentColor;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.icon-unread::before{content:"";position:absolute;inset:18%;border:2px solid currentColor;border-radius:50%}
+.icon-star::before,.icon-star-outline::before{content:"";position:absolute;inset:5%;background:currentColor;clip-path:polygon(50% 0%,63% 32%,98% 35%,73% 57%,81% 93%,50% 74%,19% 93%,27% 57%,2% 35%,37% 32%)}
+.icon-star-outline::after{content:"";position:absolute;inset:24%;background:var(--icon-cutout,#fff8ed);clip-path:polygon(50% 0%,63% 32%,98% 35%,73% 57%,81% 93%,50% 74%,19% 93%,27% 57%,2% 35%,37% 32%)}
+/* semantic objects: simple pictograms share same stroke width */
+.icon-book::before{content:"";position:absolute;inset:20% 9% 18%;border:2px solid currentColor;border-radius:2px 4px 4px 2px}
+.icon-book::after{content:"";position:absolute;left:50%;top:22%;bottom:18%;border-left:2px solid currentColor}
+.icon-note::before{content:"";position:absolute;inset:10% 18%;border:2px solid currentColor;border-radius:2px}
+.icon-note::after{content:"";position:absolute;left:32%;right:32%;top:40%;border-top:2px solid currentColor;box-shadow:0 5px 0 currentColor}
+.icon-picture::before{content:"";position:absolute;inset:16% 12%;border:2px solid currentColor;border-radius:2px}
+.icon-picture::after{content:"";position:absolute;left:24%;bottom:23%;width:47%;height:32%;clip-path:polygon(0% 100%,34% 20%,55% 54%,74% 0%,100% 100%);background:currentColor}
+.icon-clock::before{content:"";position:absolute;inset:12%;border:2px solid currentColor;border-radius:50%}
+.icon-clock::after{content:"";position:absolute;left:50%;top:27%;width:24%;height:27%;border-left:2px solid currentColor;border-bottom:2px solid currentColor}
+.icon-ruler::before{content:"";position:absolute;inset:16%;border:2px solid currentColor;clip-path:polygon(0 0,100% 100%,0 100%);}
+.icon-waves::before{content:"";position:absolute;left:9%;right:9%;top:30%;height:38%;border-top:2px solid currentColor;border-bottom:2px solid currentColor;transform:skewY(-13deg)}
+.icon-cloud::before{content:"";position:absolute;left:9%;right:9%;top:38%;bottom:19%;border:2px solid currentColor;border-radius:60%}
+.icon-cloud::after{content:"";position:absolute;left:33%;top:18%;width:42%;height:51%;border:2px solid currentColor;border-bottom:none;border-radius:100% 100% 0 0;background:var(--icon-cutout,transparent)}
+.icon-calendar::before{content:"";position:absolute;inset:18% 13%;border:2px solid currentColor;border-radius:2px}
+.icon-calendar::after{content:"";position:absolute;left:20%;right:20%;top:39%;border-top:2px solid currentColor;box-shadow:0 6px 0 -1px currentColor}
+.icon-laundry::before{content:"";position:absolute;inset:13%;border:2px solid currentColor;border-radius:4px}
+.icon-laundry::after{content:"";position:absolute;inset:30%;border:2px solid currentColor;border-radius:50%}
+.icon-window::before{content:"";position:absolute;inset:12%;border:2px solid currentColor;border-radius:2px}
+.icon-window::after{content:"";position:absolute;top:12%;bottom:12%;left:50%;border-left:2px solid currentColor}
+.icon-cup::before{content:"";position:absolute;left:17%;top:30%;width:59%;height:51%;border:2px solid currentColor;border-radius:0 0 45% 45%}
+.icon-cup::after{content:"";position:absolute;right:5%;top:39%;width:25%;height:28%;border:2px solid currentColor;border-left:none;border-radius:0 70% 70% 0}
+.icon-umbrella::before{content:"";position:absolute;left:12%;top:17%;width:76%;height:43%;border:2px solid currentColor;border-radius:100% 100% 0 0}
+.icon-umbrella::after{content:"";position:absolute;left:49%;top:52%;height:35%;width:17%;border-left:2px solid currentColor;border-bottom:2px solid currentColor;border-radius:0 0 0 55%}
+.icon-vending::before{content:"";position:absolute;inset:12% 23%;border:2px solid currentColor;border-radius:2px}
+.icon-vending::after{content:"";position:absolute;left:33%;right:38%;top:27%;height:25%;border:2px solid currentColor;box-shadow:0 7px 0 -4px currentColor}
+.icon-elevator::before{content:"";position:absolute;inset:12% 22%;border:2px solid currentColor;border-radius:2px}
+.icon-elevator::after{content:"";position:absolute;left:50%;top:12%;bottom:12%;border-left:2px solid currentColor}
+.icon-glove::before{content:"";position:absolute;left:19%;top:33%;width:62%;height:58%;border:2px solid currentColor;border-radius:37% 34% 20% 20%;transform:rotate(-9deg)}
+.icon-glove::after{content:"";position:absolute;left:22%;top:16%;width:17%;height:43%;border:2px solid currentColor;border-radius:50% 50% 0 0;transform:rotate(-20deg)}
+.icon-leaf::before{content:"";position:absolute;inset:13% 9% 19% 23%;border:2px solid currentColor;border-radius:90% 0 90% 0;transform:rotate(26deg)}
+.icon-leaf::after{content:"";position:absolute;left:45%;top:43%;width:36%;border-top:2px solid currentColor;transform:rotate(-28deg)}
+.icon-sun::before{content:"";position:absolute;inset:25%;border:2px solid currentColor;border-radius:50%}
+.icon-sun::after{content:"";position:absolute;inset:4%;background:linear-gradient(currentColor,currentColor) center top / 2px 15% no-repeat,linear-gradient(currentColor,currentColor) center bottom / 2px 15% no-repeat,linear-gradient(90deg,currentColor,currentColor) left center / 15% 2px no-repeat,linear-gradient(90deg,currentColor,currentColor) right center / 15% 2px no-repeat}
+.icon-snowflake::before,.icon-snowflake::after{content:"";position:absolute;left:50%;top:50%;width:80%;height:2px;background:currentColor;transform:translate(-50%,-50%)}
+.icon-snowflake::after{transform:translate(-50%,-50%) rotate(60deg);box-shadow:0 0 0 currentColor}
+/* scalable icon slots */
+.story-card-icon .ui-icon{width:2.8rem;height:2.8rem;color:inherit}
+.season-card-symbol .ui-icon{width:2.3rem;height:2.3rem;color:inherit}
+.nb-stamp-symbol .ui-icon{width:2rem;height:2rem;color:inherit}
+.nb-glyph .ui-icon{width:2.2rem;height:2.2rem;color:inherit}
+.nb-corner .ui-icon,.studio-index .seen .ui-icon,#studioIndex .seen .ui-icon{width:1em;height:1em}
+.related-icon .ui-icon{width:1.1rem;height:1.1rem}
+.guide-card-shelf .ui-icon,.story-kind .ui-icon{width:1.05em;height:1.05em;color:inherit;margin-right:.25em}
+.story-markers .ui-icon{width:.9em;height:.9em;vertical-align:-.08em}
+/* maintain readable labels and contrasting state icons in dark/light reader themes */
+.reader-controls .ui-state,.studio-diary-actions .ui-state,.season-actions .ui-state,.story-reader-actions .ui-state,.nb-detail-actions .ui-state{gap:.38em}
+.icon-star-outline{--icon-cutout:#f7eedf}
+.story-reader.theme-night .icon-star-outline,.story-reader.theme-night .icon-moon{--icon-cutout:#1c2535}
+/* final silhouettes remain legible on both ivory paper and midnight blue */
+.icon-moon::before{inset:0;background:currentColor;clip-path:polygon(60% 3%,41% 5%,23% 15%,10% 33%,7% 51%,12% 70%,26% 85%,45% 93%,64% 91%,79% 80%,88% 65%,90% 53%,77% 64%,61% 67%,45% 61%,34% 49%,31% 32%,39% 16%)}
+.icon-moon::after{display:none}
+.icon-star-outline::before{inset:0;clip-path:none;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m12 2 3.1 6.5 7.1 1-5.1 5 .9 7-6-3.3-6 3.3.9-7-5.1-5 7.1-1Z' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m12 2 3.1 6.5 7.1 1-5.1 5 .9 7-6-3.3-6 3.3.9-7-5.1-5 7.1-1Z' fill='none' stroke='black' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat}
+.icon-star-outline::after{display:none}

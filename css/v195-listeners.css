@@ -1,0 +1,77 @@
+/* v1.9.5 — quieter hierarchy for listener index, all other archive pages unchanged */
+#archive .archive-hero{padding:25px 0 23px!important;background:linear-gradient(155deg,#f0e6d4,#eae0cc)}
+#archive .archive-hero .eyebrow{font-size:.73rem;letter-spacing:.15em;color:#8f7050}
+#archive .archive-hero h1{font-family:Georgia,'Yu Mincho','Hiragino Mincho ProN',serif;font-size:clamp(1.85rem,3.15vw,2.55rem);font-weight:600;letter-spacing:.035em;line-height:1.35;margin:9px 0 5px;color:#3b332b}
+#archive .archive-hero p{font-size:.93rem;color:#706353;line-height:1.75;margin:0}
+#archive .paperbody{padding-top:12px}
+#archive .arc-top{margin-bottom:6px;align-items:center}
+#archive .arc-top .badge{border:0;background:transparent;font-size:.76rem;color:#80715e}
+#archive .reading-hub{margin:8px 0 14px!important}
+#archive .archive-jumps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px!important;margin:0 0 23px!important;padding:0!important;border:0!important}
+#archive .archive-jumps>span{display:none}
+#archive .archive-jumps button{border-radius:6px;min-width:0;min-height:45px!important;font-size:.91rem;color:#635442;padding:9px 8px;background:#f8f2e6;white-space:nowrap}
+#archive .archive-jumps button:first-of-type{background:#e4d5bc;border-color:#987a55;color:#483a2d;font-weight:700}
+#archive .listener-finder{scroll-margin-top:140px}
+#archive .listener-finder-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 15px}
+#archive .listener-overline{font:700 .67rem Georgia,serif;color:#9b7e5e;letter-spacing:.11em;margin:0 0 5px}
+#archive .listener-finder-header h2{font-family:Georgia,'Yu Mincho','Hiragino Mincho ProN',serif;font-size:clamp(1.18rem,2.2vw,1.48rem);font-weight:600;letter-spacing:.02em;color:#42372b}
+#archive .spoiler-shortcut{border:0;border-bottom:1px solid #b99a73;background:transparent;color:#67523a;padding:8px 2px;font-size:.79rem;line-height:1.55;min-height:40px;text-decoration:none;flex-shrink:0}
+#archive .spoiler-shortcut:hover{color:#3c2c19;border-bottom-color:#6f5237}
+#archive .library-tools{margin:0!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(150px,210px);gap:12px;align-items:end}
+#archive .library-tools .search-label{min-width:0;flex:initial!important;font-size:.79rem;gap:5px}
+#archive .library-tools input,#archive .library-tools select{min-height:46px;font-size:.93rem;padding:9px 12px}
+#archive .listener-stats-wrap{display:flex;align-items:start;justify-content:space-between;gap:8px 15px;flex-wrap:wrap;margin:8px 0 4px;padding-bottom:5px;border-bottom:1px solid #d8c9b2}
+#archive .library-stats{font-size:.77rem;line-height:1.6;margin:0;color:#66594a}
+#archive .daily-progress-rail{border:0;box-shadow:none;background:transparent!important;padding:0!important;margin:0!important;min-height:0;max-width:100%;font-size:.76rem!important;line-height:1.6;color:#7b6b58!important}
+#archive .resume-row{margin:10px 0!important;min-height:0}
+#archive .resume-row .resume-caption{font-size:.79rem;color:#7d6e5a}
+#archive .resume-row .resume-person{min-height:43px;max-width:100%;text-align:left;font-size:.84rem}
+#archive .filterbar{margin:12px 0 17px;gap:7px}
+#archive .filterbar button{min-height:40px;padding:7px 12px;font-size:.85rem}
+#archive .person-grid{margin-top:0}
+#archive .listener-extra-settings{margin:29px 0 5px;padding-top:18px;border-top:1px solid #cdbca3;display:grid;grid-template-columns:1fr 1fr;gap:12px;scroll-margin-top:135px}
+#archive .listener-extra-settings details{margin:0;align-self:start;border:1px solid #dccdb8;background:#f8f2e7}
+#archive .listener-extra-settings summary{min-height:46px;color:#665849;font-weight:600;font-size:.85rem;padding:9px 12px}
+#archive .listener-extra-settings .archive-settings summary span{display:none}
+#archive .listener-extra-settings .archive-help p{font-size:.86rem}
+#archive #spoilerSettings{scroll-margin-top:140px}
+#archive #spoilerSettings:focus-within{outline:2px solid #c8a36a;outline-offset:2px}
+#archive .keepsake-section{margin-top:38px}
+@media(min-width:950px){
+ #archive .paperbody>.wrap{max-width:1120px}
+ #archive .person-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #archive .arc-top{margin-top:0}
+}
+@media(max-width:700px){
+ #archive .archive-hero{padding:20px 0 18px!important}
+ #archive .archive-hero p{font-size:.88rem}
+ #archive .paperbody{padding-top:8px}
+ #archive .arc-top{margin-bottom:5px}
+ #archive .arc-top .badge{display:none}
+ #archive .reading-hub{margin:4px 0 10px!important}
+ #archive .archive-jumps{gap:6px!important;margin-bottom:19px!important}
+ #archive .archive-jumps button{font-size:.86rem;padding:8px 4px}
+ #archive .listener-finder-header{align-items:start;gap:9px;margin-bottom:12px}
+ #archive .spoiler-shortcut{flex:0 1 132px;text-align:right;font-size:.72rem;padding:3px 0;line-height:1.35}
+ #archive .library-tools{grid-template-columns:minmax(0,1fr) minmax(108px,36%);gap:9px}
+ #archive .library-tools .search-label{font-size:.76rem}
+ #archive .library-tools input,#archive .library-tools select{font-size:.88rem;padding:9px 9px}
+ #archive .listener-stats-wrap{display:block;margin:8px 0 4px}
+ #archive .daily-progress-rail{margin-top:4px!important}
+ #archive .filterbar{gap:6px;margin:11px 0 13px}
+ #archive .filterbar button{font-size:.79rem;min-height:40px;padding:8px 10px}
+ #archive .listener-extra-settings{grid-template-columns:1fr;margin-top:22px;gap:8px;padding-top:14px}
+}
+@media(max-width:360px){
+ #archive .listener-finder-header{display:block}
+ #archive .spoiler-shortcut{min-height:32px;text-align:left;margin-top:4px}
+ #archive .library-tools{grid-template-columns:minmax(0,1fr) 108px}
+ #archive .archive-jumps button{font-size:.8rem}
+}
+
+/* Reduce redundant helper prose between search and the first card. */
+#archive .resume-caption{display:none}
+#archive .resume-row{margin:0!important}
+#archive .resume-row:has(.resume-person:not([hidden])){margin:8px 0!important}
+#archive .listener-stats-wrap{padding-bottom:7px}
+@media(max-width:700px){#archive .listener-overline{font-size:.62rem;letter-spacing:.08em}}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-label="リスナーを象徴する持ち物">
+<defs><linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#e9dfcc"/></linearGradient><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="2" seed="19" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".06"/></feComponentTransfer></filter><filter id="soft"><feGaussianBlur stdDeviation="7"/></filter></defs>
+<rect width="320" height="320" rx="17" fill="url(#paper)"/><rect x="12" y="12" width="296" height="296" rx="13" fill="none" stroke="#9a9c86" stroke-width="1.5" opacity=".6"/><path d="M30 37h45M245 284h41" stroke="#9a9c86" opacity=".4" stroke-width="2"/><ellipse cx="161" cy="249" rx="105" ry="19" fill="#60564a" opacity=".11" filter="url(#soft)"/>
+
+<path d="M68 152q3-43 86-46 79 3 84 46-12 49-86 55-71-6-84-55z" fill="#f2ecdc" stroke="#a59b8e" stroke-width="4"/>
+<path d="M83 142l47 23 43-37 50 17" fill="none" stroke="#b7b3a6" stroke-width="2"/>
+<path d="M96 174q25-59 57-59t60 58l-15 43h-87z" fill="#f5f1e9" stroke="#998e7c" stroke-width="4"/><path d="M111 211q43-10 87 0l-7 21-75 1z" fill="#394a46" stroke="#657269" stroke-width="3"/><path d="M130 170q10-13 21 0-11 16-21 0" fill="#a89d88"/>
+<rect x="207" y="72" width="39" height="61" rx="4" fill="#d0a990" stroke="#97785f" stroke-width="3"/><rect x="215" y="63" width="23" height="19" rx="3" fill="#b4bab0" stroke="#76827e" stroke-width="3"/>
+<path d="M226 63V49" stroke="#76827e" stroke-width="4" stroke-linecap="round"/>
+<path d="M81 246h159" stroke="#b9b1a6" stroke-width="3"/>
+<path d="M30 285h26" stroke="#9a9c86" opacity=".65" stroke-width="2"/><circle cx="274" cy="38" r="5" fill="#9a9c86" opacity=".35"/>
+</svg>

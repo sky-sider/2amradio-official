@@ -1,0 +1,37 @@
+
+/* v1.6 — studio notebook; decorative styling isolated from original exploration */
+.studio-diary{margin:34px 0 35px;padding:clamp(18px,3vw,36px);border:1px solid #c4ab89;border-radius:18px;background:linear-gradient(143deg,#f9f3e7,#e9decb);color:#342f2d;box-shadow:0 10px 30px #261e1d16}
+.studio-diary-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:22px}
+.studio-diary-head h2{font-family:Georgia,'Yu Mincho',serif;font-size:clamp(1.65rem,3vw,2.25rem);color:#3d342f;margin:7px 0 9px}
+.studio-diary-head p{margin:0;color:#67584b;line-height:1.9;font-size:.94rem}
+.studio-diary-eyebrow{font-family:Georgia,serif;font-size:.67rem;font-weight:bold;letter-spacing:.18em;color:#8f6f50}
+.studio-diary-progress{min-width:180px;font-size:.8rem;color:#675748;text-align:right}
+.studio-diary-track{height:6px;border-radius:9px;background:#d9c9b1;overflow:hidden;margin-top:8px}
+.studio-diary-track span{display:block;height:100%;background:#956f48;transition:width .2s ease}
+.studio-diary-controls{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 21px}
+.studio-diary-controls button{padding:9px 12px;border:1px solid #c8b69e;border-radius:22px;background:#fffaf1;color:#594c42;cursor:pointer;font-size:.81rem}
+.studio-diary-controls button[aria-pressed=true]{background:#394657;color:#fff7e7;border-color:#394657}
+.studio-diary-layout{display:grid;grid-template-columns:minmax(220px,.82fr) minmax(0,1.45fr);gap:18px;align-items:start}
+.studio-diary-list{display:grid;grid-template-columns:1fr;gap:9px;max-height:625px;overflow-y:auto;padding:2px 6px 2px 2px}
+.studio-diary-card{display:flex;flex-direction:column;align-items:flex-start;gap:5px;width:100%;text-align:left;background:#fffaf1;border:1px solid #d8c8b3;border-radius:12px;padding:14px 16px;color:#453b35;cursor:pointer;transition:background .16s,border-color .16s}
+.studio-diary-card:hover,.studio-diary-card.selected{background:#f4e8d5;border-color:#a78965}
+.studio-diary-card[aria-pressed=true]{box-shadow:inset 4px 0 #977354}
+.studio-diary-card-time{font-size:.67rem;letter-spacing:.06em;color:#947656}
+.studio-diary-card strong{font-family:Georgia,'Yu Mincho',serif;font-size:1rem;line-height:1.45}
+.studio-diary-card small{color:#7b6a5a;font-size:.72rem}
+.studio-diary-empty{color:#766451;font-size:.85rem;padding:14px}
+.studio-diary-article{background:#fffaf2;border:1px solid #d8c6ac;border-radius:14px;min-height:385px;padding:clamp(20px,3vw,34px);scroll-margin-top:24px;box-shadow:0 6px 19px #2c251a0c}
+.studio-diary-article h3{font-family:Georgia,'Yu Mincho',serif;font-size:clamp(1.35rem,2.8vw,1.85rem);color:#3c332e;line-height:1.45;margin:13px 0 10px}
+.studio-diary-article>p{line-height:1.8;color:#66564c}
+.studio-diary-subject{font-size:.78rem!important;color:#967956!important;border-bottom:1px solid #e5d9c9;padding-bottom:18px}
+.studio-diary-body{font-family:Georgia,'Yu Mincho','Hiragino Mincho ProN',serif;color:#443a32;font-size:.97rem;line-height:2.25;margin:19px 0 24px}
+.studio-diary-body p{margin:0 0 18px}
+.studio-diary-actions{border-top:1px solid #e3d5c2;padding-top:19px;display:flex;gap:8px;flex-wrap:wrap}
+.studio-diary-actions button{border:1px solid #bcaa94;background:#f6eddf;border-radius:8px;padding:10px 12px;color:#5b4d3d;font-size:.8rem;cursor:pointer}
+.studio-diary-actions button[aria-pressed=true]{background:#e4d4bc;border-color:#92724f}
+.studio-diary-footnote{font-size:.76rem;line-height:1.75;color:#7d6957;margin:17px 0 0}
+.studio-related-note{background:#4e5764;color:#fff6e7;border:0;border-radius:7px;margin-top:15px;padding:11px 15px;cursor:pointer;font-size:.82rem}
+.studio-diary button:focus-visible,.studio-related-note:focus-visible{outline:3px solid #b97b46;outline-offset:3px}
+@media (max-width:700px){.studio-diary-layout{grid-template-columns:1fr}.studio-diary-list{grid-template-columns:repeat(2,minmax(0,1fr));max-height:none;overflow:visible}.studio-diary-progress{text-align:left;min-width:160px}.studio-diary-article{min-height:260px}.studio-diary-card{padding:12px}}
+@media (max-width:420px){.studio-diary{padding:16px 12px}.studio-diary-list{grid-template-columns:1fr}.studio-diary-controls button{font-size:.75rem;padding:8px 10px}.studio-diary-body{font-size:.93rem}}
+@media (prefers-reduced-motion:reduce){.studio-diary-track span,.studio-diary-card{transition:none}}
