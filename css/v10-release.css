@@ -1,0 +1,17 @@
+/* v1.0 release: a clear first-visit path, with low-motion mobile-first controls. */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.first-visit{background:#132239;border-top:1px solid #344760;border-bottom:1px solid #344760;padding:32px 0 39px}
+.first-visit-title{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:18px}
+.first-visit-title h2{color:#f3e1c9;font-size:clamp(1.3rem,2.5vw,1.9rem);margin-top:5px}
+.first-visit-title p{font-size:.88rem;max-width:455px;color:#c6cfda;margin:0}
+.first-visit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.visit-card{display:flex;flex-direction:column;align-items:start;text-align:left;gap:6px;color:#f6e9d5;background:#1f3048;border:1px solid #4b5d72;border-radius:7px;padding:19px 21px;min-height:142px}
+.visit-card:hover,.visit-card:focus-visible{background:#293e58;border-color:#d5ac78}
+.visit-card .visit-step{color:#d6b480;font-size:.72rem;font-weight:700;letter-spacing:.045em}
+.visit-card strong{font-size:1.07rem}
+.visit-card small{color:#c7d0dc;font-size:.82rem}
+.visit-caveat{color:#aebac8;font-size:.77rem;margin:14px 0 0;line-height:1.8}
+.release-info{border-top:1px solid #506077;margin:25px 0;padding-top:19px}
+.release-info h2{font-size:1.28rem;margin-bottom:12px;color:#f0d8b5}
+.release-info p{font-size:.9rem;color:#cbd3df;line-height:2}
+@media(max-width:740px){.first-visit-title{display:block}.first-visit-title p{margin-top:10px}.first-visit-grid{grid-template-columns:1fr}.visit-card{min-height:90px;padding:15px 18px}}

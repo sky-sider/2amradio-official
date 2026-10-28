@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101a2c">
+<meta name="description" content="『午前二時の周波数』のWeb特設サイト。人物録・放送室探索・独自創作の短編・コレクションノートを楽しめる資料室。">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<title>SOMEWHERE ON AIR | 午前二時の周波数 特設サイト</title>
+<style>
+:root{color-scheme:dark;--navy:#101a2c;--night:#17253b;--night2:#223550;--amber:#dfae70;--ivory:#f7ead5;--soft:#bec9d2;--paper:#efe5d2;--ink:#332e29;--muted:#746c61;--line:#4b5870;--edge:#c9bba4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--ivory);line-height:1.8}a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--amber);outline-offset:3px}button:disabled{opacity:.5;cursor:not-allowed}.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;z-index:100;background:white;color:black;padding:8px}
+.wrap{max-width:1120px;padding:0 24px;margin:0 auto}.mainhead{border-bottom:1px solid #334058;background:#111c2c;position:sticky;top:0;z-index:40}.headin{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-family:Georgia,serif;font-size:1.15rem;letter-spacing:.09em;color:var(--amber);font-weight:700;text-decoration:none;line-height:1.2}.brand span{display:block;font:400 .67rem/1.6 system-ui,sans-serif;color:#b9c5d2;letter-spacing:.1em}.topnav{display:flex;gap:18px;align-items:center}.topnav button{color:#d1d7dc;border:0;background:transparent;padding:7px 4px;font-size:.84rem}.topnav button[aria-current="page"]{color:var(--amber);box-shadow:0 1px 0 var(--amber)}.topnav button:hover{color:#fff}.headmenu{display:none}.eyebrow{font-size:.7rem;letter-spacing:.24em;color:var(--amber);font-weight:700}.page{display:none;min-height:70vh;animation:fade .22s ease}.page.active{display:block}@keyframes fade{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:none}}
+h1,h2,h3{line-height:1.4;margin:0;font-weight:500}h1{font-size:clamp(2rem,4.5vw,4.2rem);letter-spacing:.09em}h2{font-size:clamp(1.5rem,3vw,2.4rem)}h3{font-size:1.15rem}p{margin:0 0 1em}.hero{background:radial-gradient(ellipse at 70% 20%,#2d425b 0,transparent 50%),linear-gradient(160deg,#17263a,#101a2c);padding:70px 0 80px;border-bottom:1px solid #3b465b}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}.hero h1{margin:14px 0 14px}.lead{color:#cad3dc;max-width:570px;font-size:1.02rem;line-height:2.15}.tagline{font-family:Georgia,serif;letter-spacing:.06em;color:#ddbc8a;font-size:.8rem}.btn{display:inline-block;border:1px solid var(--amber);border-radius:5px;padding:11px 22px;color:#192339;background:var(--amber);font-weight:700;text-decoration:none}.btn:hover{filter:brightness(1.09)}.btn.ghost{color:var(--amber);background:transparent}.btn.small{font-size:.85rem;padding:8px 14px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.hero-art{height:315px;position:relative;border:1px solid #50617a;border-radius:12px;background:linear-gradient(#1b2b41 0 60%,#222d39 60%);overflow:hidden;box-shadow:inset 0 0 70px #060d1c,0 20px 55px #0004}.hero-art .window{position:absolute;left:8%;top:9%;width:35%;height:45%;border:9px solid #334255;background:linear-gradient(#0e182a,#273b55);box-shadow:0 0 0 2px #5c6271}.window:after{content:"✦     ✧";color:#d3bd91;position:absolute;inset:30% 5%;font-size:1.4rem}.desk{position:absolute;bottom:23%;left:6%;width:90%;height:17px;background:#79604c;border-radius:8px;box-shadow:0 8px 0 #41372f}.lamp{position:absolute;right:14%;top:12%;width:68px;height:45px;border-radius:60% 60% 10% 10%;background:#cca573;box-shadow:0 0 100px 35px #c8954e42}.lamp:after{content:"";position:absolute;left:32px;top:44px;height:153px;width:4px;background:#a28a72}.mic{position:absolute;left:49%;bottom:28%;height:105px;width:20px;border:5px solid #9c9890;border-radius:40px;background:#242c36;box-shadow:0 0 0 4px #2e4050}.mic:after{content:"";position:absolute;bottom:-51px;left:4px;background:#9c9890;width:4px;height:50px}.artclock{position:absolute;right:24%;bottom:32%;font-size:.8rem;color:#b0baad;border:1px solid #9e9d83;padding:3px 12px;border-radius:4px;background:#1c2630}.onair{position:absolute;right:5%;top:6%;color:#ffa39a;letter-spacing:.2em;font:.75rem system-ui,sans-serif;padding:4px 12px;border:1px solid #a45059;border-radius:2px;background:#391f2c;box-shadow:0 0 20px #cb6d7440}.onair:before{content:"●";margin-right:6px}.stars{position:absolute;left:10%;bottom:6%;font:italic .78rem Georgia,serif;color:#b8ac95;letter-spacing:.09em}
+.section{padding:67px 0}.section .intro{max-width:720px;color:#c1c9d0;margin:18px 0 24px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.tile{border:1px solid #3d4e65;background:linear-gradient(145deg,#20304a,#172338);border-radius:10px;padding:23px;min-height:174px}.tile .icon{color:var(--amber);font-size:1.5rem;display:block;margin-bottom:13px}.tile h3{color:#f5e9d6}.tile p{color:#c0cad1;font-size:.87rem;margin-top:10px}.tile-link{border:0;text-align:left;color:inherit;width:100%;height:100%;display:block}.tile-link:hover{border-color:#b28a5f;transform:translateY(-2px)}.front-note{padding:22px 25px;border:1px dashed #7a735f;border-radius:7px;background:#192334;color:#cbd0d1;max-width:800px}.muted{color:#bac4cf}.small{font-size:.82rem}.paper-zone{background:var(--paper);color:var(--ink);min-height:78vh;border-top:5px solid #d1bd99}.paper-zone .eyebrow{color:#8b6a48}.paperhead{padding:54px 0 32px;border-bottom:1px solid var(--edge)}.paperhead p{color:#6b6258;margin:10px 0 0}.paperbody{padding:32px 0 76px}.paper-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.filecard{background:#fbf7ed;border:1px solid #d2c2aa;border-radius:6px;padding:23px;text-align:left;color:#332c28;box-shadow:2px 4px 0 #d2c2aa55;min-height:170px}.filecard:hover{border-color:#8e755b;transform:translateY(-2px)}.filecard strong{display:block;margin:12px 0 6px;font-size:1rem}.filecard span{color:#78695b;font-size:.75rem}.filecard p{font-size:.86rem;color:#6c635b}.arc-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 27px}.linkbtn{border:0;background:transparent;text-decoration:underline;text-underline-offset:3px;color:inherit;padding:7px 0}.filterbar{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.filterbar button{border:1px solid #a69884;color:#594c3f;background:transparent;border-radius:30px;padding:7px 14px}.filterbar button.on{background:#493b30;color:#fff}.person-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.person{background:#fcf8ef;color:#352f29;border:1px solid #d1c5b2;padding:18px;border-radius:5px;text-align:left;min-height:142px}.person:hover{border-color:#8e6c4d}.person .id{font:italic .74rem Georgia,serif;color:#917c65}.person h3{font-size:1.05rem;margin:6px 0}.person p{color:#75685a;font-size:.82rem}.drawer{margin:20px 0;border:1px solid #c8b6a1;background:#fffaf0;padding:26px;position:relative}.drawer h3{font-size:1.4rem}.drawer .close{position:absolute;right:14px;top:14px;background:none;border:none;color:#625044;font-size:1.5rem;padding:0 8px}.factlist{padding-left:1.5rem}.factlist li{margin:8px 0}.section-title{margin:40px 0 13px}.file-index{font-size:.75rem;color:#80694f;letter-spacing:.17em}.note{border-left:3px solid #af8e63;padding:12px 15px;background:#f5efdf;color:#594c3e;margin:15px 0;font-size:.86rem}.letters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.letter{background:#fdf8ef;border:1px solid #cfbea6;padding:24px;box-shadow:3px 4px 0 #dccdb8}.letter .label{font-size:.76rem;letter-spacing:.12em;color:#8a7256}.letter h3{margin:8px 0 16px}.letter p{white-space:pre-line;line-height:2}.badge{font-size:.74rem;border:1px solid #a78d72;border-radius:3px;padding:4px 9px;color:#634f3b;display:inline-block}.spoiler-row{background:#f6ebd6;padding:15px;border-radius:6px;border:1px solid #d7c7ad;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.spoiler-row select{border:1px solid #b9a88e;background:white;color:#382b25;border-radius:5px;padding:8px 12px;font:inherit}.hidden-note{font-size:.8rem;background:#eee4d3;padding:12px;border-radius:5px;color:#675845}.booktext{max-width:740px;line-height:2.2}.back{margin-top:28px}.foot{border-top:1px solid #334058;padding:30px 0;color:#9aa8b5;font-size:.8rem}.foot .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.tune-wrap{max-width:650px;padding:30px;border:1px solid #465877;background:#1a2941;border-radius:12px;margin:27px 0}.tune-range{width:100%;accent-color:var(--amber);height:35px}.freq{font:2.7rem Georgia,serif;color:#f4d2a0;text-align:center;margin:6px 0 0}.stat{color:#bec8cf;font-size:.85rem;text-align:center;min-height:2em}.wave{height:48px;display:flex;justify-content:center;gap:5px;align-items:center}.wave span{height:var(--h);width:3px;border-radius:3px;background:#ad8a61;opacity:.7}.found{display:none;text-align:center;margin-top:17px;border-top:1px solid #43516b;padding-top:18px}.found.show{display:block}.aboutlines{max-width:760px}.aboutlines p{color:#ccd3da;line-height:2.2}.postits{border:1px solid #44536a;border-radius:8px;padding:25px;margin:20px 0;max-width:700px}.postits li{padding:9px 0}.return{background:transparent;border:1px solid #a4bac7;color:#cad8e1;border-radius:4px;padding:9px 17px}.unavailable{opacity:.55}.level{margin:9px 0}.listenlist{margin:12px 0 18px}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-art{height:280px}.grid,.paper-grid,.person-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.headin{flex-wrap:wrap;padding-top:12px;padding-bottom:12px}.topnav{gap:9px;justify-content:flex-end;flex-wrap:wrap}.topnav button{font-size:.78rem}.hero{padding:48px 0}.section{padding:48px 0}}
+@media(max-width:540px){.wrap{padding:0 17px}.brand{font-size:.9rem}.brand span{font-size:.6rem}.topnav{width:100%;justify-content:space-between}.topnav button{padding:4px 1px;font-size:.76rem}.hero-art{height:220px}.grid,.letters{grid-template-columns:1fr}.paper-grid,.person-grid{grid-template-columns:1fr 1fr;gap:9px}.filecard,.person{padding:15px;min-height:118px}.filecard strong{font-size:.89rem}.filecard p,.person p{font-size:.74rem}.paperhead{padding:37px 0 24px}.drawer{padding:18px}.section{padding:36px 0}.headin{min-height:64px}.hero h1{font-size:2.1rem}.hero .lead{font-size:.93rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.page{animation:none}.tile-link:hover,.person:hover,.filecard:hover{transform:none}}
+
+/* v0.3: character dossiers & reading archive */
+.archive-intro{display:flex;align-items:flex-start;gap:16px;border:1px solid #d4c2a7;background:#faf5e9;padding:18px 19px;border-radius:7px;margin:20px 0 15px;box-shadow:2px 3px 0 #d4c2a733}.archive-intro strong{letter-spacing:.04em}.archive-intro p{font-size:.88rem;color:#685a4b;margin:5px 0 0}.archive-intro-icon{color:#9a774e;font-size:2rem;line-height:1.2}.library-tools{display:flex;gap:13px;margin-top:15px;align-items:flex-end;flex-wrap:wrap}.search-label{font-size:.81rem;color:#665a4d;display:flex;flex-direction:column;gap:6px;flex:1 1 220px}.search-label input,.search-label select{font-family:inherit;font-size:.95rem;color:#3c3128;background:#fffaf0;border:1px solid #ad9980;padding:11px 12px;border-radius:5px;min-height:45px;width:100%}.library-tools .search-label:last-child{flex:0 1 185px}.library-stats{font-size:.82rem;color:#75624e;margin-top:11px;min-height:1.5em}.person{position:relative;min-height:190px;transition:transform .16s ease,border-color .16s ease}.person .person-sigil{display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:2rem;line-height:1;position:absolute;right:13px;top:13px;color:var(--c,#917c65);width:49px;height:49px;border:1px solid var(--c,#917c65);background:#fffefa;border-radius:50%}.person p{padding-right:9px}.person .person-category{font-size:.7rem;color:#756554}.person .fav-flag{position:absolute;right:12px;bottom:11px;color:#7e5e3e;font-size:.8rem}.person.locked{opacity:.66}.person:disabled{cursor:default}.person h3{max-width:calc(100% - 35px)}.reader-drawer{padding:0;overflow:hidden}.reader-header{padding:26px 30px 24px;background:linear-gradient(120deg,#faf5e8,#f0e7d5);border-bottom:1px solid #cfbfa6;position:relative}.reader-heading{padding-right:56px}.reader-heading h3{font-family:Georgia,'Yu Mincho','Hiragino Mincho ProN',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:600;margin:7px 0 3px}.reader-heading p{font-size:.89rem;color:#635747;margin:6px 0}.reader-symbol{font-size:2.6rem;line-height:1;color:var(--c,#8b755a);width:67px;height:67px;border:1px solid var(--c,#8b755a);border-radius:100%;background:#fffaf0;display:flex;justify-content:center;align-items:center;float:right;margin:0 18px 10px}.reader-body{padding:20px 30px 30px}.reader-controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:14px 0 2px}.reader-btn{border:1px solid #ae987e;background:#fffaf0;color:#574635;border-radius:6px;min-height:44px;padding:9px 14px;font-size:.85rem}.reader-btn:hover{background:#f0e4d0}.reader-btn[aria-pressed="true"]{background:#664c36;color:#fff}.reader-btn:disabled{opacity:.46}.reader-tabs{display:flex;gap:6px;overflow-x:auto;border-bottom:1px solid #cbb9a1;padding-top:8px}.reader-tab{border:none;border-radius:5px 5px 0 0;color:#654e38;background:transparent;min-height:48px;padding:8px 15px;white-space:nowrap}.reader-tab[aria-selected="true"]{background:#584431;color:#fff}.reader-panel{padding:26px 2px 16px;max-width:810px;min-height:220px}.reader-panel h4{font-size:1.16rem;margin:0 0 14px;line-height:1.5}.reader-panel .paragraph{font-size:.99rem;line-height:2.15;margin-bottom:1.25em;letter-spacing:.012em}.reader-panel .epilogue{font-family:Georgia,'Yu Mincho',serif;font-size:.97rem;border-left:2px solid #c6a778;padding:14px 16px;color:#5d503e;background:#f8f1e3;margin-top:25px}.label-chip{display:inline-block;letter-spacing:.07em;font-size:.72rem;border-radius:3px;border:1px solid #ccb595;color:#675039;padding:3px 9px;background:#f6eedf;margin-bottom:12px}.source-strip{background:#f4ecdb;border-top:1px solid #dfd2ba;padding:14px 30px;color:#6d5f50;font-size:.79rem;line-height:1.8}.motif-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:15px 0 27px}.motif-card{border:1px solid #d6c6b0;border-radius:6px;background:#f9f5ec;padding:15px}.motif-card strong{display:block;color:#483b2b;font-size:.91rem;margin-bottom:7px}.motif-card p{font-size:.83rem;color:#6d5d4e;margin:0}.rhythm-list{counter-reset:rhythm;list-style:none;margin:12px 0 26px;padding:0;border-left:1px solid #bdae98}.rhythm-list li{position:relative;padding:8px 0 16px 24px;color:#55483e}.rhythm-list li:before{counter-increment:rhythm;content:counter(rhythm);position:absolute;left:-12px;top:9px;width:23px;height:23px;text-align:center;background:#eee2cd;color:#796247;border-radius:100%;font-size:.76rem}.related-people{color:#5b4b3c;background:#f9f3e6;padding:14px 16px;border:1px solid #e0d0b7;border-radius:5px}.reader-bottom{display:flex;justify-content:space-between;gap:10px;padding:0 30px 26px;flex-wrap:wrap}.reader-bottom .reader-btn{flex:1 1 110px}.empty-search{padding:25px;border:1px dashed #bca98d;color:#6b5948;border-radius:5px}.imprint{border-top:1px solid #d3c6b1;margin:24px 0;padding-top:12px;color:#736453}.footnote-title{font-size:.88rem;font-weight:700;color:#574433;margin-top:20px}.fab-note{color:#806547;font-size:.77rem;margin-top:12px}.reader-panel .hidden-note{font-size:.88rem;line-height:1.9}.site-version{font-size:.75rem;color:#b5c0c6}
+@media(max-width:700px){.reader-header{padding:20px 18px}.reader-body{padding:14px 18px 20px}.source-strip{padding:13px 18px}.reader-bottom{padding:0 18px 20px}.motif-grid{grid-template-columns:1fr}.person-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.person{min-height:160px}.reader-panel{padding:20px 0 12px}.reader-symbol{width:54px;height:54px;font-size:2.1rem;margin-right:8px}.reader-tab{padding:8px 10px;font-size:.83rem}.library-tools .search-label:last-child{flex:1 1 140px}}
+@media(max-width:390px){.person-grid{grid-template-columns:1fr}.person{min-height:137px}.reader-symbol{display:none}.reader-heading{padding-right:28px}}
+
+/* v0.3: keepsake illustrations and the twelve-object exhibition */
+.person{padding-top:14px;min-height:222px;overflow:hidden}
+.person-illustration{display:block;width:100%;height:112px;object-fit:contain;margin-bottom:12px;border-radius:5px;background:#f0e6d8}
+.person .person-sigil.secret-sigil{position:static;width:58px;height:58px;margin-bottom:12px;border-style:dashed;color:#a59b8c;border-color:#c0b4a5;background:#eee6d9}
+.person h3{max-width:100%}.person .person-category{display:block;margin-top:10px}
+.person p{padding-right:0}.person.locked{min-height:208px}
+.reader-illustration{float:right;width:106px;height:106px;object-fit:cover;margin:0 12px 10px 22px;border:1px solid #d8c5ad;border-radius:7px;box-shadow:3px 4px 0 #c9b39a55}
+.keepsake-intro{display:flex;align-items:center;gap:21px;padding:15px;margin:18px 0 22px;background:#f5eddd;border:1px solid #dac9ae;border-radius:7px}
+.keepsake-feature{width:150px;height:150px;object-fit:contain;flex:0 0 150px;border-radius:5px}
+.keepsake-intro h4{margin:6px 0 7px}.keepsake-intro p{font-size:.85rem;line-height:1.9;color:#6a5b4b}
+.keepsake-section{padding:32px 0 35px;margin-top:44px;border-top:1px solid #cabaa4}
+.keepsake-kicker{color:#977555;font-size:.72rem;letter-spacing:.15em}
+.keepsake-section h2{font-family:Georgia,'Yu Mincho','Hiragino Mincho ProN',serif;font-weight:600;font-size:1.55rem;margin:8px 0}
+.keepsake-lead{font-size:.86rem;color:#786958;margin:5px 0 22px;max-width:650px;line-height:1.9}
+.keepsake-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.keepsake-card{display:flex;align-items:stretch;flex-direction:column;gap:5px;background:#fcf7ec;border:1px solid #d5c5aa;border-radius:7px;padding:10px;min-width:0;text-align:left;color:#3a3029;box-shadow:2px 3px 0 #cabaa450;min-height:240px}
+button.keepsake-card:hover,button.keepsake-card:focus-visible{border-color:#876e53;transform:translateY(-2px);outline-offset:3px}
+.keepsake-card img,.keepsake-unknown{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:5px;background:#ede2d1}
+.keepsake-card span{font:italic .7rem Georgia,serif;color:#90745b;letter-spacing:.09em;padding:5px 4px 0}
+.keepsake-card strong{padding:0 4px;font-size:.9rem}.keepsake-card small{padding:0 4px 3px;color:#857363;font-size:.72rem}
+.keepsake-locked{opacity:.65}
+.keepsake-unknown{display:flex;align-items:center;justify-content:center;color:#ac9c85;font:3rem Georgia,serif;border:1px dashed #c2b39e}
+@media(max-width:800px){.keepsake-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:540px){.keepsake-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.keepsake-card{min-height:190px;padding:8px}.keepsake-card strong{font-size:.83rem}.keepsake-card small{font-size:.7rem}.person{min-height:200px}.person-illustration{height:112px}.reader-illustration{width:74px;height:74px;margin:0 6px 8px 13px}.keepsake-intro{padding:11px;gap:12px}.keepsake-feature{width:85px;height:85px;flex-basis:85px}.keepsake-intro p{font-size:.75rem}}
+@media(max-width:390px){.person-grid{grid-template-columns:1fr}.reader-illustration{width:68px;height:68px}.keepsake-section{margin-top:28px}}
+@media(prefers-reduced-motion:reduce){.keepsake-card{transition:none}button.keepsake-card:hover{transform:none}}
+
+/* v0.5 STUDIO WALKTHROUGH — all visual decorations are local CSS/SVG, without remote services */
+.studio-shell{background:#e9decc;color:#312d2a;min-height:80vh;border-top:5px solid #a88861}
+.studio-shell .eyebrow{color:#94714a}
+.studio-head{padding:42px 0 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px}
+.studio-head h1{font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(1.75rem,3.4vw,2.8rem);letter-spacing:.04em;margin:4px 0 12px}
+.studio-head p{max-width:690px;color:#695d51;font-size:.94rem;line-height:2}
+.studio-shell .studio-return{color:#655442;text-decoration:underline;text-underline-offset:3px;background:transparent;border:0;padding:9px 4px}
+.studio-walk{border:1px solid #bdad98;border-radius:12px;overflow:hidden;background:#f9f3e7;box-shadow:0 12px 35px #4d382020}
+.studio-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px;padding:16px 20px;border-bottom:1px solid #d3c3aa}
+.studio-phases{display:flex;gap:6px;flex-wrap:wrap}
+.studio-phases button{border:1px solid #b9a992;background:#eee6d9;color:#55483b;border-radius:5px;padding:8px 12px;font-size:.84rem;min-height:44px}
+.studio-phases button[aria-pressed=true]{background:#334254;color:#fff4e2;border-color:#334254}
+.studio-count{font-size:.81rem;color:#655746;font-variant-numeric:tabular-nums}
+.studio-count strong{font-size:1rem;color:#423226}
+.studio-viewport{position:relative;isolation:isolate;background:#101e33;overflow:hidden}
+.studio-drawing{display:block;width:100%;height:auto;aspect-ratio:1000/560}
+.studio-viewport:after{content:"";pointer-events:none;position:absolute;inset:0;background:linear-gradient(0deg,#090f2011,#0a14241a);z-index:1}
+.studio-pin{--dot:#e7bb7c;position:absolute;z-index:3;left:var(--x);top:var(--y);transform:translate(-50%,-50%);min-width:44px;min-height:44px;border-radius:999px;border:2px solid #f7e7cd;background:#20344be0;color:#fff6e6;display:grid;place-items:center;font-size:.83rem;font-weight:700;box-shadow:0 0 0 5px #e2b37636,0 4px 12px #0009;transition:transform .16s,border-color .16s,background .16s}
+.studio-pin:hover{transform:translate(-50%,-50%) scale(1.12);background:#526b7b}
+.studio-pin:focus-visible{outline:3px solid #f7cd7a;outline-offset:4px}
+.studio-pin.is-active{background:#e4b373;color:#1c2835;border-color:#fff4dc;box-shadow:0 0 0 7px #edbc726b,0 0 20px #efbc6ea1}
+.studio-pin.is-seen:not(.is-active):after{content:"✓";position:absolute;top:-8px;right:-6px;display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:#a8bb9d;color:#192d29;font-size:.7rem;border:1px solid #162d2d}
+.studio-viewport[data-phase="before"] .on-air-glow,.studio-viewport[data-phase="after"] .on-air-glow{opacity:.08}
+.studio-viewport[data-phase="during"] .on-air-glow{opacity:1}
+.studio-viewport[data-phase="during"] .studio-meter-bar{opacity:.85}
+.studio-viewport[data-phase="before"] .studio-meter-bar,.studio-viewport[data-phase="after"] .studio-meter-bar{opacity:.25}
+.studio-statusline{padding:10px 19px 12px;background:#1b2b3d;color:#d7c7aa;font-size:.82rem;display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap}
+.studio-bottom{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:0}
+.studio-objects{padding:23px 22px 26px;border-right:1px solid #d9c7ab}
+.studio-objects h2{font-size:1.2rem;font-family:Georgia,"Yu Mincho",serif;margin:0 0 9px}
+.studio-objects p{font-size:.82rem;color:#756759;margin-bottom:14px}
+.studio-index{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.studio-index button{border:1px solid #d4c3ab;min-height:55px;text-align:left;border-radius:6px;background:#fffaf0;padding:9px 10px;display:flex;align-items:center;gap:9px;color:#4b3b2e}
+.studio-index button:hover{border-color:#997b56;background:#fff5df}
+.studio-index button[aria-pressed=true]{background:#e8dcc8;border-color:#9a7851}
+.studio-index .number{font:italic .76rem Georgia,serif;color:#947455;flex-shrink:0}
+.studio-index .seen{margin-left:auto;color:#52715b;font-size:.83rem}
+.studio-inspect{padding:24px 24px 28px;background:#fcf7eb;min-height:270px}
+.studio-inspect .file-index{color:#997c5b}
+.studio-inspect h2{font-family:Georgia,"Yu Mincho",serif;font-size:1.5rem;margin:8px 0 10px}
+.studio-inspect .inspect-copy{line-height:2.1;color:#3e3731;font-size:.93rem;min-height:66px}
+.studio-inspect .inspect-small{color:#766758;font-size:.8rem;margin-bottom:12px}
+.studio-inspect .inspect-caption{border-left:3px solid #ab8b64;padding:11px 12px;background:#f0e4d1;color:#655644;font-size:.85rem;line-height:1.85}
+.studio-inspect .inspect-meta{margin-top:17px;color:#7a6855;font-size:.75rem;letter-spacing:.04em}
+.studio-discovery{border:1px dashed #ac9371;background:#f7edda;padding:18px 21px;border-radius:7px;margin:22px 0 0}
+.studio-discovery h3{font-family:Georgia,"Yu Mincho",serif;font-size:1.17rem;margin-bottom:7px}
+.studio-discovery p{font-size:.87rem;color:#635748;line-height:2;margin:0}
+.studio-discovery:not(.unlocked) .locked-copy{display:block}
+.studio-discovery:not(.unlocked) .unlocked-copy{display:none}
+.studio-discovery.unlocked .locked-copy{display:none}
+.studio-discovery.unlocked .unlocked-copy{display:block}
+.studio-provenance{font-size:.78rem;color:#76695b;max-width:840px;line-height:1.8;margin:18px 0 54px}
+@media(max-width:780px){.studio-bottom{grid-template-columns:1fr}.studio-objects{border-right:0;border-bottom:1px solid #d9c7ab}.studio-toolbar{padding:13px}.studio-pin{min-width:36px;min-height:36px;font-size:.72rem}.studio-head{padding:30px 0 16px}}
+@media(max-width:460px){.studio-index{grid-template-columns:1fr 1fr;gap:7px}.studio-index button{font-size:.76rem;gap:6px;padding:8px}.studio-objects{padding:17px 12px 20px}.studio-inspect{padding:19px 15px}.studio-statusline{font-size:.72rem}.studio-phases button{padding:7px 9px;font-size:.75rem}.studio-pin{min-width:31px;min-height:31px;border-width:1.5px;box-shadow:0 0 0 4px #e2b37636}.studio-head p{font-size:.86rem}}
+@media(prefers-reduced-motion:reduce){.studio-pin{transition:none}.studio-pin:hover{transform:translate(-50%,-50%)}}
+
+/* v0.5 — quiet reading room: parchment archive, no remote font/assets */
+.story-shell{background:#ece2d1;color:#352e29;border-top:5px solid #ba9a71;min-height:84vh;padding-bottom:76px}
+.story-toprow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:25px 0 0;color:#7d6b57}
+.story-back{border:0;background:transparent;color:#66513b;text-decoration:underline;text-underline-offset:4px;padding:11px 0;min-height:44px}
+.story-overline,.story-kicker,.story-progress-label{font:700 .72rem/1.6 system-ui,sans-serif;letter-spacing:.13em;color:#90714e}
+.story-intro{display:grid;grid-template-columns:minmax(0,1fr) 210px;align-items:center;gap:20px;padding:24px 0 25px;border-bottom:1px solid #cbbb9e}
+.story-intro h1{font-family:Georgia,'Yu Mincho','Hiragino Mincho ProN',serif;font-size:clamp(1.85rem,4vw,3.25rem);margin:11px 0 16px;line-height:1.46}
+.story-lede{color:#655c50;line-height:2.1;font-size:.96rem;max-width:690px}
+.story-hero-symbol{height:166px;background:radial-gradient(ellipse at 53% 36%,#ffefc6,#e2cba4 65%,#bb9970);border-radius:130px 130px 8px 8px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 0 25px #9b785d44;overflow:hidden}
+.story-hero-symbol:before{content:'';position:absolute;inset:14px 15px 20px;border:1px solid #b6a187;border-radius:100px 100px 4px 4px}
+.story-hero-symbol span{margin-top:9px;font:italic 1.03rem Georgia,serif;letter-spacing:.2em;color:#72573d}
+.hero-envelope{width:96px;height:61px;background:#fff7e9;position:relative;border:2px solid #b8a287;border-radius:4px;box-shadow:2px 8px 12px #5b40232a;overflow:hidden;transform:rotate(-7deg)}
+.hero-envelope:after{content:'';position:absolute;left:0;top:-24px;width:67px;height:67px;background:#f2e5d0;border-right:2px solid #b8a287;border-bottom:2px solid #b8a287;transform:rotate(45deg) translate(26px,-26px)}
+.hero-envelope i{position:absolute;left:40px;top:29px;width:18px;height:18px;border-radius:50%;background:#9b5f58;z-index:1}
+.story-disclaimer{background:#f8f0e2;color:#5e5143;border-left:3px solid #ab8963;padding:14px 19px;margin:21px 0 24px;font-size:.82rem;line-height:1.95}
+.story-progress{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:#263746;border-radius:8px;color:#e8d9c5;padding:17px 23px;margin:19px 0 25px}
+.story-progress-label{color:#d6b78e;font-size:.67rem}.story-progress p{margin:1px 0 0;font-size:.88rem}
+.story-progress-track{height:7px;background:#566170;flex:1 1 100px;border-radius:999px;overflow:hidden}
+.story-progress-track>div{width:0%;height:100%;background:#e4bd83;border-radius:999px;transition:width .2s ease}
+.story-resume{border:1px solid #af9472;background:#384a58;color:#f3dfbb;border-radius:5px;padding:7px 11px;font-size:.83rem;min-height:40px}
+.story-tools{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:15px;margin-bottom:12px}
+.story-filters{display:flex;flex-wrap:wrap;gap:7px}
+.story-filters button{border:1px solid #ac9983;background:#f8f1e5;color:#655342;border-radius:999px;padding:7px 12px;min-height:42px;font-size:.8rem}
+.story-filters button[aria-pressed=true]{background:#293c4b;color:#fff1df;border-color:#293c4b}
+.story-search-label{display:grid;gap:5px;font-size:.74rem;color:#766653;flex:1 1 200px;max-width:290px}
+.story-search-label input{width:100%;background:#fffbf3;color:#352c27;border:1px solid #bbaa91;border-radius:5px;min-height:44px;padding:8px 12px;font-size:.9rem}
+.story-grid-status{font-size:.77rem;color:#746450;margin:13px 0 15px}
+.story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.story-card{border:1px solid #cbbc9e;background:#fcf7ed;color:#3b342c;display:flex;flex-direction:column;text-align:left;min-width:0;min-height:285px;border-radius:7px;overflow:hidden;box-shadow:3px 4px 0 #cab69a55;transition:transform .15s,border-color .15s}
+.story-card:hover{transform:translateY(-2px);border-color:#967c5e}
+.story-card:focus-visible,.story-reader button:focus-visible{outline:3px solid #bd8a43;outline-offset:3px}
+.story-card-art{height:110px;position:relative;background:linear-gradient(125deg,#293c4f,#1a283b);display:grid;place-items:center;isolation:isolate;overflow:hidden}
+.story-card[data-kind=letter] .story-card-art{background:linear-gradient(120deg,#c5aa86,#efe0c3)}
+.story-card-art:before{content:'';position:absolute;width:150px;height:150px;border-radius:50%;background:#e2b97c33;right:-30px;top:-70px}
+.story-card-art:after{content:'';position:absolute;left:12%;bottom:25px;width:76%;height:1px;background:#d4af7a44}
+.story-card-icon{font-family:Georgia,serif;font-size:3.1rem;color:#eedbc1;position:relative;text-shadow:0 5px 10px #0003;line-height:1}
+.story-card[data-kind=letter] .story-card-icon{color:#795b44}
+.story-card-number{position:absolute;top:10px;left:12px;font:.63rem Georgia,serif;letter-spacing:.13em;color:#d9c9b4}
+.story-card[data-kind=letter] .story-card-number{color:#67533d}
+.story-card-content{padding:16px 17px 18px;flex:1;display:flex;flex-direction:column;gap:7px}
+.story-kind{font-size:.68rem;letter-spacing:.08em;color:#946f4a}.story-card h3{font-size:1.08rem;font-family:Georgia,'Yu Mincho','Hiragino Mincho ProN',serif;font-weight:600}
+.story-card .story-hint{font-size:.8rem;color:#736554;line-height:1.8;margin:2px 0 8px;flex:1}.story-card-bottom{display:flex;align-items:center;justify-content:space-between;font-size:.72rem;color:#796a5a}
+.story-card-bottom .story-open{color:#7b513c;font-weight:700}.story-card .story-markers{position:absolute;top:9px;right:11px;display:flex;gap:5px}
+.story-card .story-markers i{font-style:normal;border-radius:3px;background:#f3e6cce8;color:#54442f;font-size:.65rem;padding:1px 5px}
+.story-empty{grid-column:1/-1;border:1px dashed #bba78e;padding:24px;color:#625440}
+.story-reader-slot{scroll-margin-top:92px}.story-reader{margin:30px auto 0;max-width:880px;background:#fffaf1;color:#342d27;border:1px solid #bfac91;box-shadow:5px 7px 0 #b9a78e65;position:relative}
+.story-reader.theme-night{background:#1e2b38;color:#f6e8d4;border-color:#566479;box-shadow:5px 7px 0 #13253755}
+.story-reader-header{padding:24px 36px 18px;border-bottom:1px solid #d5c6ac}
+.theme-night .story-reader-header{border-color:#4d5b69}.story-reader-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.story-reader-toolbar button,.story-reader-actions button{border:1px solid #b6a183;background:transparent;color:inherit;border-radius:5px;padding:7px 11px;min-height:42px;font-size:.83rem}
+.story-reader-toolbar .story-close{padding:7px 12px}.story-reader-tools{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.story-reader-tools .active,.story-reader-actions button.active{background:#344c5b;color:#fff0dd;border-color:#344c5b}
+.theme-night .story-reader-tools .active,.theme-night .story-reader-actions button.active{background:#ddbc89;color:#1b2a37}
+.story-reader-kicker{font:.7rem Georgia,serif;letter-spacing:.17em;color:#9a785a}.theme-night .story-reader-kicker{color:#d7b88e}
+.story-reader h2{font-size:clamp(1.6rem,3vw,2.25rem);font-family:Georgia,'Yu Mincho','Hiragino Mincho ProN',serif;letter-spacing:.05em;margin:8px 0 4px}
+.story-reader-subtitle{font-size:.85rem;color:#756653;margin-bottom:0}.theme-night .story-reader-subtitle{color:#bbb8b0}
+.story-paper{font-family:'Yu Mincho','Hiragino Mincho ProN',Georgia,serif;padding:29px 56px 12px;line-height:2.15;letter-spacing:.03em;font-size:var(--story-size,1.02rem);max-width:100%;overflow-wrap:anywhere}
+.story-reader[data-kind=letter] .story-paper{background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(2.15em - 1px),#d4c4a440 calc(2.15em - 1px),#d4c4a440 2.15em);background-origin:content-box}
+.story-reader.theme-night[data-kind=letter] .story-paper{background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(2.15em - 1px),#96a1ad28 calc(2.15em - 1px),#96a1ad28 2.15em);background-origin:content-box}
+.story-paper p{margin:0 0 1.5em}.story-paper .address{margin-bottom:2em;color:#8a6d53}.theme-night .story-paper .address{color:#d1ad81}
+.story-reader-footer{border-top:1px solid #ded0b8;padding:18px 36px 28px}.theme-night .story-reader-footer{border-color:#526271}
+.story-reader-footer .fiction-label{font-size:.75rem;color:#7f6d59;line-height:1.9;margin:0 0 14px}.theme-night .fiction-label{color:#c4bdb4}
+.story-reader-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.story-reader-actions .main-action{background:#2d4753;color:#fff5e8;border-color:#2d4753}
+.theme-night .story-reader-actions .main-action{background:#deb982;color:#212d37;border-color:#deb982}
+.story-crosslink{padding:18px 19px;margin:22px 0 0;background:#f1e7d7;border:1px solid #d5c3a8;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.theme-night .story-crosslink{background:#283d4b;border-color:#566a79}
+.story-crosslink small{display:block;color:#89725a;font-size:.7rem}.theme-night .story-crosslink small{color:#d2b791}
+.story-crosslink strong{display:block;font-size:.95rem;margin-top:4px}.story-crosslink button{background:#fefaf0;border:1px solid #b2a082;border-radius:5px;padding:9px 12px;min-height:44px;color:#594839;white-space:nowrap}
+.theme-night .story-crosslink button{background:#314656;color:#fff0d5;border-color:#71808c}
+.story-nextrow{display:flex;justify-content:space-between;gap:9px;margin-top:14px}.story-nextrow button{background:none;color:inherit;border:0;text-decoration:underline;text-underline-offset:4px;padding:9px 0;font-size:.82rem}
+.story-secret{display:flex;gap:18px;border:1px dashed #a68d6e;background:#f9f2e7;border-radius:6px;margin:38px 0 0;padding:23px 25px;color:#544838}
+.story-secret h2{font-family:Georgia,'Yu Mincho',serif;font-size:1.2rem;margin:0 0 9px}.story-secret p{font-size:.85rem;color:#655749;line-height:2.1;margin:0 0 8px}.story-secret small{color:#8b7562;font-size:.74rem}.story-secret-mark{font-size:2rem;color:#af8960;line-height:1}
+.studio-to-stories{margin-top:20px;border:1px solid #b6a186;border-radius:7px;background:#fcf6ea;display:flex;gap:15px;justify-content:space-between;align-items:center;padding:20px;color:#4c4034}
+.studio-to-stories p{margin:4px 0 0;color:#786c60;font-size:.83rem}.studio-to-stories button{min-height:44px;border:1px solid #886c52;color:#f7ebd9;background:#30465a;padding:8px 15px;border-radius:5px;white-space:nowrap}
+@media(max-width:900px){.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.story-intro{grid-template-columns:minmax(0,1fr) 150px}.story-hero-symbol{height:145px}}
+@media(max-width:600px){.story-shell .wrap{padding-left:16px;padding-right:16px}.story-intro{grid-template-columns:1fr;padding:14px 0 21px}.story-hero-symbol{display:none}.story-intro h1{font-size:1.85rem}.story-lede{font-size:.87rem}.story-disclaimer{font-size:.76rem}.story-tools{align-items:stretch}.story-filters{gap:5px}.story-filters button{font-size:.74rem;padding:6px 10px}.story-search-label{max-width:none}.story-grid{gap:9px}.story-card{min-height:261px}.story-card-art{height:82px}.story-card-icon{font-size:2.1rem}.story-card-content{padding:12px 11px 13px}.story-card h3{font-size:.92rem}.story-card .story-hint{font-size:.75rem}.story-card-bottom{font-size:.68rem}.story-reader-header{padding:17px 18px}.story-paper{padding:25px 23px 12px;font-size:var(--story-size,.96rem)}.story-reader-footer{padding:17px 18px 23px}.story-crosslink{align-items:start;flex-direction:column}.story-nextrow{gap:15px}.story-reader-toolbar{align-items:start}.story-progress{padding:14px;gap:12px}.studio-to-stories{flex-direction:column;align-items:start}}
+@media(max-width:370px){.story-grid{grid-template-columns:1fr}.story-card{min-height:230px}.story-card-art{height:90px}}
+@media(prefers-reduced-motion:reduce){.story-card,.story-progress-track>div{transition:none}.story-card:hover{transform:none}}
+
+/* v0.6: the personal scrap-book; matches the stationery archive without changing v0.5 pages */
+.notebook-shell{background:#e8ddc9;color:#302d2b;border-top:5px solid #b79a6e;padding:0 0 75px;min-height:80vh}
+.nb-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:23px 0;color:#88745e;font:700 .68rem/1.6 Georgia,serif;letter-spacing:.13em}
+.nb-link{background:transparent;border:0;color:#615244;text-decoration:underline;text-underline-offset:4px;padding:7px 0;min-height:44px}
+.nb-hero{background:#f8f0de;border:1px solid #c9b89d;box-shadow:5px 6px 0 #bdac8d6b;min-height:250px;display:grid;grid-template-columns:1fr 230px;gap:22px;padding:40px 44px;align-items:center;position:relative;overflow:hidden}
+.nb-hero:before{content:' ';position:absolute;inset:8px;border:1px solid #dcd0bd;pointer-events:none}
+.nb-kicker,.nb-small{color:#8d7051;font:700 .7rem Georgia,serif;letter-spacing:.18em}
+.nb-hero h1{font:500 clamp(2rem,4vw,3.15rem)/1.45 'Yu Mincho',Georgia,serif;color:#3b332a;margin:8px 0 16px;letter-spacing:.09em}
+.nb-lead{color:#675a4c;font-size:.89rem;line-height:2.12;margin:0}
+.nb-paper-art{height:182px;background:repeating-linear-gradient(180deg,transparent,transparent 24px,#e1d3bb 25px),#fcf8ea;border:1px solid #cab89c;border-radius:4px;box-shadow:8px 9px 0 #cdbd9c,0 5px 19px #9e896437;display:flex;flex-direction:column;justify-content:center;align-items:center;transform:rotate(4deg);position:relative}
+.nb-art-moon{font-size:3.9rem;line-height:1;color:#a78359}.nb-art-envelope{position:absolute;top:13px;right:20px;font-size:1.45rem;color:#ab7965}.nb-art-line{font:italic .7rem Georgia,serif;color:#846c4e;letter-spacing:.16em;margin-top:16px}
+.nb-disclaimer{font-size:.82rem;line-height:1.9;color:#6b6054;padding:19px 1px 0;margin-bottom:20px}
+.nb-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:10px 0 28px}
+.nb-stat{padding:17px;background:#fbf6eb;border:1px solid #ccbaa0;border-radius:5px;min-width:0;display:flex;flex-direction:column;gap:3px}
+.nb-stat span{font-size:.75rem;color:#75644f}.nb-stat strong{font:500 clamp(1.4rem,2.9vw,1.9rem) Georgia,serif;color:#4a3e30}.nb-stat small{color:#8c7a68;font-size:.69rem}
+.nb-stamp-section{padding:23px 21px;background:#eee4d0;border:1px dashed #b9a482;margin:0 0 28px}.nb-stamp-header{display:flex;align-items:baseline;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:12px}.nb-stamp-header h2{font:500 1.23rem 'Yu Mincho',serif;color:#514230}.nb-stamp-header p{font-size:.8rem;color:#796b5a;margin:0}
+.nb-stamps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.nb-stamp{border:1px solid #c5b49a;background:#faf4e7;padding:15px 9px;text-align:center;min-width:0;border-radius:4px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.nb-stamp-symbol{font:2.15rem Georgia,serif;color:#b6a897;line-height:1.4;filter:grayscale(1)}.nb-stamp.earned .nb-stamp-symbol{color:#8b5945;filter:none;text-shadow:0 2px 0 #dec5ae}.nb-stamp strong{font-size:.77rem;color:#604c3d}.nb-stamp small{font-size:.7rem;color:#8d7b69}
+.nb-book{position:relative;border:1px solid #c6b59b;background:#fbf7ee;box-shadow:5px 7px 0 #b6a38580;margin-top:20px;padding:32px 29px 37px 45px;min-height:400px}
+.nb-book-spine{position:absolute;top:0;bottom:0;left:17px;border-left:2px solid #cdbb9d;border-right:1px solid #e8ddc7;width:8px}
+.nb-section-top{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:0 0 21px}.nb-section-top h2{font:500 1.7rem 'Yu Mincho',serif;margin:5px 0;color:#433729}
+.nb-search{font-size:.72rem;color:#746457;display:flex;flex-direction:column;gap:4px;max-width:280px;flex:1}.nb-search input{min-height:43px;border:1px solid #bca88b;background:#fffdfa;border-radius:4px;padding:9px 12px;color:#382f2a;width:100%;font:inherit;font-size:.86rem}
+.nb-filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}.nb-filters button{border:1px solid #bda98a;border-radius:4px;background:#f5ead8;color:#66513d;min-height:44px;padding:8px 13px;font-size:.8rem}.nb-filters button[aria-pressed=true]{background:#384f56;color:#fff3dc;border-color:#384f56}
+.nb-filter-status{color:#82715e;font-size:.75rem;margin:6px 0 17px}.nb-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.nb-item{border:1px solid #cdbc9f;background:#fffdf8;display:flex;flex-direction:column;align-items:stretch;min-width:0;text-align:left;padding:10px;color:#3d3229;min-height:205px;position:relative;box-shadow:2px 2px 0 #dbcab0aa}
+.nb-item:not(:disabled):hover{border-color:#806446;transform:translateY(-2px)}.nb-item:focus-visible{outline:3px solid #4d7a8a;outline-offset:2px}
+.nb-item:disabled{opacity:.72;cursor:default}.nb-item-art{height:106px;background:linear-gradient(145deg,#efe2cd,#ded0b8);position:relative;display:flex;justify-content:center;align-items:center;overflow:hidden;border:1px solid #e4d6c2}
+.nb-item-art img{width:100%;height:100%;object-fit:cover}.nb-item-art .nb-glyph{font:2.9rem Georgia,serif;color:#947a5a}.nb-item-locked .nb-item-art{background:repeating-linear-gradient(45deg,#e7dac5,#e7dac5 8px,#eee3d1 8px,#eee3d1 16px)}
+.nb-item-locked .nb-glyph{color:#b3a38b}.nb-item-tag{color:#917858;font:.65rem Georgia,serif;letter-spacing:.13em;margin-top:9px}.nb-item strong{font-size:.82rem;line-height:1.6;margin-top:5px;overflow-wrap:anywhere}.nb-item small{color:#85725f;font-size:.7rem;margin-top:auto;padding-top:6px}
+.nb-corner{position:absolute;right:16px;top:16px;z-index:2;background:#fdf5e3;border:1px solid #a67e56;border-radius:50%;width:27px;height:27px;display:flex;align-items:center;justify-content:center;color:#875c40;font-size:.79rem;transform:rotate(-13deg)}
+.nb-detail{margin:25px 0 0;border:1px solid #bda68b;background:#f6ecda;padding:22px 25px;box-shadow:inset 0 0 0 5px #fbf6eb;position:relative}
+.nb-detail h3{font:500 1.45rem 'Yu Mincho',serif;margin:8px 38px 12px 0;color:#463524}.nb-detail h4{font-size:.86rem;margin:20px 0 7px;color:#64513c}.nb-detail p{font-size:.85rem;color:#6b5c4f;line-height:2}.nb-detail .nb-detail-cover{float:right;width:min(160px,38%);border:5px solid #fffaf0;margin:0 0 15px 20px;box-shadow:2px 3px 0 #baab98}.nb-detail-close{position:absolute;right:15px;top:12px;border:0;background:none;color:#5b4937;font-size:1.5rem;min-height:44px;min-width:44px}.nb-detail-actions{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.nb-detail-actions button{border:1px solid #a99378;background:#fffbf2;color:#574535;border-radius:4px;min-height:44px;padding:8px 14px;font-size:.82rem}
+.nb-note{display:block;font-size:.8rem;color:#665444;clear:both}.nb-note textarea{width:100%;display:block;min-height:110px;border:1px solid #b6a184;background:#fffdf7;margin-top:6px;resize:vertical;color:#3d3026;padding:12px 14px;font:inherit;font-size:.91rem;line-height:1.8;border-radius:4px}
+.nb-note-count{display:block;text-align:right;font-size:.7rem;color:#86725f;margin-top:2px}.nb-note-caveat{font-size:.74rem!important}
+.nb-empty{grid-column:1/-1;padding:26px;border:1px dashed #c6b399;color:#7d6b56;line-height:1.9}
+.nb-backup{background:#283d49;color:#f6ecdb;margin:33px 0 0;padding:28px 31px;display:grid;grid-template-columns:1fr minmax(220px,275px);gap:25px;border:1px solid #495e67}.nb-backup h2{font:500 1.48rem 'Yu Mincho',serif;margin:7px 0 12px}.nb-backup p{color:#c4ccd0;font-size:.84rem;line-height:1.95}.nb-backup .nb-small{color:#dec095}.nb-backup .nb-caution{font-size:.76rem;color:#d9c6aa}.nb-backup-actions{display:flex;flex-direction:column;gap:10px}.nb-action-main,.nb-file-trigger{display:block;text-align:center;border:1px solid #d3b482;color:#233541;background:#e7c990;border-radius:5px;padding:10px 12px;min-height:45px;font-size:.83rem;cursor:pointer}.nb-file-trigger{background:transparent;color:#f6ead5;border-color:#aebcc2}.nb-file-trigger input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}.nb-file-trigger:focus-within{outline:3px solid #f0d5a3;outline-offset:3px}.nb-backup-actions #nbBackupStatus{font-size:.75rem;color:#e8d7b5;margin:0}
+@media(max-width:900px){.nb-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:680px){.nb-hero{grid-template-columns:1fr;padding:28px 23px;min-height:auto}.nb-paper-art{display:none}.nb-book{padding:22px 15px 25px 27px}.nb-book-spine{left:9px;width:7px}.nb-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.nb-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.nb-stamps{grid-template-columns:repeat(2,minmax(0,1fr))}.nb-section-top{align-items:start;flex-direction:column}.nb-search{width:100%;max-width:none}.nb-item{min-height:186px;padding:7px}.nb-item-art{height:90px}.nb-item strong{font-size:.77rem}.nb-top span{font-size:.61rem}.nb-backup{grid-template-columns:1fr;padding:24px 20px}.nb-detail{padding:18px 14px}.nb-detail h3{font-size:1.25rem}}
+@media(max-width:360px){.nb-filters button{padding:8px 10px}.nb-item-art{height:76px}.nb-item{min-height:171px}}
+@media(prefers-reduced-motion:reduce){.nb-item:hover{transform:none}}
+
+/* v0.7 — coherent reading interface & calmer mobile navigation */
+:root{--ui-shadow:0 6px 22px rgba(50,37,24,.07)}
+html{scroll-padding-top:122px}
+#listener-section,#keepsakeTitle,#archiveShelf,.person-detail-slot,.story-reader-slot,#nbDetail{scroll-margin-top:128px}
+button{touch-action:manipulation}
+.mainhead{box-shadow:0 3px 14px rgba(7,17,27,.18)}
+.mainhead .topnav button{min-height:42px;white-space:nowrap}
+.paper-zone,.story-shell,.notebook-shell{background-color:#ede4d3;background-image:radial-gradient(#9a76541b .55px,transparent .55px);background-size:9px 9px}
+.reading-hub{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0 19px;padding:7px;background:#f8f2e7;border:1px solid #d3c2a9;border-radius:9px;box-shadow:var(--ui-shadow)}
+.reading-hub button{flex:1 1 130px;min-height:45px;padding:9px 13px;border:1px solid transparent;background:transparent;color:#5d503f;border-radius:6px;font-size:.86rem;font-weight:700}
+.reading-hub button span{margin-right:7px;color:#9b7650}
+.reading-hub button[aria-current=page]{background:#2c414b;color:#fff2df;box-shadow:0 2px 4px #3b322720}
+.reading-hub button[aria-current=page] span{color:#eac594}
+.reading-hub button:hover:not([aria-current=page]){background:#ece0cd}
+.archive-jumps{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:28px 0 11px;border-bottom:1px solid #c9b89e;padding:8px 0 15px}
+.archive-jumps>span{font:700 .68rem Georgia,serif;color:#937d60;letter-spacing:.1em;margin-right:auto}
+.archive-jumps button{min-height:40px;border:1px solid #bfad93;border-radius:6px;padding:7px 14px;color:#67523e;background:#faf5e9}
+.archive-jumps button:hover,.resume-person:hover{background:#dfcfb6}
+.resume-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:15px 0 18px}
+.resume-person{border:1px solid #907354;border-radius:5px;background:#e8d6b9;color:#4a392b;padding:10px 14px;min-height:45px;font-weight:700;font-size:.85rem}
+.resume-caption{font-size:.79rem;color:#695f54}
+.person-grid,.story-grid,.nb-grid{align-items:stretch}
+.person,.story-card,.nb-item{box-shadow:var(--ui-shadow)}
+.person{transition:border-color .12s,box-shadow .12s}.person:hover{box-shadow:0 6px 21px #493b2930}
+.person-detail-slot:empty,.story-reader-slot:empty,#nbDetail:empty{display:none}
+.person-detail-slot:not(:empty){margin:20px 0 27px}
+.reader-drawer{margin:0;border-radius:8px;border:1px solid #bfa88b;box-shadow:0 8px 24px #67523b21;overflow:hidden}
+.reader-header,.reader-body,.reader-bottom{background-color:#fffaf0}
+.reader-heading h3,.story-reader h2,.nb-detail h3{letter-spacing:.04em}
+.reader-panel,.story-paper{font-family:'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif}
+.reader-panel .paragraph,.story-paper p{font-size:clamp(1rem,1.6vw,1.09rem);line-height:2.15;letter-spacing:.025em}
+.reader-tabs{gap:5px;flex-wrap:wrap}.reader-tab{min-height:43px}
+.reader-controls button,.reader-bottom button{min-height:44px}
+.story-reader-slot:not(:empty){margin-bottom:30px}
+.story-reader{margin:10px auto 0;border-radius:7px;overflow:hidden}
+.story-reader-toolbar{gap:12px}.story-reader-toolbar button{min-height:45px}
+.story-reader h2{font-weight:600}
+.story-reader.theme-night .story-paper p{color:#ece4da}
+.nb-book{box-shadow:0 12px 28px #685c4730}
+.nb-grid-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:6px 0 10px}
+.nb-only-label{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:.87rem;font-weight:700;color:#4d4337;cursor:pointer;min-height:44px}
+.nb-only-label input{width:20px;height:20px;accent-color:#304d55;flex-shrink:0}
+.nb-legend{font-size:.73rem;color:#7f715e}.nb-legend i{display:inline-block;width:9px;height:9px;background:#b28d5f;border-radius:50%;margin-right:5px}
+#nbDetail:not(:empty){margin:15px 0 25px}.nb-detail{box-shadow:0 8px 26px #4d362924;border-radius:6px}
+.nb-filter-status,.story-grid-status{min-height:1.4em}
+#storyGrid,#nbGrid,#personGrid{scroll-margin-top:110px}
+:is(.paper-zone,.story-shell,.notebook-shell) button:focus-visible,:is(.paper-zone,.story-shell,.notebook-shell) input:focus-visible{outline-color:#7a5531}
+@media(max-width:760px){
+ html{scroll-padding-top:112px}
+ .headin{flex-direction:column;align-items:stretch;gap:5px;padding-top:11px;padding-bottom:0}
+ .brand{align-self:start}
+ .topnav{width:100%;justify-content:flex-start;display:flex;flex-wrap:nowrap;gap:13px;overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#a48861 transparent;padding-bottom:3px}
+ .topnav button{font-size:.82rem;padding:8px 4px;flex-shrink:0}
+ .story-reader-header{padding:18px 17px}.story-paper{padding-left:20px;padding-right:20px}
+ .reader-header,.reader-body,.reader-bottom{padding-left:16px;padding-right:16px}
+ .reader-panel .paragraph,.story-paper p{font-size:1.04rem;line-height:2.13}
+ .nb-book{padding-right:13px}
+}
+@media(max-width:390px){
+ .reading-hub{gap:4px;padding:5px}.reading-hub button{flex:1 1 80px;padding:7px 4px;font-size:.76rem;min-height:45px}.reading-hub button span{margin-right:2px}
+ .archive-jumps>span{width:100%}.archive-jumps button{flex:1;padding:6px}
+ .story-paper p,.reader-panel .paragraph{font-size:1rem}
+ .nb-legend{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.person,.story-card,.nb-item{transition:none}}
+
+/* v0.7 reader navigation */
+.reader-topline{display:flex;justify-content:flex-start;margin-bottom:9px}
+.reader-drawer .reader-topline .close{position:static;inset:auto;display:inline-flex;align-items:center;min-height:44px;background:transparent;border:0;padding:8px 11px;color:#66503b;font-size:.84rem;text-decoration:underline;text-underline-offset:3px;border-radius:5px}
+.reader-drawer .reader-topline .close:hover{background:#efe3d1}
+@media(max-width:540px){.reader-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.reader-tab{width:100%;padding:10px 4px;font-size:.79rem}}
+/* v0.8: reliable keyboard focus, clear mobile targets and reduced motion. */
+:where(button,a,input,select,textarea):focus-visible{outline:3px solid #b77e36;outline-offset:3px}
+@media(max-width:460px){.studio-viewport .studio-pin{min-width:34px;min-height:34px}.studio-index button{min-height:48px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+<link rel="stylesheet" href="css/v09-visual.css">
+<link rel="stylesheet" href="css/v10-release.css">
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="mainhead"><div class="wrap headin"><a href="#home" class="brand" aria-label="トップページへ">SOMEWHERE ON AIR<span>午前二時の周波数 · 特設サイト</span></a><nav class="topnav" aria-label="メインナビゲーション"><button type="button" data-page="home">HOME</button><button type="button" data-page="program">番組案内</button><button type="button" data-page="tune">周波数</button><button type="button" data-page="archive" id="navArchive" hidden>資料室</button><button type="button" data-page="stories" id="navStories" hidden>読み物室</button><button type="button" data-page="notebook" id="navNotebook" hidden>ノート</button></nav></div></header>
+<main id="main" tabindex="-1">
+<p class="sr-only" id="pageAnnounce" role="status" aria-live="polite"></p>
+<section id="home" class="page active">
+<div class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">MIDNIGHT RADIO PROGRAM · 02:00—03:00</div><h1>午前二時の<br>周波数</h1><p class="tagline">SOMEWHERE ON AIR</p><p class="lead">夜ごとに届く、小さなおたより。<br>知らない誰かの一日が、今夜もここへやってきます。</p><div class="actions"><button class="btn" type="button" data-go="program">番組について</button><button class="btn ghost" type="button" data-go="tune">周波数を合わせる</button></div></div><figure class="hero-art" aria-label="午前二時の放送室。窓の外には夜の街が広がり、マイクや時計、手紙が置かれています。">
+<img src="assets/studio-cover.svg" alt="" class="hero-cover" width="1000" height="560">
+<figcaption class="hero-art-caption"><span class="live-dot" aria-hidden="true"></span><span>02:00 — 03:00</span><span class="hero-art-caption-end">SOMEWHERE ON AIR</span></figcaption>
+</figure></div></div>
+<div class="first-visit"><div class="wrap"><div class="first-visit-title"><div><div class="eyebrow">FIRST VISIT / はじめての方へ</div><h2>今夜は、どちらへ？</h2></div><p>ここはゲーム本編とは別の小さな寄り道です。ネタバレを避けながら、好きな入口から楽しめます。</p></div><div class="first-visit-grid">
+<button type="button" data-go="program" class="visit-card"><span class="visit-step">01 / はじめて訪れたら</span><strong>番組のことを知る</strong><small>放送の雰囲気から楽しむ</small></button>
+<button type="button" data-go="tune" class="visit-card"><span class="visit-step">02 / ちょっと探索したいなら</span><strong>周波数を探す</strong><small>資料室への入口を見つける</small></button>
+<button type="button" data-go="archive" class="visit-card"><span class="visit-step">03 / すでに遊んでいるなら</span><strong>資料室を直接開く</strong><small>人物録・読み物・記録帳へ</small></button>
+</div><p class="visit-caveat">人物録のネタバレ表示は初期状態で「基本情報のみ」です。変更する場合は資料室の設定から選べます。</p></div></div>
+<div class="section"><div class="wrap"><div class="eyebrow">FROM THE STUDIO</div><h2>今夜も、手紙を開きます。</h2><p class="intro">誰かの毎日を、たった一度の返事で変えることはできないかもしれません。それでも、声を聴く夜は続いていきます。</p><div class="grid"><button type="button" data-go="program" class="tile tile-link"><span class="icon">◇</span><h3>番組のこと</h3><p>深夜の小さなラジオ局と、放送の過ごし方。</p></button><button type="button" data-go="tune" class="tile tile-link"><span class="icon">◎</span><h3>周波数を合わせる</h3><p>ダイヤルの向こうに、小さな記録が隠れています。</p></button><button type="button" data-go="tune" class="tile tile-link"><span class="icon">✉</span><h3>放送の余白</h3><p>人物録や、放送には残らなかった小さな物語。</p></button></div></div></div>
+<div class="section" style="padding-top:0"><div class="wrap"><div class="front-note"><span class="eyebrow">NOTICE</span><p style="margin:10px 0 0">このサイトはゲーム『午前二時の周波数』の世界を楽しむWeb特設サイトの公開候補版です。人物の基本情報はゲーム v4.8.23 に基づきます。追加の短編は特設サイト独自の創作であり、ゲーム本編で起こった出来事を示すものではありません。</p></div></div></div>
+</section>
+<section id="program" class="page"><div class="section"><div class="wrap aboutlines"><div class="eyebrow">ABOUT THE PROGRAM</div><h1>番組のこと</h1><p style="margin-top:20px">ここは、午前二時から三時まで続く小さなラジオ局。毎晩届くおたよりの中から、気になる声を選び、言葉を返していきます。</p><p>ラジオの向こうの人々には、それぞれの暮らしがあります。放送で読まれなかった手紙の向こうにも、別の一日が続いています。</p><div class="postits"><h3>番組の小さな手引き</h3><ul><li>放送に点数や唯一の正解はありません。</li><li>通常の放送と、おたよりを中心にした放送を選べます。</li><li>「聴くだけの夜」では、別のDJが届ける放送を読み物として楽しめます。</li><li>このサイトの資料室は、ゲーム本編とは別の読み物です。</li></ul></div><div class="release-info"><h2>資料室をご利用になる前に</h2><p>人物録の一部には物語の先の情報があります。ネタバレ設定はいつでも変更できます。サイト内の短編と放送室の小話は独自の創作であり、ゲームの正史や実際の放送履歴ではありません。</p><p>お気に入り・読了記録・メモは、このブラウザの保存領域に保存されます。ゲーム本編のセーブデータにはアクセスしません。バックアップJSONには自分で書いたメモも入るため、公開しないでください。</p></div><button class="btn ghost" type="button" data-go="tune">周波数を合わせてみる</button></div></div></section>
+<section id="tune" class="page"><div class="section"><div class="wrap"><div class="eyebrow">TUNE IN / OLD FREQUENCY</div><h1>聴こえない放送</h1><p class="lead" style="margin-top:24px">周波数を少しだけ、ずらしてみてください。いつもの番組とは違うものが、聴こえるかもしれません。</p><div class="tune-wrap"><div class="wave" aria-hidden="true"><span style="--h:12px"></span><span style="--h:22px"></span><span style="--h:37px"></span><span style="--h:18px"></span><span style="--h:31px"></span><span style="--h:44px"></span><span style="--h:18px"></span><span style="--h:35px"></span><span style="--h:12px"></span></div><p class="freq" id="freq">79.5</p><label for="dial" class="small" style="display:block;text-align:center;color:#c9d1dc">周波数のダイヤル</label><input class="tune-range" id="dial" type="range" min="76" max="96" step="0.1" value="79.5" aria-describedby="signal"><p class="stat" id="signal" aria-live="polite">……雑音が混じっています。</p><div class="found" id="found"><p>古い整理箱から、放送局の資料が見つかりました。</p><button type="button" class="btn" data-go="archive">資料室へ進む →</button></div></div><p class="small muted">ヒント：80MHz台のはじめのほうを探してみてください。<button class="linkbtn" id="directArchive" type="button" data-go="archive">謎解きをせずに資料室へ</button></p></div></div></section>
+<section id="archive" class="page paper-zone"><div class="paperhead"><div class="wrap"><div class="eyebrow">ARCHIVE ROOM / SOMEWHERE ON AIR</div><h1>放送局の資料室</h1><p>放送に残った声と、放送の外で続く暮らし。</p></div></div><div class="paperbody"><div class="wrap"><div class="arc-top"><button type="button" class="linkbtn" data-go="home">← 公式サイトに戻る</button><span class="badge">資料集・コレクションノート v1.0</span></div>
+<nav class="reading-hub" aria-label="資料室の各コーナー"><button type="button" data-go="archive" data-hub="archive"><span aria-hidden="true">✎</span>人物録</button><button type="button" data-go="stories" data-hub="stories"><span aria-hidden="true">✉</span>読み物室</button><button type="button" data-go="notebook" data-hub="notebook"><span aria-hidden="true">✦</span>記録帳</button></nav><div class="spoiler-row"><div><strong>ネタバレ表示</strong><div class="small" style="color:#6b6153">進行状況に関係なく、閲覧範囲を自分で選べます。</div></div><label><span class="small">表示範囲　</span><select id="spoilers"><option value="0">基本情報のみ</option><option value="1">背景設定も読む</option><option value="2">分岐の可能性まで読む</option></select></label></div>
+<nav class="archive-jumps" aria-label="資料室内の目次"><span>INDEX / 資料室の目次</span><button type="button" data-jump="listener-section">人物録</button><button type="button" data-jump="keepsakeTitle">持ち物展</button><button type="button" data-jump="archiveShelf">保管棚</button></nav><h2 class="section-title" id="listener-section">リスナー人物録</h2><p class="small" style="color:#695c50">本編で確認できる情報を土台に、12人の暮らしを読むための資料を整理しました。「暮らしの一頁」はサイト用に創作した〈もしもの一日〉です。</p><div class="archive-intro"><div class="archive-intro-icon" aria-hidden="true">✦</div><div><strong>人物録の読み方</strong><p>「設定の記録」には本編で確認できる情報を、「暮らしの一頁」には本編の習慣をもとに創作した短編を収めています。架空の一日は、あなたの放送で実際に起きた出来事とは限りません。</p></div></div><div class="library-tools"><label class="search-label" for="listenerSearch">人物録を探す<input id="listenerSearch" type="search" placeholder="名前・持ち物・言葉で検索" autocomplete="off"></label><label class="search-label" for="personSort">並び順<select id="personSort"><option value="default">基本順</option><option value="name">名前順</option><option value="favorites">お気に入りを先に</option></select></label></div><div class="library-stats" id="libraryStats" aria-live="polite"></div><div class="resume-row"><button class="resume-person" type="button" id="personResume" hidden>前に読んだ人物録を開く →</button><span class="resume-caption">気になる人を選ぶと、ここに人物録が開きます。</span></div><div class="filterbar" role="group" aria-label="人物の絞り込み"><button type="button" class="on" data-filter="all">すべて</button><button type="button" data-filter="work">仕事のある暮らし</button><button type="button" data-filter="study">学校・学び</button><button type="button" data-filter="life">小さな日常</button><button type="button" data-filter="star">★ お気に入り</button></div><div id="personDetail" class="person-detail-slot" aria-live="polite"></div><div class="person-grid" id="personGrid"></div>
+<section class="keepsake-section" aria-labelledby="keepsakeTitle"><div class="keepsake-kicker">TWELVE LITTLE KEEPSAKES</div><h2 id="keepsakeTitle">小さな持ち物展</h2><p class="keepsake-lead">放送の向こうにいる、12人の暮らしを想像する12枚の絵。タップすると人物録を開けます。</p><div class="keepsake-grid" id="keepsakeGrid"></div><p class="fab-note">持ち物を描いたイラストは資料室のための新規制作です。絵の中の細部はゲームの確定設定を増やすものではありません。</p></section>
+<p class="small imprint">人物の写真や実際の手紙の原文は掲載していません。ゲーム内の手紙そのものではなく、人物の設定を読むためのアーカイブです。</p>
+<h2 class="section-title" id="archiveShelf">保管棚</h2><div class="paper-grid"><button class="filecard" type="button" data-go="stories"><span>FILE 001 · NEW</span><strong>未放送のおたよりと街角</strong><p>12編の読み物と、6組の小さなつながり。</p></button><button class="filecard" type="button" data-go="studio"><span>FILE 002 · NEW</span><strong>放送室を探索する</strong><p>放送前・放送中・放送後。8か所を調べられる探索マップ。</p></button><button class="filecard" type="button" data-go="notebook"><span>FILE 003 · NEW</span><strong>わたしの記録帳</strong><p>人物・手紙・持ち物・放送室の発見を一冊に。</p></button><button class="filecard" type="button" data-open="creator"><span>FILE 004</span><strong>制作ノート</strong><p>世界観とゲームのしくみについて。</p></button></div><div id="archiveDetail"></div></div></div></section>
+
+
+<!-- v0.5: Fiction library, accessible through the discovered archive -->
+<section id="stories" class="page story-shell" aria-labelledby="storiesTitle">
+  <div class="wrap">
+    <div class="story-toprow"><button type="button" class="story-back" data-go="archive">← 資料室に戻る</button><span class="story-overline">FILE 001 / THE NIGHT LETTERS</span></div>
+    <nav class="reading-hub" aria-label="資料室の各コーナー"><button type="button" data-go="archive" data-hub="archive"><span aria-hidden="true">✎</span>人物録</button><button type="button" data-go="stories" data-hub="stories"><span aria-hidden="true">✉</span>読み物室</button><button type="button" data-go="notebook" data-hub="notebook"><span aria-hidden="true">✦</span>記録帳</button></nav><div class="story-intro"><div><p class="story-kicker">UNBROADCAST LETTERS & MIDNIGHT CORNERS</p><h1 id="storiesTitle">おたよりと、街の余白</h1><p class="story-lede">声にならなかった便箋と、そのころ街に灯っていた明かり。<br>同じ言葉を知っているわけではない、ふたつの夜の記録。</p></div><div class="story-hero-symbol" aria-hidden="true"><div class="hero-envelope"><i></i></div><span>02 : 00</span></div></div>
+    <div class="story-disclaimer">このコーナーの12編は<strong>特設サイトのための完全新作・非正史</strong>です。ゲームで届いた手紙、実在の投稿、実際のリスナーの後日談ではありません。二つの物語の関連はモチーフによるもので、同一人物の出来事を示しません。</div>
+    <div class="story-progress" role="status" aria-live="polite"><div><span class="story-progress-label">YOUR READING LOG</span><p id="storyCount">読了 0 / 12 編</p></div><div class="story-progress-track" aria-hidden="true"><div id="storyBar"></div></div><button type="button" id="storyResume" class="story-resume" hidden>前回の続きを開く →</button></div>
+    <div class="story-tools"><div class="story-filters" role="group" aria-label="読み物を絞り込む"><button type="button" data-story-filter="all" aria-pressed="true">すべて</button><button type="button" data-story-filter="letter" aria-pressed="false">未放送の便箋</button><button type="button" data-story-filter="street" aria-pressed="false">午前二時の街角</button><button type="button" data-story-filter="unread" aria-pressed="false">未読</button><button type="button" data-story-filter="favorites" aria-pressed="false">★ お気に入り</button></div><label class="story-search-label" for="storySearch">物語を探す<input id="storySearch" type="search" placeholder="題名・場所・言葉で検索" autocomplete="off"></label></div>
+    <p class="story-grid-status" id="storyGridStatus" aria-live="polite"></p>
+    <div id="storyReader" class="story-reader-slot" aria-live="polite"></div>
+    <div id="storyGrid" class="story-grid" aria-label="物語の一覧"></div>
+    <aside class="story-secret" id="storySecret" aria-live="polite"><div class="story-secret-mark" aria-hidden="true">✳</div><div><h2>読書カードの裏</h2><p class="story-secret-locked">すべての記録を読み終えると、資料室の片隅にある短いあとがきが開きます。</p><div class="story-secret-unlocked" hidden><p>「同じ夜を過ごしていても、同じ夢を見るわけではない。それでも、時々ひとつの灯りを見上げることがある。」</p><p>ここまで読んでくれて、ありがとう。読み終えた文章も、次に読むときには少し違って見えるかもしれません。</p><small>資料室の創作メモ / 本編の隠しイベントではありません。</small></div></div></aside>
+  </div>
+</section>
+
+<!-- v0.6: Personal collection notebook, independent from the game save -->
+<section id="notebook" class="page notebook-shell" aria-labelledby="notebookTitle">
+  <div class="wrap notebook-wrap">
+    <div class="nb-top"><button type="button" class="nb-link" data-go="archive">← 資料室へ</button><span>PERSONAL FIELD NOTES / VOL. 01</span></div>
+    <nav class="reading-hub" aria-label="資料室の各コーナー"><button type="button" data-go="archive" data-hub="archive"><span aria-hidden="true">✎</span>人物録</button><button type="button" data-go="stories" data-hub="stories"><span aria-hidden="true">✉</span>読み物室</button><button type="button" data-go="notebook" data-hub="notebook"><span aria-hidden="true">✦</span>記録帳</button></nav><header class="nb-hero"><div><p class="nb-kicker">THE SMALL COLLECTION</p><h1 id="notebookTitle">わたしの記録帳</h1><p class="nb-lead">会った人、読んだ文章、机の上で見つけたもの。<br>あなたが確かめた記録だけを、ゆっくり集めていくノート。</p></div><div class="nb-paper-art" aria-hidden="true"><span class="nb-art-moon">☾</span><span class="nb-art-envelope">✉</span><span class="nb-art-line">02:00 — 03:00</span></div></header>
+    <p class="nb-disclaimer">これは<strong>特設サイト内の閲覧・発見記録</strong>です。ゲーム本編の進行度やリスナーの実際の経験は読み取りません。創作の短編も本編の正史とは区別しています。</p>
+    <div class="nb-summary" id="nbSummary" aria-live="polite"></div>
+    <div class="nb-stamp-section"><div class="nb-stamp-header"><h2>四つのしるし</h2><p>少しずつ集めていくための小さな印。全部揃えなくてもかまいません。</p></div><div class="nb-stamps" id="nbStamps"></div></div>
+    <div class="nb-book"><div class="nb-book-spine" aria-hidden="true"></div><div class="nb-book-pages"><div class="nb-section-top"><div><span class="nb-small">SCRAPBOOK / INDEX</span><h2>拾い集めた記録</h2></div><label class="nb-search" for="nbSearch">記録を探す<input id="nbSearch" type="search" placeholder="名前・タイトル・場所など" autocomplete="off"></label></div>
+    <div class="nb-filters" role="group" aria-label="記録帳の種類を選ぶ"><button type="button" data-nb-filter="all" aria-pressed="true">すべて</button><button type="button" data-nb-filter="person" aria-pressed="false">人物</button><button type="button" data-nb-filter="keepsake" aria-pressed="false">持ち物</button><button type="button" data-nb-filter="studio" aria-pressed="false">放送室</button><button type="button" data-nb-filter="story" aria-pressed="false">読み物</button><button type="button" data-nb-filter="star" aria-pressed="false">★ 大切な記録</button></div>
+    <div class="nb-grid-controls"><label class="nb-only-label" for="nbCollectedOnly"><input id="nbCollectedOnly" type="checkbox">見つけた記録だけを表示</label><span class="nb-legend"><i aria-hidden="true"></i>色のあるカード＝発見済み</span></div><p id="nbFilterStatus" class="nb-filter-status" aria-live="polite"></p><div id="nbDetail" aria-live="polite"></div><div id="nbGrid" class="nb-grid"></div>
+    </div></div>
+    <section class="nb-backup" aria-labelledby="nbBackupTitle"><div><span class="nb-small">KEEP THIS NOTEBOOK SAFE</span><h2 id="nbBackupTitle">記録の持ち帰り</h2><p>ブラウザの保存先が変わると記録は引き継がれません。自分用のバックアップを保存し、同じサイトに読み込めます。</p><p class="nb-caution">バックアップには、お気に入り・読了・個人的なメモが含まれます。公開したり、他人と共有したりしないでください。</p></div><div class="nb-backup-actions"><button type="button" id="nbExport" class="nb-action-main">記録をJSONで保存</button><label class="nb-file-trigger" for="nbImport">保存した記録を読み込む<input type="file" id="nbImport" accept=".json,application/json"></label><p id="nbBackupStatus" role="status" aria-live="polite"></p></div></section>
+  </div>
+</section>
+
+<!-- v0.5: a dedicated, fully interactive studio exploration page -->
+<section id="studio" class="page studio-shell" aria-labelledby="studioTitle">
+  <div class="wrap">
+    <div class="studio-head">
+      <div><div class="eyebrow">FILE 002 / STUDIO WALKTHROUGH</div><h1 id="studioTitle">放送室の一時間</h1><p>この部屋にも、一時間ぶんの時間が流れています。気になる場所を選んで、放送前と放送後の小さな変化を覗いてみてください。</p></div>
+      <button type="button" class="studio-return" data-go="archive">← 資料室へ戻る</button>
+    </div>
+    <div class="studio-walk">
+      <div class="studio-toolbar"><div class="studio-phases" role="group" aria-label="放送の時間帯を選ぶ"><button type="button" data-studio-phase="before" aria-pressed="true">01:59 放送前</button><button type="button" data-studio-phase="during" aria-pressed="false">02:15 放送中</button><button type="button" data-studio-phase="after" aria-pressed="false">03:00 放送後</button></div><div class="studio-count" id="studioProgress" aria-live="polite">発見 <strong>0 / 8</strong></div></div>
+      <div class="studio-viewport" id="studioViewport" data-phase="before" aria-label="放送室の探索図。番号を押して物を調べられます。">
+        <svg class="studio-drawing" viewBox="0 0 1000 560" role="img" aria-label="星の見える窓、卓上灯、時計、マイク、便箋、音量メーターがある、深夜の放送室を描いた図" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="studioWall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#253a53"/><stop offset="1" stop-color="#142235"/></linearGradient>
+            <linearGradient id="studioSky" x1="0" x2=".5" y2="1"><stop stop-color="#061225"/><stop offset="1" stop-color="#304865"/></linearGradient>
+            <linearGradient id="studioWood" x1="0" x2=".8" y2="1"><stop stop-color="#8b674f"/><stop offset=".6" stop-color="#654c42"/><stop offset="1" stop-color="#372f33"/></linearGradient>
+            <radialGradient id="studioLight"><stop stop-color="#eed2a0" stop-opacity=".48"/><stop offset="1" stop-color="#eec985" stop-opacity="0"/></radialGradient>
+            <pattern id="studioSpecks" width="38" height="38" patternUnits="userSpaceOnUse"><circle cx="12" cy="11" r=".6" fill="#bcd2e2" opacity=".12"/></pattern>
+            <filter id="studioSoft"><feGaussianBlur stdDeviation="12"/></filter>
+          </defs>
+          <rect width="1000" height="560" fill="url(#studioWall)"/>
+          <rect width="1000" height="560" fill="url(#studioSpecks)"/>
+          <path d="M0 405L1000 405V560H0Z" fill="#1b283a"/>
+          <path d="M0 409H1000" stroke="#536075" stroke-width="5"/>
+          <!-- window and quiet town -->
+          <rect x="67" y="62" width="344" height="309" rx="4" fill="#0b1421" stroke="#80715d" stroke-width="14"/>
+          <rect x="81" y="77" width="314" height="277" fill="url(#studioSky)"/>
+          <circle cx="329" cy="127" r="25" fill="#e3ddc9" opacity=".85"/>
+          <g fill="#d7d2c2" opacity=".8"><circle cx="121" cy="117" r="1.6"/><circle cx="193" cy="144" r="1.2"/><circle cx="267" cy="100" r="1.6"/><circle cx="362" cy="189" r="1.2"/><circle cx="139" cy="198" r="1"/><circle cx="243" cy="190" r="1"/></g>
+          <path d="M80 302L80 239 118 239 118 276 152 276 152 204 197 204 197 258 244 258 244 224 295 224 295 268 356 268 356 240 395 240 395 354 81 354Z" fill="#152337"/>
+          <g fill="#d8ae73" opacity=".65"><rect x="106" y="259" width="6" height="10"/><rect x="162" y="227" width="7" height="11"/><rect x="178" y="239" width="7" height="10"/><rect x="220" y="278" width="7" height="12"/><rect x="275" y="249" width="8" height="11"/><rect x="308" y="292" width="7" height="10"/><rect x="366" y="270" width="7" height="10"/></g>
+          <rect x="231" y="73" width="12" height="287" fill="#6d6159"/><rect x="81" y="206" width="314" height="12" fill="#6d6159"/><rect x="84" y="76" width="310" height="279" fill="none" stroke="#d4b588" stroke-opacity=".18" stroke-width="5"/>
+          <path d="M52 382H426L442 400H46Z" fill="#8b7362"/>
+          <!-- clock -->
+          <circle cx="723" cy="134" r="67" fill="#0b1825" stroke="#806b5d" stroke-width="9"/><circle cx="723" cy="134" r="55" fill="#e5d5b8"/><circle cx="723" cy="134" r="49" fill="none" stroke="#9b8973" stroke-width="1"/>
+          <g stroke="#66564b" stroke-width="3"><path d="M723 88v10M723 170v10M677 134h10M759 134h10"/></g><path d="M723 134V101M723 134l-24 15" stroke="#504944" stroke-width="5" stroke-linecap="round"/><circle cx="723" cy="134" r="5" fill="#51463f"/>
+          <!-- mellow lamp -->
+          <ellipse cx="514" cy="258" rx="228" ry="201" fill="url(#studioLight)"/>
+          <path d="M511 163L511 244" stroke="#928777" stroke-width="8"/><path d="M464 156Q510 107 560 156L579 199H446Z" fill="#ad916e" stroke="#413b38" stroke-width="7"/><path d="M454 201Q511 215 571 201" fill="none" stroke="#f4ce8c" stroke-width="5"/><path d="M510 243L478 332" stroke="#948374" stroke-width="8"/>
+          <ellipse cx="479" cy="338" rx="26" ry="8" fill="#7c7168"/>
+          <!-- on-air panel -->
+          <rect x="811" y="79" width="157" height="55" rx="7" fill="#161f30" stroke="#8b7169" stroke-width="5"/>
+          <rect class="on-air-glow" x="820" y="86" width="141" height="41" rx="4" fill="#b95150" opacity=".08"/>
+          <text x="889" y="114" text-anchor="middle" fill="#f4d0af" font-family="Georgia,serif" font-size="24" letter-spacing="2">ON AIR</text>
+          <!-- board, table, letters -->
+          <ellipse cx="580" cy="464" rx="470" ry="86" fill="#000" opacity=".19" filter="url(#studioSoft)"/>
+          <path d="M153 401L907 401 970 481 86 481Z" fill="url(#studioWood)" stroke="#bc9776" stroke-width="5"/>
+          <path d="M86 481H970V498H86Z" fill="#45373a"/>
+          <path d="M150 402L908 402" stroke="#cb9c71" stroke-width="3" opacity=".65"/>
+          <path d="M173 457L346 416 420 441 251 485Z" fill="#dfd3bd" stroke="#b5a58f" stroke-width="2"/>
+          <path d="M206 461L363 424 412 439 257 479Z" fill="#f5e7cc" stroke="#b6a58e" stroke-width="2"/>
+          <path d="M240 465l97-24m-90 30 65-16" stroke="#9d8e7c" stroke-width="2" opacity=".7"/>
+          <path d="M236 446l143-29 43 20-151 33Z" fill="#f1ddbb" stroke="#b7a58a" stroke-width="2" opacity=".75"/>
+          <!-- condenser microphone + base -->
+          <ellipse cx="625" cy="429" rx="63" ry="14" fill="#25313d" stroke="#7c7e7d" stroke-width="4"/>
+          <path d="M627 416V332" stroke="#a5a4a0" stroke-width="10"/>
+          <rect x="603" y="240" width="48" height="105" rx="24" fill="#283545" stroke="#adb2af" stroke-width="7"/>
+          <g stroke="#87959b" stroke-width="3"><path d="M613 258h27M613 271h27M613 284h27M613 298h27M613 311h27"/></g>
+          <path d="M592 285v31q0 36 35 36t35-36v-31" fill="none" stroke="#a7b0ae" stroke-width="5"/>
+          <!-- soft graphic signal meter -->
+          <rect x="751" y="344" width="182" height="98" rx="7" fill="#222d3c" stroke="#71808a" stroke-width="6"/>
+          <rect x="773" y="361" width="136" height="22" rx="3" fill="#101c27"/>
+          <g class="studio-meter-bar" fill="#d1b779"><rect x="784" y="372" width="9" height="5"/><rect x="802" y="368" width="9" height="9"/><rect x="820" y="364" width="9" height="13"/><rect x="838" y="371" width="9" height="6"/><rect x="856" y="360" width="9" height="17"/><rect x="874" y="367" width="9" height="10"/></g>
+          <g fill="#b7aca1"><circle cx="790" cy="413" r="12"/><circle cx="829" cy="413" r="12"/><circle cx="868" cy="413" r="12"/></g>
+          <!-- cup on table -->
+          <path d="M466 406H519L515 453Q494 465 469 452Z" fill="#9ea8a6" stroke="#c2c5b9" stroke-width="4"/><path d="M518 412Q548 407 541 430Q538 441 518 436" fill="none" stroke="#adb4b0" stroke-width="6"/><ellipse cx="492" cy="405" rx="27" ry="6" fill="#4d413d"/>
+          <path d="M0 519Q500 490 1000 520V560H0Z" fill="#0c1523" opacity=".3"/>
+        </svg>
+        <div id="studioPins"></div>
+      </div>
+      <div class="studio-statusline"><span id="studioSceneText">放送を待つ部屋には、まだ手紙の音だけがある。</span><span id="studioLightText">01:59 / BEFORE ON AIR</span></div>
+      <div class="studio-bottom"><div class="studio-objects"><h2>調べられる場所</h2><p>図の番号、または下の一覧を押してください。</p><div class="studio-index" id="studioIndex" role="group" aria-label="探索地点の一覧"></div></div><div class="studio-inspect" id="studioInspect" aria-live="polite"><div class="file-index">FIELD NOTE / 00</div><h2>小さな探索を始める</h2><p class="inspect-copy">気になる番号を選ぶと、ここに記録が開きます。</p><div class="inspect-caption">実際のゲーム本編で確認できる舞台装置をもとに構成した、資料室独自の探索展示です。</div></div></div>
+    </div>
+    <aside class="studio-discovery" id="studioDiscovery" aria-live="polite"><h3>封筒の底に残ったメモ</h3><p class="locked-copy">8か所をすべて調べると、まだ誰にも渡していない、小さなメモを読むことができます。</p><div class="unlocked-copy"><p>「読み終えた言葉は、消えてしまうわけではない。机の上から片づいても、どこかの夜に残っている。明日も同じ時刻に、またここで。」</p><p style="margin-top:6px;font-size:.76rem">— 資料室限定の創作テキスト。本編の未公開原稿ではありません。</p></div></aside>
+    <div class="studio-to-stories"><div><strong>もう少し、誰かの夜を覗く</strong><p>放送室から離れて、街角の灯りと未放送の便箋へ。</p></div><button type="button" data-go="stories">読み物室へ →</button></div><p class="studio-provenance">本展示の物品はゲーム v4.8.23 のスタジオ描写（script.js のスタジオ表示、放送前後の文章など）を参照しています。配置図、道具の外観、各地点の小話は特設サイト用に創作した解釈であり、ゲームの正式な見取り図や出来事を確定させるものではありません。時間は展示上の切り替えです。音声・効果音は再生されません。</p>
+  </div>
+</section>
+</main>
+<footer class="foot"><div class="wrap"><span>SOMEWHERE ON AIR · SPECIAL SITE · ARCHIVE v1.0</span><span>本編 v4.8.23 に基づく公開候補版 / 本編のセーブデータには触れません</span></div></footer>
+<script src="stories_data.js"></script>
+<script>
+"use strict";
+// 人物の設定はv4.8.23のlisteners.js/letters.js/events.jsを確認して要約。
+// 確定した出来事とプレイごとに変わる可能性を混同しない。
+const PEOPLE=[
+{id:'cat',name:'夜明けの猫',group:'work',intro:'職場での迷いと、忘れかけていた「好きなこと」。',facts:['会社で働いている。','仕事について上司に相談するおたよりがある。','スケッチブックや絵を描くことが、暮らしの中に残っている。'],deeper:'仕事を続けること、自分に合う働き方を探すこと。どちらの気持ちも揺れながら持ち続けている。',branches:'仕事を続けながら描く／転職先を探す／退職も含めて相談する／今は仕事を続ける、などの道が用意されている。'},
+{id:'driver',name:'午前3時の配達員',group:'work',intro:'夜の配送と、駐車場にいる「猫主任」。',facts:['夜中に荷物を運ぶ仕事をしている。','配送先で会う猫を「主任」と呼んでいる。','休憩所の缶コーヒーを楽しむ習慣がある。'],deeper:'妹との関係が、本人の暮らしの中で気がかりとして残っている。',branches:'妹と話す／文章で連絡する／休んでから考える／しばらく距離を置く、などの選択肢がある。'},
+{id:'fish',name:'透明な金魚',group:'study',intro:'自分の気持ちを言葉にすることを、少しずつ練習している。',facts:['講義のノートを整理する学生生活を送る。','友人との会話について悩むことがある。','日記やノートに言葉を書いている。'],deeper:'嫌だったことを笑ってやり過ごしてしまう癖について、番組へ相談する物語がある。',branches:'文章に関わる仕事への関心や進路について、複数の道が描かれる。'},
+{id:'clock',name:'古時計',group:'life',intro:'時計と散歩と、図書室で過ごす穏やかな時間。',facts:['以前、時計を直す仕事をしていた。','朝の散歩や図書室での交流がある。','家には長く止まった時計がある。'],deeper:'止まった時計は、妻が買ってきた思い出の品として語られる。',branches:'海辺の駅へ向かう準備／図書室の交流を広げる／今の暮らしを続ける、などの道がある。'},
+{id:'terminal',name:'終点のひとつ前',group:'life',intro:'駅の時刻表と、小さな待ち合わせの気配。',facts:['終点のひとつ前にある小さな駅について手紙を送る。','仕事帰りに時刻表を眺める。','古い切符を大切にしている。'],deeper:'弟との距離や、まだ出していない便箋に関わる日々がある。',branches:'弟に手紙を書く／駅へ通う／別の道を歩く、といった過ごし方がある。'},
+{id:'bread',name:'眠れないパン屋',group:'work',intro:'焼きたてのパンと、何度も書き直す売り場の札。',facts:['パン屋で働き、試作品を考えている。','くるみと蜂蜜のパンについて手紙を送る。','店長や常連客とのやりとりがある。'],deeper:'売り場の札や常連客との関係が、長く続く話題になっていく。',branches:'変化の表れ方は、そのとき届いた手紙や放送の積み重ねによって異なる。'},
+{id:'moon',name:'月の裏側',group:'life',intro:'月と秘密と、冷蔵庫の奥のプリン。',facts:['月について自由な空想をする。','ノートに思いついたことを書いている。','家族との会話やプリンの話がある。'],deeper:'月面の役所や食堂といった不思議な空想が、別の手紙へ続く。',branches:'空想の話がどう広がるかは、放送で交わす言葉にも関係する。'},
+{id:'sugar',name:'砂糖を三杯',group:'life',intro:'コーヒーの甘さと、雲を見上げる時間。',facts:['コーヒーと砂糖の話題が印象的。','夕方の雲の形を眺めることがある。','友人と短いメッセージを交わしている。'],deeper:'いつもの砂糖の量を自分で選び直すような、小さな変化も描かれる。',branches:'日常の変化は固定された大きな結末ではなく、繰り返しの暮らしの中に現れる。'},
+{id:'anon',name:'名前はまだありません',group:'life',intro:'送る言葉がなくても、ラジオを聴いている人。',facts:['番組を静かに聴く夜がある。','夜更けに本を読んだり、机にメモを残したりする。','隣人と短い挨拶を交わす日がある。'],deeper:'ラジオネームを決めないまま、聴くことと手紙を書くことの間を行き来している。',branches:'「名前」を強制的に決めるような結末は、ここでは設定しない。'},
+{id:'umbrella',name:'逆さまの傘',group:'work',intro:'花屋の店先と、窓際の小さな鉢。',facts:['花屋で働いている。','花束を組み、店先の鉢を並べる。','常連客や店を手伝う知人と関わっている。'],deeper:'仕事で相手の希望を聞きながら、自分の休む時間にも目を向けていく。',branches:'花の世話や店の会話がどう続くかは、その日の生活行動によって違う。'},
+{id:'triangle',name:'三角定規',group:'study',intro:'ノートの余白に、まだ存在しない街を描く。',facts:['学校に通い、授業や進路について考えている。','ノートに図形や架空の街の地図を描く。','友人や先生、家族とのやりとりがある。'],deeper:'配置や計画を大切にしながら、計画にはない会話の価値にも気づいていく。',branches:'進路や学校生活の悩みについて複数の方向性が描かれる。'},
+{id:'fridge',name:'冷蔵庫の明かり',group:'work',intro:'誰かの料理を作る仕事と、自分の夕食。',facts:['料理人として厨房で働いている。','帰宅後にはコンビニのおにぎりを選ぶ日もある。','料理人仲間や仕入れ先との交流がある。'],deeper:'料理を作ることが仕事だからこそ、自分の食事や休息について考える時間がある。',branches:'仕事の忙しさ、休む時間、周囲との関わりは日々の行動で変化する。'}
+];
+const STORAGE_KEY='soa_archive_preview_v01';
+let settings={spoiler:0,found:false};
+try {
+ const previous=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}');
+ if(previous && typeof previous==='object' && !Array.isArray(previous)) settings={...settings,...previous};
+} catch(e) { /* An invalid save must not prevent the site opening. */ }
+settings.spoiler=[0,1,2].includes(Number(settings.spoiler))?Number(settings.spoiler):0;
+settings.found=settings.found===true;
+// Preserve the v0.1–v0.7 localStorage key and backed-up data.
+function savePrefs(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(settings))}catch(e){}}
+const $=x=>document.getElementById(x);
+function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+const SITE_PAGES=['home','program','tune','archive','studio','stories','notebook'];
+function page(id,fromHistory=false){
+ if(!SITE_PAGES.includes(id)) id='home';
+ const labels={home:'トップページ',program:'番組案内',tune:'周波数',archive:'資料室・人物録',studio:'放送室探索',stories:'読み物室',notebook:'わたしの記録帳'};
+ const announcer=$('pageAnnounce');if(announcer)announcer.textContent=labels[id]+'を表示しています。';
+ if(['archive','studio','stories','notebook'].includes(id)){settings.found=true;savePrefs();}
+ document.querySelectorAll('.page').forEach(el=>el.classList.toggle('active',el.id===id));
+ document.querySelectorAll('[data-page]').forEach(el=>el.setAttribute('aria-current',el.dataset.page===id?'page':'false'));
+ $('navArchive').hidden=!settings.found;$('navStories').hidden=!settings.found;$('navNotebook').hidden=!settings.found;
+ document.querySelectorAll('[data-hub]').forEach(b=>b.setAttribute('aria-current',b.dataset.hub===id?'page':'false'));
+ if(id==='archive')renderPeople();if(id==='studio')renderStudio();if(id==='stories')renderStories();if(id==='notebook')renderNotebook();
+ if(location.hash!=='#'+id){
+  // New user navigation creates a history entry; browser Back/Forward merely restores the view.
+  if(fromHistory)history.replaceState(null,'','#'+id);
+  else history.pushState(null,'','#'+id);
+ }
+ window.scrollTo({top:0,behavior:'auto'});
+}
+document.addEventListener('click',e=>{const to=e.target.closest('[data-go],[data-page]');if(to){page(to.dataset.go||to.dataset.page)}const open=e.target.closest('[data-open]');if(open)openFile(open.dataset.open)});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-jump]');if(!b)return;const target=$(b.dataset.jump);if(target){target.scrollIntoView({block:'start',behavior:'instant'});}});
+// Keyboard skip link should focus main without creating a fake router entry (#main).
+document.querySelector('.skip')?.addEventListener('click',e=>{e.preventDefault();$('main')?.focus({preventScroll:false});});
+const dial=$('dial');function updateDial(){const val=Number(dial.value);$('freq').textContent=val.toFixed(1);const near=Math.abs(val-82.0)<0.11;$('signal').textContent=near?'……古い資料の保管番号が聴こえます。':Math.abs(val-82)<2?'……声のようなものが混じっています。':'……雑音が混じっています。';$('found').classList.toggle('show',near);if(near){settings.found=true;savePrefs()}}dial.addEventListener('input',updateDial);updateDial();
+const spoilerSelect=$('spoilers');spoilerSelect.value=String(settings.spoiler||0);spoilerSelect.addEventListener('change',()=>{settings.spoiler=Number(spoilerSelect.value);savePrefs();renderPeople()});let activeFilter='all';
+document.querySelectorAll('[data-filter]').forEach(el=>el.addEventListener('click',()=>{activeFilter=el.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('on',x===el));renderPeople()}));
+function openFile(which){if(which==='letters'){page('stories');return;}if(which==='objects'){page('studio');return;}const archive=$('archiveDetail');const sections={letters:`<div class="file-index">FILE 001 / UNBROADCAST LETTERS</div><h2>未放送のおたより</h2><p class="note">次の2編はサイトの雰囲気を試すための新規創作サンプルです。本編の登場人物の行動・事実を確定させるものではありません。</p><div class="letters"><article class="letter"><span class="label">試作短編 01 / 午前二時の街角</span><h3>コインランドリーの明かり</h3><p>洗濯機が回る音に混じって、小さなラジオの声が聞こえる。\n\n上着のポケットから、昨日なくしたと思っていた百円玉が出てきた。こんな時間に運がよくても困る、と彼は思った。\n\n乾燥機が止まるまで、あと十二分。誰かの話の続きを聴くには、ちょうどいい長さだった。</p></article><article class="letter"><span class="label">試作短編 02 / 午前二時の街角</span><h3>消し忘れた灯り</h3><p>向かいの建物の、いつもは暗い窓が今夜は明るかった。\n\n何をしている人なのかは知らない。残業なのか、試験勉強なのか、ただ眠れないのか。\n\n窓の明かりが消えるころ、自分もそろそろ寝ようと思った。</p></article></div>`,objects:`<div class="file-index">FILE 002 / STUDIO OBJECTS</div><h2>放送室にあるもの</h2><div class="paper-grid"><div class="filecard"><span>OBJECT 01</span><strong>マイク</strong><p>放送中に灯りがともる、声の入口。</p></div><div class="filecard"><span>OBJECT 02</span><strong>時計</strong><p>午前2時の開始と、3時の静けさを示す。</p></div><div class="filecard"><span>OBJECT 03</span><strong>机と窓</strong><p>放送の終わりには、今夜の手紙が机に残る。</p></div></div><p class="note">本編のCSSスタジオ表現にある要素を掲載しています。「手紙の棚」「マグカップ」などの細部は現時点では確定設定として扱っていません。</p>`,creator:`<div class="file-index">FILE 003 / MAKING OF</div><h2>制作ノート</h2><div class="booktext"><p>この作品では、放送で紹介されなかった人の日々も進んでいきます。だから資料室も、ラジオで知ったことと、まだ語られていないことを分けて紹介する構成にしています。</p><p>ゲーム本編には、言葉を返す「いつもの放送」、進行を簡略化した「おたより中心」、別のDJの放送を読む「聴くだけの夜」があります。特設サイトでは、これらのモードを変更したり、セーブデータを読み込んだりしません。</p><p class="note">こちらは特設サイト制作の設計ノートです。ゲーム作者の制作動機を代弁するインタビュー記事ではありません。人物録の「暮らしの一頁」は、設定に沿ったサイト独自の創作であり、ゲーム内の実際の一日を表すものではありません。</p></div>`};archive.innerHTML=`<div class="drawer"><button class="close" type="button" id="closeFile" aria-label="閉じる">×</button>${sections[which]||''}</div>`;$('closeFile').addEventListener('click',()=>{archive.innerHTML=''});archive.scrollIntoView({behavior:'smooth',block:'nearest'})}
+
+// v0.3 character archive augmentation. "One page of life" is creative fiction.
+const DOSSIERS={"cat":{"label":"窓とスケッチブック","symbol":"✎","hue":"#9e7c77","keywords":["通勤電車","仕事","スケッチブック"],"people":["職場の上司","学生時代の友人","同僚"],"rhythm":["通勤電車で外を眺める","帰宅後、照明を落として休む","机の奥のスケッチブックを開く"],"motifs":[["スケッチブック","見つめるだけの日も、線を描く日もある。"],["窓の景色","朝の車内から、空の色を確かめる。"],["下書きの文章","古い友人に伝えたいことを、まだ言葉にしている。"]],"copy":"好きだったことは、なくなるのではなく、棚の奥へ移るのかもしれない。","taleTitle":"一センチの線","tale":["仕事帰りの電車で、窓に映った自分の顔を見ていた。誰もいないように見えるガラスには、つり革や広告の明かりもいっしょに映っている。","帰宅して机の引き出しを開けると、スケッチブックの角が少し折れていた。新しい絵を描こうと決めたわけではない。ただ、鉛筆を出して一センチの線を引いた。","たった一センチ。でも、今日は昨日と少し違う。そんなふうに思えたら、線をもう一本だけ足してみる。"],"epilogue":"描けたことより、机に向かえたことが小さなニュースになる夜。"},"driver":{"label":"配送車と猫主任","symbol":"▣","hue":"#8b9094","keywords":["夜の配送","缶コーヒー","猫主任"],"people":["妹","配送仲間","猫主任"],"rhythm":["出発前に配送車を点検する","休憩所で缶コーヒーを買う","駐車場で猫主任を見かける"],"motifs":[["缶コーヒー","短い休憩をあたためるもの。"],["配送ルート","夜ごとに繰り返す、誰かの街への道筋。"],["駐車場の猫","通称「主任」。人間の勤務表は気にしない。"]],"copy":"夜の道には、仕事の用事とは別の寄り道がある。","taleTitle":"主任の勤務態度","tale":["休憩所の自動販売機で温かい缶コーヒーを買った。今夜は少しだけ冷える。手のひらに伝わる熱が、いつもより長く残った。","駐車場では、猫主任が同じ場所に座っていた。働きぶりを確認しに来たのか、それとも単に気に入った場所なのか。近づきすぎない距離にしゃがんで、「異常なしです」と報告する。","主任は返事をしない。しないけれど、そこにいる。そろそろ車に戻ろうと立ち上がると、猫のしっぽが一度だけ揺れた。"],"epilogue":"返事のない相手に話しかける時間も、夜の仕事の一部。"},"fish":{"label":"日記とノート","symbol":"◇","hue":"#81a4a6","keywords":["講義","日記","本屋"],"people":["親しい友人","兄","家族"],"rhythm":["講義のノートを取り直す","帰りに本屋を歩く","日記に一行だけ書いてみる"],"motifs":[["日記帳","短い言葉でも、自分のものとして残る。"],["講義のノート","書き直すたび、考えが整理される。"],["本屋の棚","まだ知らない言葉を探す場所。"]],"copy":"言葉にする前の気持ちにも、居場所があっていい。","taleTitle":"一行の余白","tale":["今日のノートには、珍しく空白が残った。講義の途中で考えごとをして、書き損ねたところだ。","帰りに本屋へ寄った。並んだ背表紙を目で追っていると、「言葉にできない」ことと「言葉がない」ことは、きっと同じではないのだと思った。","夜、日記を開く。今日あったことを全部書く必要はない。「まだ考えている」と一行だけ記して、ペンを置いた。空白は、そのまま残しておいた。"],"epilogue":"書き残した一行が、明日の自分への返事になるかもしれない。"},"clock":{"label":"お茶と時計","symbol":"◷","hue":"#9f906c","keywords":["朝の散歩","時計","図書室"],"people":["図書室の人たち","古い知人","近所の人"],"rhythm":["朝の散歩で花を見る","古い時計に触れる","図書室で人の話を聞く"],"motifs":[["古い時計","針が動いていても、止まっていても、時間を連れている。"],["お茶","丁寧に淹れると、部屋の時間が少しゆっくりになる。"],["図書室","人の話を聞くための静かな場所。"]],"copy":"進まない針のそばにも、過ぎていく朝はある。","taleTitle":"今日の花の名前","tale":["いつもの散歩道に、見覚えのない小さな花が咲いていた。昨日は通り過ぎたのか、それとも今日になって咲いたのか。","名前がわからないまま家に帰り、茶葉を急須に入れる。お湯を注ぐ間に、花の色だけを思い出してみた。うまく説明できない色だった。","時計を一つ手に取って、柔らかい布で拭く。時計の針は、花の名前を教えてくれない。けれど次に散歩に出るための時刻なら、静かに知らせてくれる。"],"epilogue":"答えを急がない時間そのものが、大切な予定になる。"},"terminal":{"label":"時刻表と古い切符","symbol":"⌁","hue":"#8490a7","keywords":["駅","時刻表","切符"],"people":["弟","近所の人"],"rhythm":["仕事帰りに時刻表を見る","駅前の道をゆっくり歩く","引き出しの古い切符を確かめる"],"motifs":[["時刻表","行き先を決めなくても眺められる。"],["古い切符","使い終わっても捨てられない一枚。"],["便箋","書きかけの言葉には、宛先があるかもしれない。"]],"copy":"出発するだけでなく、見送るためにも駅はある。","taleTitle":"通らなかった道","tale":["いつも曲がる角を、今日はひとつだけ通り過ぎてみた。駅へ向かう道は他にもあるのに、普段は気づかないふりをしている。","歩いたことのない通りには、小さな店があった。店先の時計は少し進んでいて、そのおかげで乗らない予定の電車に間に合いそうだった。","時刻表の前で足を止める。出発の欄を指で追いながら、次の電車に乗るつもりもない自分を少しおかしく思った。知らない道を一本歩いただけなのに、今日はちゃんと遠回りができた。"],"epilogue":"行き先の決まらない散歩にも、発見はある。"},"bread":{"label":"売り場の札と焼きたて","symbol":"✣","hue":"#b58c5a","keywords":["パン屋","試作","店長"],"people":["店長","常連のお客さん"],"rhythm":["焼きたての匂いを確かめる","新しい配合をノートに書く","売り場の札を書き直す"],"motifs":[["試作ノート","まだ売り物にならない味の記録。"],["売り場の札","短い言葉で、おいしさを伝える難しさ。"],["温かい飲み物","閉店後の小さな休息。"]],"copy":"焼けたパンより先に、言葉のほうが迷う日もある。","taleTitle":"おいしいの説明","tale":["売り場の札を書き直した。「やさしい甘さ」では、どうも違う。「ほっとする味」も、少し曖昧な気がする。","店の奥では、焼きたてのパンが冷めるのを待っている。ひと口食べれば、言いたいことはすぐ伝わるのに。文字にすると、とたんに難しい。","結局、材料の名前を丁寧に書いた。小さな札を元の場所へ戻し、今度はお客さんの顔を見てみようと思う。説明が足りないところは、会話で埋められるかもしれない。"],"epilogue":"食べものに添える言葉も、毎日の試作品。"},"moon":{"label":"月の空想とプリン","symbol":"☾","hue":"#8c8bb4","keywords":["月","空想ノート","プリン"],"people":["家族","友達"],"rhythm":["帰り道に月を見る","ノートへ空想を書き足す","冷蔵庫のプリンを確認する"],"motifs":[["月","見るたび、違う名前がつきそうな天体。"],["空想ノート","月の役所や食堂も、ここでは営業中。"],["プリン","宇宙より身近で、ときに大事な関心事。"]],"copy":"月の裏側にも、きっと小さな暮らしがある。","taleTitle":"月面の忘れ物係","tale":["もし月に忘れ物係がいたら、何を預かるだろう。落としてしまった手袋、使われなかった切符、誰かが考えかけてやめたなぞなぞ。","ノートの端に「忘れ物は名前がなくても預かります」と書いた。窓の向こうに浮かぶ月は、今夜も黙っている。きっと窓口は混んでいるのだ。","冷蔵庫を開けてプリンを確かめる。こちらの忘れ物係は、自分しかいない。無事に残っていたプリンを見て、月面の職員にも休憩時間を設けることにした。"],"epilogue":"空想は、真面目なようで少しだけおかしいほうが楽しい。"},"sugar":{"label":"コーヒーと雲","symbol":"☁","hue":"#9fa9a1","keywords":["コーヒー","雲","友達"],"people":["友達"],"rhythm":["コーヒーを淹れる","夕方の空を眺める","友達と短い連絡を交わす"],"motifs":[["スプーン","砂糖の量を自分で決めるための道具。"],["雲","同じ形が二度と現れない、小さな展示会。"],["短いメッセージ","長い話をしなくても続いていく関係。"]],"copy":"いつも通りの味は、いつも通りに選んでいる。","taleTitle":"雲の展覧会","tale":["夕方、窓の向こうの雲が妙な形をしていた。犬にも見えるし、急いで走っているパンにも見える。","コーヒーを淹れてからもう一度見ると、さっきの形は消えていた。少し残念だったので、友達へのメッセージに「今日はパンみたいな雲があった」と書く。","送信したあと、言葉だけではきっと伝わらないと思った。でも、それでいい。相手は別の雲を思い浮かべるだろう。自分だけが見た雲の展覧会が、誰かの頭の中で一日だけ延長される。"],"epilogue":"同じ空を見ていなくても、小さな話題は分けられる。"},"anon":{"label":"机のメモと読書","symbol":"□","hue":"#aaa294","keywords":["本","机","隣人"],"people":["隣人"],"rhythm":["机の上を片付ける","夜更けに本を開く","ラジオの周波数を合わせる"],"motifs":[["一冊の本","読み進めない日も手元に置ける。"],["小さなメモ","誰かへ送るとは限らない言葉。"],["周波数のダイヤル","声を出さずに誰かの声を聴くための入口。"]],"copy":"名乗らなくても、受け取れる言葉がある。","taleTitle":"名前のない付箋","tale":["机を片付けていたら、何も書いていない付箋が一枚出てきた。どこかに貼るつもりだったのだろうけれど、何を書くはずだったのか思い出せない。","本を開いてみたものの、数ページで手が止まった。ラジオをつけると、知らない誰かが話している。返事をする必要はない、という距離が今夜はちょうどいい。","付箋には何も書かず、本のページに挟んだ。明日の自分が見つけたら、それはそれで小さな手紙になるだろう。"],"epilogue":"言わなかったことを、急いで言葉にしなくてもいい。"},"umbrella":{"label":"花と店先の鉢","symbol":"❀","hue":"#9f9585","keywords":["花屋","市場","花束"],"people":["花を買いに来る常連","週末に手伝う知人","向かいの店の人"],"rhythm":["花屋のシャッターを上げる","店先の鉢を並べ直す","朝の市場で花を選ぶ"],"motifs":[["小さな鉢","並べ方で通りの表情が変わる。"],["花束","渡す人と受け取る人の間にあるもの。"],["水の入ったバケツ","華やかさの裏側の、毎日の仕事。"]],"copy":"花には名前があっても、贈る気持ちには名前のないものが多い。","taleTitle":"窓辺の配置換え","tale":["店を開ける前、窓辺の鉢を一つだけ移した。昨日までそこにあった光が、今日はほんの少し違って見えたからだ。","通りを行く人は、並び替えたことに気づかないだろう。でも水をやるときの手の届き方が変わる。花の影の落ち方も変わる。","シャッターの音が朝の空気にひびく。今日も誰かが、どんな花を贈ろうか迷いながら店に来るかもしれない。鉢をもう一度見てから、開店の札を出した。"],"epilogue":"ほんの少しの配置換えにも、その人なりの理由がある。"},"triangle":{"label":"ノートの架空都市","symbol":"△","hue":"#849b99","keywords":["学校","図形","街の地図"],"people":["クラスの友人","学校の先生","家族"],"rhythm":["学校の時間割を確かめる","ノートの端に図形を描く","放課後の予定を考える"],"motifs":[["三角定規","線と線がきれいに交わる道具。"],["架空の街の地図","まだ存在しない通りには、好きな名前をつけられる。"],["進路メモ","未来の案が三つあっても構わない。"]],"copy":"予定表にない道こそ、地図に描きたくなる日がある。","taleTitle":"地図の行き止まり","tale":["ノートに描いた街に、小さな行き止まりができた。通れるようにするには建物を動かさなければならないし、その建物も気に入っている。","定規を当てて考えた末、行き止まりの先にベンチを一つ描いた。道が続いていなくても、そこで誰かが休めるなら無駄ではない。","放課後、友達との会話は予定と違う方向に転がっていった。家に帰ったら、この街にはもっと曲がり角を増やそう。まっすぐな道だけでは、面白い散歩にならない。"],"epilogue":"完璧な計画の外側に、居心地のいい場所ができる。"},"fridge":{"label":"厨房と夜食","symbol":"▤","hue":"#9a9c86","keywords":["料理人","厨房","おにぎり"],"people":["厨房の仲間","兄","食材の仕入れ先"],"rhythm":["厨房の火を落とす","使った包丁を研ぐ","仕事帰りにコンビニへ寄る"],"motifs":[["包丁","毎日の仕事を支える道具。"],["冷蔵庫の明かり","片付けが終わった時間にも点いている光。"],["おにぎり","誰かが用意してくれた、自分のための食事。"]],"copy":"料理を作る人にも、作らなくていい夜が必要だ。","taleTitle":"包みを開ける夜","tale":["店の火を落とし、使った道具を片付けた。最後に冷蔵庫を開けて、明日の仕込みを確かめる。庫内の明かりだけが、厨房に四角く落ちた。","帰り道のコンビニでおにぎりを二つ選ぶ。誰かの作ったものを食べるのは、少し奇妙で、でもありがたい。包みを開ける指先だけが、昼間の仕事の続きのように器用だった。","家に帰ったら、何も作らない。湯気の立つ料理でなくても、一日を終えるための食事にはなる。そう思いながら、一口目をゆっくり食べた。"],"epilogue":"手間をかけないことも、自分をもてなす方法のひとつ。"}};
+settings.favorites = Array.isArray(settings.favorites) ? settings.favorites : [];
+settings.read = Array.isArray(settings.read) ? settings.read : [];
+let personQuery='';let personSort='default';let openedPerson=null;let readerTab='facts';
+const LATE_LISTENERS=new Set(['umbrella','triangle','fridge']);
+const VISIBLE_TABS=[['facts','設定の記録'],['day','暮らしの断片'],['tale','暮らしの一頁'],['behind','背景と可能性']];
+const categoryText={work:'仕事のある暮らし',study:'学校・学び',life:'小さな日常'};
+function hiddenPerson(p){return LATE_LISTENERS.has(p.id) && Number(settings.spoiler)===0;}
+function verifiedSet(p){return '<ul class="factlist">'+p.facts.map(f=>'<li>'+safe(f)+'</li>').join('')+'</ul>';}
+function renderKeepsakes(){
+ const grid=$('keepsakeGrid');if(!grid)return;
+ grid.innerHTML=PEOPLE.map((p,index)=>{
+   const hide=hiddenPerson(p),x=DOSSIERS[p.id];
+   return hide?`<div class="keepsake-card keepsake-locked" aria-label="未公開の持ち物"><div class="keepsake-unknown" aria-hidden="true">?</div><span>FILE ${String(index+1).padStart(2,'0')}</span><strong>まだ知らない持ち物</strong></div>`:
+     `<button type="button" class="keepsake-card" data-keepsake="${safe(p.id)}" aria-label="${safe(p.name)}の人物録を開く"><img loading="lazy" src="assets/keepsakes/${safe(p.id)}.svg" alt=""><span>FILE ${String(index+1).padStart(2,'0')}</span><strong>${safe(p.name)}</strong><small>${safe(x.label)}</small></button>`;
+ }).join('');
+ grid.querySelectorAll('[data-keepsake]').forEach(b=>b.addEventListener('click',()=>{
+    // clear filters/search so selected entry remains visible
+    activeFilter='all';personQuery='';$('listenerSearch').value='';
+    document.querySelectorAll('[data-filter]').forEach(btn=>btn.classList.toggle('on',btn.dataset.filter==='all'));
+    renderPeople();showPerson(b.dataset.keepsake);
+ }));
+}
+function renderPeople(){
+ const all=PEOPLE.filter(p=>activeFilter==='all'||(activeFilter==='star'?settings.favorites.includes(p.id):p.group===activeFilter));
+ const q=personQuery.trim().toLocaleLowerCase();
+ let items=all.filter(p=>{
+  if(hiddenPerson(p))return !q; // no clues from hidden names or keywords
+  const extra=DOSSIERS[p.id];return !q || [p.name,p.intro,...extra.keywords,...extra.motifs.map(x=>x[0])].join(' ').toLocaleLowerCase().includes(q);
+ });
+ if(personSort==='name')items.sort((a,b)=>a.name.localeCompare(b.name,'ja'));
+ if(personSort==='favorites')items.sort((a,b)=>Number(settings.favorites.includes(b.id))-Number(settings.favorites.includes(a.id)));
+ $('libraryStats').textContent=items.length+'件表示 · 読了 '+settings.read.filter(id=>PEOPLE.some(p=>p.id===id&&!hiddenPerson(p))).length+'件 · お気に入り '+settings.favorites.filter(id=>PEOPLE.some(p=>p.id===id&&!hiddenPerson(p))).length+'件';
+ const last=PEOPLE.find(p=>p.id===settings.lastPerson&&!hiddenPerson(p));$('personResume').hidden=!last;if(last)$('personResume').textContent='前に読んだ「'+last.name+'」を開く →';
+ $('personGrid').innerHTML=items.map(p=>{
+   const hide=hiddenPerson(p),x=DOSSIERS[p.id];
+   return `<button type="button" class="person ${hide?'locked':''}" ${hide?'disabled aria-label="まだ知らないリスナー"':'data-person="'+safe(p.id)+'"'}>${hide?`<span class="person-sigil secret-sigil" aria-hidden="true">?</span>`:`<img class="person-illustration" loading="lazy" src="assets/keepsakes/${safe(p.id)}.svg" alt="" aria-hidden="true">`}<div class="id">${hide?'LISTENER / UNKNOWN':'LISTENER / '+safe(p.id.toUpperCase())}</div><h3>${hide?'まだよく知らないリスナー':safe(p.name)}</h3><p>${hide?'物語の先で出会うかもしれない声。':safe(p.intro)}</p>${hide?'':`<span class="person-category">${safe(categoryText[p.group])}${settings.read.includes(p.id)?' · 読了':''}</span>${settings.favorites.includes(p.id)?'<span class="fav-flag" aria-label="お気に入り">★</span>':''}`}</button>`;
+ }).join('')||'<p class="empty-search">条件に一致する人物録がありません。検索語や絞り込みを変えてみてください。</p>';
+ document.querySelectorAll('[data-person]').forEach(btn=>btn.addEventListener('click',()=>showPerson(btn.dataset.person)));
+ renderKeepsakes();
+ if(openedPerson && (hiddenPerson(PEOPLE.find(p=>p.id===openedPerson)) || !items.some(p=>p.id===openedPerson))){openedPerson=null;$('personDetail').innerHTML='';}
+}
+function makeTabBody(p,x){
+ const lv=Number(settings.spoiler);
+ if(readerTab==='facts')return `<span class="label-chip">ゲーム本編で確認できること</span><h4>設定の記録</h4><p class="paragraph">${safe(p.intro)}</p>${verifiedSet(p)}<div class="keepsake-intro"><img class="keepsake-feature" src="assets/keepsakes/${safe(p.id)}.svg" alt="${safe(x.label)}のイラスト"><div><div class="file-index">KEEPSAKE / 暮らしの持ち物</div><h4>${safe(x.label)}</h4><p>その人らしい暮らしの断片を、資料室のために小さな絵にしました。人物の容姿は描いていません。</p></div></div><p class="footnote-title">人物を象徴するもの</p><div class="motif-grid">${x.motifs.map(m=>`<div class="motif-card"><strong>${safe(m[0])}</strong><p>${safe(m[1])}</p></div>`).join('')}</div><div class="note">持ち物の解説文は資料集用の編集文章です。ゲームで必ずこの一日を過ごすという意味ではありません。</div>`;
+ if(readerTab==='day')return `<span class="label-chip">生活シミュレーションの設定に基づく</span><h4>ある日の生活の候補</h4><p class="paragraph">${safe(x.copy)}</p><ol class="rhythm-list">${x.rhythm.map(v=>`<li>${safe(v)}</li>`).join('')}</ol><h4>暮らしの周りにいる人</h4><div class="related-people">${x.people.map(safe).join(' ／ ')}</div><p class="fab-note">これらは行動候補と関係人物の設定です。全ての行動が同じ日に発生するわけではありません。</p>`;
+ if(readerTab==='tale')return `<span class="label-chip">資料室限定の創作短編・非正史</span><h4>${safe(x.taleTitle)}</h4>${x.tale.map(p=>`<p class="paragraph">${safe(p)}</p>`).join('')}<div class="epilogue">${safe(x.epilogue)}</div><p class="fab-note">本編の設定をもとに想像した「もしもの一日」です。ゲーム中で起きた出来事、公式に確定した過去、実際に届いた手紙ではありません。</p>`;
+ return `<span class="label-chip">閲覧範囲に応じて表示</span><h4>まだ知らない、その人のこと</h4><div class="file-index level">BACKGROUND / 背景設定</div>${lv>=1?`<p class="paragraph">${safe(p.deeper)}</p>`:'<div class="hidden-note">この記録は少し先の物語に触れます。資料室上部で「背景設定も読む」にすると表示されます。</div>'}<div class="file-index level">POSSIBILITIES / 分岐の可能性</div>${lv>=2?`<p class="paragraph">${safe(p.branches)}</p>`:'<div class="hidden-note">今後の選択で生まれ得る違いに触れます。「分岐の可能性まで読む」で閲覧できます。</div>'}<p class="note">ここに記したのは本編で起こり得る可能性であり、あなたのセーブデータで起きた出来事を表しません。</p>`;
+}
+function renderReader(){
+ const p=PEOPLE.find(v=>v.id===openedPerson);if(!p||hiddenPerson(p)){openedPerson=null;$('personDetail').innerHTML='';return;}
+ const x=DOSSIERS[p.id];
+ const fav=settings.favorites.includes(p.id),read=settings.read.includes(p.id);
+ const available=PEOPLE.filter(v=>!hiddenPerson(v));const index=available.findIndex(v=>v.id===p.id);
+ $('personDetail').innerHTML=`<article class="drawer reader-drawer" aria-label="${safe(p.name)}の人物録"><div class="reader-header"><div class="reader-topline"><button class="close" type="button" id="closePerson">← 人物一覧に戻る</button></div><img class="reader-illustration" src="assets/keepsakes/${safe(p.id)}.svg" alt="${safe(p.name)}を象徴する持ち物のイラスト"><div class="reader-heading"><div class="file-index">LISTENER RECORD / ${safe(p.id.toUpperCase())}</div><h3 id="readerTitle" tabindex="-1">${safe(p.name)}</h3><p>${safe(x.label)} — ${safe(p.intro)}</p></div><div class="reader-controls"><button type="button" class="reader-btn" id="favPerson" aria-pressed="${fav}">${fav?'★ お気に入りから外す':'☆ お気に入りに登録'}</button><button type="button" class="reader-btn" id="readPerson" aria-pressed="${read}">${read?'✓ 読了を取り消す':'✓ 読了にする'}</button></div></div><div class="reader-body"><div class="reader-tabs" role="tablist" aria-label="人物録の内容">${VISIBLE_TABS.map(([id,label])=>`<button type="button" class="reader-tab" role="tab" id="reader-tab-${id}" aria-controls="readerPanel" data-reader-tab="${id}" aria-selected="${readerTab===id}" tabindex="${readerTab===id?0:-1}">${label}</button>`).join('')}</div><div class="reader-panel" role="tabpanel" id="readerPanel" aria-labelledby="reader-tab-${readerTab}" tabindex="0">${makeTabBody(p,x)}</div></div><div class="reader-bottom"><button class="reader-btn" type="button" id="prevPerson" ${index===0?'disabled':''}>← 前の人物へ</button><button class="reader-btn" type="button" id="nextPerson" ${index>=available.length-1?'disabled':''}>次の人物へ →</button></div><div class="source-strip">出典：ゲーム v4.8.23 <code>listeners.js</code> の人物名・日課・行動候補・関係人物、および本編のおたより・関連イベント。短編とキャッチコピーは特設サイト向け新規創作です。</div></article>`;
+ $('closePerson').addEventListener('click',()=>{const id=openedPerson;openedPerson=null;$('personDetail').innerHTML='';const card=document.querySelector('[data-person=\"'+id+'\"]');card?.scrollIntoView({block:'center',behavior:'instant'});card?.focus({preventScroll:true});});
+ $('favPerson').addEventListener('click',()=>{settings.favorites=fav?settings.favorites.filter(v=>v!==p.id):[...settings.favorites,p.id];savePrefs();renderPeople();renderReader();$('favPerson')?.focus({preventScroll:true});});
+ $('readPerson').addEventListener('click',()=>{settings.read=read?settings.read.filter(v=>v!==p.id):[...settings.read,p.id];savePrefs();renderPeople();renderReader();$('readPerson')?.focus({preventScroll:true});});
+ document.querySelectorAll('[data-reader-tab]').forEach(b=>b.addEventListener('click',()=>{readerTab=b.dataset.readerTab;renderReader();const selected=document.querySelector('[data-reader-tab="'+readerTab+'"]');selected?.focus();}));
+ document.querySelectorAll('[data-reader-tab]').forEach(b=>b.addEventListener('keydown',e=>{
+  const keys=['ArrowRight','ArrowLeft','Home','End'];if(!keys.includes(e.key))return;
+  e.preventDefault();const pos=VISIBLE_TABS.findIndex(t=>t[0]===readerTab);
+  const next=e.key==='Home'?0:e.key==='End'?VISIBLE_TABS.length-1:(pos+(e.key==='ArrowRight'?1:-1)+VISIBLE_TABS.length)%VISIBLE_TABS.length;
+  readerTab=VISIBLE_TABS[next][0];renderReader();document.getElementById('reader-tab-'+readerTab)?.focus({preventScroll:true});
+ }));
+ $('prevPerson').addEventListener('click',()=>showPerson(available[index-1]?.id));
+ $('nextPerson').addEventListener('click',()=>showPerson(available[index+1]?.id));
+}
+function showPerson(id){const p=PEOPLE.find(v=>v.id===id);if(!p||hiddenPerson(p))return;openedPerson=id;settings.lastPerson=id;savePrefs();$('personResume').hidden=false;$('personResume').textContent='前に読んだ「'+p.name+'」を開く →';readerTab='facts';rememberKeepsake(id);renderReader();$('personDetail').scrollIntoView({block:'start',behavior:'instant'});$('readerTitle')?.focus({preventScroll:true});}
+$('personResume').addEventListener('click',()=>{const id=settings.lastPerson;const p=PEOPLE.find(v=>v.id===id);if(!p||hiddenPerson(p))return;activeFilter='all';personQuery='';$('listenerSearch').value='';document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('on',b.dataset.filter==='all'));renderPeople();showPerson(id);});
+$('listenerSearch').addEventListener('input',e=>{personQuery=e.target.value;renderPeople();});
+$('personSort').addEventListener('change',e=>{personSort=e.target.value;renderPeople();});
+// Keep the in-flight reader in sync when spoiler preferences change.
+spoilerSelect.addEventListener('change',()=>{if(openedPerson){if(hiddenPerson(PEOPLE.find(v=>v.id===openedPerson))){openedPerson=null;$('personDetail').innerHTML='';}else renderReader();}});
+
+
+// Studio exploration: accessible object list + map pins, non-canonical short texts.
+const STUDIO_OBJECTS=[
+ {id:'window',name:'窓',x:25,y:33,ground:'窓越しの天候や街の明かりは、本編のスタジオ描写に登場します。',notes:{before:'夜の街には、まだ明かりのついている窓がある。放送を始める前は、その数を数えたくなる。',during:'こちらの声は、どの明かりの向こうへ届いているのだろう。窓の外は、いつも答えない。',after:'番組が終わっても、窓の向こうの明かりはすぐには消えない。それぞれの夜が、まだ続いている。'}},
+ {id:'clock',name:'時計',x:71.5,y:24,ground:'スタジオには時刻を示す時計があり、放送は午前2時から3時まで続きます。',notes:{before:'時計の針が、最後の一分を静かに数える。早すぎても、遅すぎてもいけない時間。',during:'針は一度も休まない。誰かの一通を読み終えるころには、さっきと違う位置にいる。',after:'午前三時。針は放送の終わりを知らせるけれど、誰かの物語の終わりまでは決めない。'}},
+ {id:'lamp',name:'卓上の灯り',x:52,y:34,ground:'机を照らすランプは、ゲーム内のスタジオ演出に描かれています。',notes:{before:'照明の下で、今夜の便箋を一通ずつ揃える。小さな文字にも、それぞれ書かれた時間がある。',during:'白い紙の上に灯りが落ちる。声に出した文字は、もう元の紙だけのものではない。',after:'灯りを落とす前に、机をもう一度見る。残った紙の白さが、少し眩しい。'}},
+ {id:'onair',name:'ON AIR',x:89,y:18,ground:'スタジオの表示には、放送中と放送外を区別するON AIR / OFF AIRの表示があります。',notes:{before:'赤い表示はまだ眠っている。もうすぐ、ここからどこかへ声が出ていく。',during:'ON AIR。たった二つの単語で、部屋の静けさは少し違う意味になる。',after:'灯りが消えた。話しかけるための部屋が、再び何も言わない部屋へ戻っていく。'}},
+ {id:'microphone',name:'マイク',x:62,y:52,ground:'放送前はマイクがオフで、03:00にはマイクの灯りが消える描写があります。',notes:{before:'マイクはまだ、誰の声も運んでいない。咳払いもため息も、ここでは始まりの準備だ。',during:'マイクの向こうに顔は見えない。それでも言葉の行き先を考えて、少しゆっくり話す。',after:'マイクを切ったあとにも、言い足りなかった言葉は心に残る。次の夜があるから、全部を今日言わなくてもいい。'}},
+ {id:'letters',name:'手紙の束',x:32,y:78,ground:'01:59には今夜届いた手紙が机に並び、03:00には読んだ手紙が残る描写があります。',notes:{before:'封筒には、それぞれ違う暮らしが入っている。読む順番を決めても、誰かの一日の順番は変わらない。',during:'一通を読み終えると、次の一通が待っている。紙の厚さでは、話の重さは量れない。',after:'今日読んだ手紙と、読まなかった手紙。机の上では隣同士になっている。'}},
+ {id:'meter',name:'声のメーター',x:83,y:66,ground:'本編にはマイク脇の小さなメーターの表示があり、設定で演出を切り替えられます。',notes:{before:'目盛りはほとんど動かない。機械も、今は声の始まりを待っている。',during:'声に合わせて小さな光が動く。言葉の内容はわからないまま、声があったことだけを記録する。',after:'目盛りが静かになった。ここにはもう、声の形を測るものがない。'}},
+ {id:'desk',name:'放送机',x:69,y:86,ground:'机はゲーム内のスタジオ演出に登場し、手紙を並べる場所として描かれます。',notes:{before:'机は、届いた手紙を受け止める。誰かの部屋にあった一枚が、今はここにある。',during:'紙をめくるたび、机の上の順番が変わる。放送の時間は、こうして少しずつ進む。',after:'机に残るのは紙と、もう読まれた言葉の気配。片づけは明日の夜に回してもいいだろうか。'}}
+];
+const STUDIO_PHASES={before:{label:'01:59 / BEFORE ON AIR',status:'放送を待つ部屋には、まだ手紙の音だけがある。'},during:{label:'02:15 / ON AIR',status:'マイクの向こうへ、今夜も誰かの声が届いていく。'},after:{label:'03:00 / OFF AIR',status:'放送が終わり、スタジオに時計の音が戻る。'}};
+let studioPhase='before',studioSelected='';
+settings.studioVisited=Array.isArray(settings.studioVisited)?settings.studioVisited.filter(x=>STUDIO_OBJECTS.some(o=>o.id===x)):[];
+function renderStudio(){
+ const stage=$('studioViewport');if(!stage)return;
+ stage.dataset.phase=studioPhase;
+ document.querySelectorAll('[data-studio-phase]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.studioPhase===studioPhase)));
+ $('studioSceneText').textContent=STUDIO_PHASES[studioPhase].status;
+ $('studioLightText').textContent=STUDIO_PHASES[studioPhase].label;
+ $('studioProgress').innerHTML=`発見 <strong>${settings.studioVisited.length} / ${STUDIO_OBJECTS.length}</strong>`;
+ $('studioPins').innerHTML=STUDIO_OBJECTS.map((o,i)=>`<button type="button" class="studio-pin ${studioSelected===o.id?'is-active':''} ${settings.studioVisited.includes(o.id)?'is-seen':''}" style="--x:${o.x}%;--y:${o.y}%" data-studio-object="${o.id}" aria-label="${safe(o.name)}を調べる" aria-pressed="${studioSelected===o.id}">${i+1}</button>`).join('');
+ $('studioIndex').innerHTML=STUDIO_OBJECTS.map((o,i)=>`<button type="button" data-studio-object="${o.id}" aria-pressed="${studioSelected===o.id}"><span class="number">${String(i+1).padStart(2,'0')}</span><span>${safe(o.name)}</span>${settings.studioVisited.includes(o.id)?'<span class="seen" aria-label="発見済み">✓</span>':''}</button>`).join('');
+ const o=STUDIO_OBJECTS.find(x=>x.id===studioSelected);
+ if(o){$('studioInspect').innerHTML=`<div class="file-index">OBJECT RECORD / ${String(STUDIO_OBJECTS.indexOf(o)+1).padStart(2,'0')}</div><h2>${safe(o.name)}</h2><p class="inspect-copy">${safe(o.notes[studioPhase])}</p><div class="inspect-caption"><strong>本編で確認できること</strong><div>${safe(o.ground)}</div></div><p class="inspect-meta">小話はこのサイトの創作です。実際の放送履歴には連動しません。</p>`;}
+ else $('studioInspect').innerHTML='<div class="file-index">FIELD NOTE / 00</div><h2>小さな探索を始める</h2><p class="inspect-copy">気になる番号を選ぶと、ここに記録が開きます。</p><div class="inspect-caption">実際のゲーム本編で確認できる舞台装置をもとに構成した、資料室独自の探索展示です。</div>';
+ $('studioDiscovery').classList.toggle('unlocked',settings.studioVisited.length===STUDIO_OBJECTS.length);
+}
+document.addEventListener('click',e=>{const phase=e.target.closest('[data-studio-phase]');if(phase){studioPhase=phase.dataset.studioPhase;renderStudio();return;}const object=e.target.closest('[data-studio-object]');if(object){studioSelected=object.dataset.studioObject;if(!settings.studioVisited.includes(studioSelected)){settings.studioVisited.push(studioSelected);savePrefs();}renderStudio();const sourceWasIndex=Boolean(object.closest('#studioIndex'));const buttons=document.querySelectorAll((sourceWasIndex?'#studioIndex ':'#studioPins ')+'[data-studio-object]');[...buttons].find(b=>b.dataset.studioObject===studioSelected)?.focus({preventScroll:true});}});
+
+
+// v0.5: the story archive is authored, fictional material independent of in-game events.
+settings.storyRead=Array.isArray(settings.storyRead)?settings.storyRead.filter(id=>STORY_ENTRIES.some(s=>s.id===id)):[];
+settings.storyStar=Array.isArray(settings.storyStar)?settings.storyStar.filter(id=>STORY_ENTRIES.some(s=>s.id===id)):[];
+settings.storySize=[0,1,2].includes(Number(settings.storySize))?Number(settings.storySize):1;
+settings.storyNight=settings.storyNight===true;
+let storyFilter='all',storyQuery='',openedStory='';
+const STORY_ICONS={'洗濯':'◌','窓':'✧','帰り道':'⌁','飲み物':'☕','本':'▤','雨':'☂'};
+function readingMinutes(story){return Math.max(1,Math.ceil(story.body.join('').length/280));}
+function storyById(id){return STORY_ENTRIES.find(s=>s.id===id);}
+function renderStories(){
+ const r=$('storyGrid');if(!r)return;
+ const count=settings.storyRead.length;
+ $('storyCount').textContent=`読了 ${count} / ${STORY_ENTRIES.length} 編`;
+ $('storyBar').style.width=(count/STORY_ENTRIES.length*100)+'%';
+ $('storyResume').hidden=!storyById(settings.storyLast);
+ $('storySecret').querySelector('.story-secret-locked').hidden=count===STORY_ENTRIES.length;
+ $('storySecret').querySelector('.story-secret-unlocked').hidden=count!==STORY_ENTRIES.length;
+ document.querySelectorAll('[data-story-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.storyFilter===storyFilter)));
+ const q=storyQuery.trim().toLocaleLowerCase();
+ const items=STORY_ENTRIES.filter(s=>{
+  if(storyFilter==='letter'&&s.kind!=='letter')return false;
+  if(storyFilter==='street'&&s.kind!=='street')return false;
+  if(storyFilter==='unread'&&settings.storyRead.includes(s.id))return false;
+  if(storyFilter==='favorites'&&!settings.storyStar.includes(s.id))return false;
+  return !q||[s.title,s.subtitle,s.hint,s.tag,s.from_name||'',...s.body].join(' ').toLocaleLowerCase().includes(q);
+ });
+ $('storyGridStatus').textContent=`${items.length}編を表示 · 便箋6通 / 街角6編 · 各物語は独立した創作です`;
+ r.innerHTML=items.length?items.map((s)=>{
+  const index=STORY_ENTRIES.indexOf(s)+1,read=settings.storyRead.includes(s.id),star=settings.storyStar.includes(s.id);
+  return `<button type="button" class="story-card" data-story="${safe(s.id)}" data-kind="${s.kind}" aria-label="${safe(s.title)}を読む"><div class="story-card-art"><span class="story-card-number">ARCHIVE ${String(index).padStart(2,'0')}</span><div class="story-markers">${star?'<i>★</i>':''}${read?'<i>既読</i>':''}</div><span class="story-card-icon" aria-hidden="true">${STORY_ICONS[s.tag]||'✉'}</span></div><div class="story-card-content"><span class="story-kind">${s.kind==='letter'?'✉ 未放送の便箋':'☾ 午前二時の街角'} · ${safe(s.tag)}</span><h3>${safe(s.title)}</h3><p class="story-hint">${safe(s.subtitle)}。${safe(s.hint)}。</p><div class="story-card-bottom"><span>約${readingMinutes(s)}分</span><span class="story-open">読む →</span></div></div></button>`;
+ }).join(''):'<div class="story-empty">条件に合う物語がありません。絞り込みや検索語を変えてみてください。</div>';
+ if(openedStory)renderStoryReader(false);
+}
+function renderStoryReader(shouldScroll=true){
+ const story=storyById(openedStory);if(!story){$('storyReader').innerHTML='';return;}
+ const num=STORY_ENTRIES.indexOf(story),paired=storyById(story.paired),read=settings.storyRead.includes(story.id),star=settings.storyStar.includes(story.id);
+ const size=['.91rem','1.02rem','1.16rem'][settings.storySize];
+ $('storyReader').innerHTML=`<article class="story-reader ${settings.storyNight?'theme-night':''}" data-kind="${story.kind}" style="--story-size:${size}">
+   <div class="story-reader-header"><div class="story-reader-toolbar"><button type="button" class="story-close" id="storyClose">← 一覧に戻る</button><div class="story-reader-tools"><button type="button" id="storyFontDown" aria-label="文字を小さく" ${settings.storySize===0?'disabled':''}>あ−</button><button type="button" id="storyFontUp" aria-label="文字を大きく" ${settings.storySize===2?'disabled':''}>あ＋</button><button type="button" id="storyNight" class="${settings.storyNight?'active':''}" aria-pressed="${settings.storyNight}">${settings.storyNight?'☀ 明るく':'☾ 暗く'}</button></div></div><div class="story-reader-kicker">${story.kind==='letter'?'UNBROADCAST LETTER':'MIDNIGHT CORNER'} / ${String(num+1).padStart(2,'0')}</div><h2 id="storyReaderTitle">${safe(story.title)}</h2><p class="story-reader-subtitle">${safe(story.subtitle)} · 約${readingMinutes(story)}分</p></div>
+   <div class="story-paper">${story.kind==='letter'?`<p class="address">ラジオ局のみなさんへ</p>`:''}${story.body.map(p=>`<p>${safe(p)}</p>`).join('')}${story.from_name?`<p class="address">${safe(story.from_name)}</p>`:''}</div>
+   <div class="story-reader-footer"><p class="fiction-label">本作は特設サイト独自の創作です。ゲーム内に届いた手紙・発生済みイベント・人物の正史ではありません。</p><div class="story-reader-actions"><button type="button" id="storyMarkRead" class="main-action">${read?'✓ 読了を取り消す':'✓ 読み終えた'}</button><button type="button" id="storyMarkStar" aria-pressed="${star}" class="${star?'active':''}">${star?'★ お気に入り済み':'☆ お気に入り'}</button></div><div class="story-crosslink"><div><small>${story.kind==='letter'?'RELATED STREET / 同じモチーフの街角':'RELATED LETTER / 同じモチーフの便箋'}</small><strong>${safe(paired.title)}</strong></div><button type="button" data-story="${safe(paired.id)}">もう一方を読む →</button></div><div class="story-nextrow"><button type="button" data-story="${safe(STORY_ENTRIES[(num+STORY_ENTRIES.length-1)%STORY_ENTRIES.length].id)}">← 前の記録</button><button type="button" data-story="${safe(STORY_ENTRIES[(num+1)%STORY_ENTRIES.length].id)}">次の記録 →</button></div></div></article>`;
+ if(shouldScroll){$('storyReader').scrollIntoView({block:'start',behavior:'instant'});$('storyClose').focus({preventScroll:true});}
+}
+function openStory(id){if(!storyById(id))return;if(!document.getElementById('stories').classList.contains('active'))page('stories');openedStory=id;settings.storyLast=id;savePrefs();renderStoryReader();}
+$('storySearch').addEventListener('input',e=>{storyQuery=e.target.value;renderStories();});
+document.querySelectorAll('[data-story-filter]').forEach(b=>b.addEventListener('click',()=>{storyFilter=b.dataset.storyFilter;renderStories();}));
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-story]');if(b){openStory(b.dataset.story);return;}
+ if(e.target.closest('#storyResume')){openStory(settings.storyLast);return;}
+ if(e.target.closest('#storyClose')){const id=openedStory;openedStory='';$('storyReader').innerHTML='';const card=[...document.querySelectorAll('.story-card')].find(c=>c.dataset.story===id);(card||$('storyGridStatus')).scrollIntoView({block:'center',behavior:'instant'});card?.focus({preventScroll:true});return;}
+ if(e.target.closest('#storyMarkRead')){settings.storyRead=settings.storyRead.includes(openedStory)?settings.storyRead.filter(id=>id!==openedStory):[...settings.storyRead,openedStory];savePrefs();renderStories();$('storyMarkRead')?.focus({preventScroll:true});return;}
+ if(e.target.closest('#storyMarkStar')){settings.storyStar=settings.storyStar.includes(openedStory)?settings.storyStar.filter(id=>id!==openedStory):[...settings.storyStar,openedStory];savePrefs();renderStories();$('storyMarkStar')?.focus({preventScroll:true});return;}
+ if(e.target.closest('#storyFontDown')){settings.storySize=Math.max(0,settings.storySize-1);savePrefs();renderStoryReader(false);$('storyFontDown')?.focus({preventScroll:true});return;}
+ if(e.target.closest('#storyFontUp')){settings.storySize=Math.min(2,settings.storySize+1);savePrefs();renderStoryReader(false);$('storyFontUp')?.focus({preventScroll:true});return;}
+ if(e.target.closest('#storyNight')){settings.storyNight=!settings.storyNight;savePrefs();renderStoryReader(false);$('storyNight')?.focus({preventScroll:true});return;}
+});
+
+
+// v0.6 — personal notebook. Do not change STORAGE_KEY: backwards compatible with v0.5.
+const NB_SECTIONS=[{id:'person',name:'人物録',stamp:'✎',caption:'人を知った印'},{id:'keepsake',name:'持ち物',stamp:'✦',caption:'小さな絵の印'},{id:'studio',name:'放送室',stamp:'◉',caption:'部屋の記憶の印'},{id:'story',name:'読み物',stamp:'✉',caption:'便箋を読んだ印'}];
+function nbUnique(items,valid){return Array.isArray(items)?[...new Set(items.filter(x=>typeof x==='string'&&valid.includes(x)))]:[];}
+const NB_IDS={person:PEOPLE.map(p=>p.id),keepsake:PEOPLE.map(p=>p.id),studio:STUDIO_OBJECTS.map(o=>o.id),story:STORY_ENTRIES.map(s=>s.id)};
+settings.favorites=nbUnique(settings.favorites,NB_IDS.person);
+settings.read=nbUnique(settings.read,NB_IDS.person);
+settings.studioVisited=nbUnique(settings.studioVisited,NB_IDS.studio);
+settings.storyRead=nbUnique(settings.storyRead,NB_IDS.story);
+settings.storyStar=nbUnique(settings.storyStar,NB_IDS.story);
+// In v0.5 the illustration was shown while reading a dossier. Credit those existing reads.
+settings.keepsakeSeen=nbUnique([...(Array.isArray(settings.keepsakeSeen)?settings.keepsakeSeen:[]),...settings.read],NB_IDS.keepsake);
+const NB_ALL_KEYS=Object.entries(NB_IDS).flatMap(([category,ids])=>ids.map(id=>`${category}:${id}`));
+settings.scrapStars=nbUnique(settings.scrapStars,NB_ALL_KEYS);
+function sanitizeNbNotes(value){const out={};if(!value||typeof value!=='object'||Array.isArray(value))return out;for(const key of NB_ALL_KEYS){if(typeof value[key]==='string')out[key]=value[key].slice(0,500)}return out;}
+settings.scrapNotes=sanitizeNbNotes(settings.scrapNotes);
+let nbFilter='all',nbQuery='',nbOpened='';settings.nbCollectedOnly=settings.nbCollectedOnly===true;$('nbCollectedOnly').checked=settings.nbCollectedOnly;
+function rememberKeepsake(id){if(!NB_IDS.keepsake.includes(id)||settings.keepsakeSeen.includes(id))return;settings.keepsakeSeen.push(id);savePrefs();}
+function nbEntries(){return [...PEOPLE.map(p=>({type:'person',id:p.id,title:p.name,desc:p.intro,icon:'✎',img:`assets/keepsakes/${p.id}.svg`})),...PEOPLE.map(p=>({type:'keepsake',id:p.id,title:DOSSIERS[p.id].label,desc:p.name+'の持ち物',icon:'✦',img:`assets/keepsakes/${p.id}.svg`})),...STUDIO_OBJECTS.map(o=>({type:'studio',id:o.id,title:o.name,desc:'放送室の探索記録',icon:'◉'})),...STORY_ENTRIES.map(s=>({type:'story',id:s.id,title:s.title,desc:s.kind==='letter'?'未放送の便箋・非正史':'午前二時の街角・非正史',icon:STORY_ICONS[s.tag]||'✉'}))];}
+function nbHas(entry){const list={person:settings.read,keepsake:settings.keepsakeSeen,studio:settings.studioVisited,story:settings.storyRead}[entry.type];return list.includes(entry.id);}
+function nbHidden(entry){return (entry.type==='person'||entry.type==='keepsake')&&LATE_LISTENERS.has(entry.id)&&Number(settings.spoiler)===0;}
+function nbIsStarred(entry){if(entry.type==='person')return settings.favorites.includes(entry.id);if(entry.type==='story')return settings.storyStar.includes(entry.id);return settings.scrapStars.includes(`${entry.type}:${entry.id}`);}
+function nbTotals(section){const all=nbEntries().filter(e=>e.type===section&&!nbHidden(e));return {collected:all.filter(nbHas).length,total:all.length,hidden:nbEntries().filter(e=>e.type===section&&nbHidden(e)).length};}
+function renderNotebook(){
+ const records=nbEntries();
+ $('nbSummary').innerHTML=NB_SECTIONS.map(section=>{const t=nbTotals(section.id);return `<div class="nb-stat"><span>${section.name}</span><strong>${t.collected} <span aria-hidden="true">/</span> ${t.total}</strong><small>${t.hidden?'ほかに未公開の記録あり':'閲覧・発見済みの記録'}</small></div>`}).join('');
+ $('nbStamps').innerHTML=NB_SECTIONS.map(section=>{const t=nbTotals(section.id),ok=t.collected===t.total&&!t.hidden;return `<div class="nb-stamp ${ok?'earned':''}"><span class="nb-stamp-symbol" aria-hidden="true">${section.stamp}</span><strong>${section.caption}</strong><small>${ok?'押印済み':'まだ白い余白'}</small></div>`}).join('');
+ document.querySelectorAll('[data-nb-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.nbFilter===nbFilter)));
+ const q=nbQuery.trim().toLocaleLowerCase();
+ const showing=records.filter(e=>{
+  if(nbFilter!=='all'&&nbFilter!=='star'&&e.type!==nbFilter)return false;
+  if(nbFilter==='star'&&(!nbHas(e)||!nbIsStarred(e)))return false;
+  if(settings.nbCollectedOnly&&(!nbHas(e)||nbHidden(e)))return false;
+  if(nbHidden(e))return !q && nbFilter!=='star'; // Never search for undiscovered spoiler characters by name
+  if(!q)return true;
+  return [e.title,e.desc].join(' ').toLocaleLowerCase().includes(q);
+ });
+ $('nbFilterStatus').textContent=`${showing.length}件を表示 · ${settings.nbCollectedOnly?'発見した記録だけ':'未発見の記録も含む'}。`; 
+ $('nbGrid').innerHTML=showing.length?showing.map(e=>{
+  const locked=!nbHas(e)||nbHidden(e),label=NB_SECTIONS.find(s=>s.id===e.type).name,art=!locked&&e.img?`<img src="${safe(e.img)}" alt="">`:`<span class="nb-glyph" aria-hidden="true">${locked?'?':e.icon}</span>`;
+  return `<button class="nb-item ${locked?'nb-item-locked':''}" type="button" ${locked?'disabled aria-label="未発見の記録"':`data-nb-open="${safe(e.type+':'+e.id)}"`}><span class="nb-item-art">${art}</span>${!locked?'<span class="nb-corner" aria-hidden="true">✓</span>':''}<span class="nb-item-tag">${safe(label)}</span><strong>${locked?'まだ開いていない記録':safe(e.title)}</strong><small>${locked?'見つけるまで封印されています':nbIsStarred(e)?'★ 大切な記録':'記録済み'}</small></button>`;
+ }).join(''):'<p class="nb-empty">まだ条件に合う記録はありません。ほかのページで読んだり調べたりすると、ここに増えていきます。</p>';
+ if(nbOpened){const entry=records.find(e=>e.type+':'+e.id===nbOpened);if(entry&&nbHas(entry)&&!nbHidden(entry))nbShowDetail(entry,false);else{$('nbDetail').innerHTML='';nbOpened='';}}
+}
+function nbShowDetail(entry,scroll=true){
+ nbOpened=entry.type+':'+entry.id;
+ const bookmark=nbIsStarred(entry),note=settings.scrapNotes[nbOpened]||'',type=NB_SECTIONS.find(s=>s.id===entry.type).name;
+ const img=entry.img?`<img class="nb-detail-cover" src="${safe(entry.img)}" alt="${safe(entry.title)}を象徴する持ち物の絵">`:'';
+ $('nbDetail').innerHTML=`<article class="nb-detail"><button type="button" class="nb-detail-close" id="nbClose" aria-label="記録を閉じる">×</button>${img}<span class="nb-small">FOUND / ${safe(type)}</span><h3 id="nbDetailTitle" tabindex="-1">${safe(entry.title)}</h3><p>${safe(entry.desc)}</p><div class="nb-detail-actions"><button type="button" id="nbStar" aria-pressed="${bookmark}">${bookmark?'★ 大切な記録から外す':'☆ 大切な記録にする'}</button><button type="button" id="nbSource">元のページへ →</button></div><label class="nb-note" for="nbMemo">この記録について、ひとこと残す<textarea id="nbMemo" maxlength="500" placeholder="思い出したこと、好きだった文章、感じたことなど…">${safe(note)}</textarea></label><span class="nb-note-count" id="nbMemoCount">${note.length} / 500字</span><p class="nb-note-caveat">このメモはこのブラウザだけに保存され、ゲーム本編には反映されません。</p></article>`;
+ if(scroll){$('nbDetail').scrollIntoView({behavior:'instant',block:'nearest'});$('nbDetailTitle').focus({preventScroll:true});}
+}
+function nbSetStar(e){if(e.type==='person'){settings.favorites=nbIsStarred(e)?settings.favorites.filter(id=>id!==e.id):[...settings.favorites,e.id];}
+ else if(e.type==='story'){settings.storyStar=nbIsStarred(e)?settings.storyStar.filter(id=>id!==e.id):[...settings.storyStar,e.id];}
+ else{const key=e.type+':'+e.id;settings.scrapStars=nbIsStarred(e)?settings.scrapStars.filter(k=>k!==key):[...settings.scrapStars,key];}savePrefs();renderNotebook();$('nbStar')?.focus({preventScroll:true});}
+function nbVisitSource(e){if(e.type==='person'||e.type==='keepsake'){page('archive');activeFilter='all';personQuery='';$('listenerSearch').value='';document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('on',b.dataset.filter==='all'));renderPeople();showPerson(e.id);}
+ if(e.type==='studio'){page('studio');studioSelected=e.id;renderStudio();$('studioInspect').scrollIntoView({behavior:'instant',block:'nearest'});}
+ if(e.type==='story')openStory(e.id);}
+$('nbSearch').addEventListener('input',e=>{nbQuery=e.target.value;renderNotebook();});
+$('nbCollectedOnly').addEventListener('change',e=>{settings.nbCollectedOnly=e.target.checked;savePrefs();nbOpened='';$('nbDetail').innerHTML='';renderNotebook();});
+document.querySelectorAll('[data-nb-filter]').forEach(b=>b.addEventListener('click',()=>{nbFilter=b.dataset.nbFilter;nbOpened='';$('nbDetail').innerHTML='';renderNotebook();}));
+document.addEventListener('click',e=>{
+ const open=e.target.closest('[data-nb-open]');if(open){const entry=nbEntries().find(v=>v.type+':'+v.id===open.dataset.nbOpen);if(entry&&nbHas(entry)&&!nbHidden(entry))nbShowDetail(entry);return;}
+ if(e.target.closest('#nbClose')){const key=nbOpened;nbOpened='';$('nbDetail').innerHTML='';const card=[...document.querySelectorAll('[data-nb-open]')].find(c=>c.dataset.nbOpen===key);card?.focus({preventScroll:true});return;}
+ const item=nbEntries().find(v=>v.type+':'+v.id===nbOpened);if(!item)return;
+ if(e.target.closest('#nbStar')){nbSetStar(item);return;}
+ if(e.target.closest('#nbSource')){nbVisitSource(item);return;}
+});
+$('nbDetail').addEventListener('input',e=>{if(e.target.id!=='nbMemo'||!NB_ALL_KEYS.includes(nbOpened))return;settings.scrapNotes[nbOpened]=e.target.value.slice(0,500);$('nbMemoCount').textContent=settings.scrapNotes[nbOpened].length+' / 500字';savePrefs();});
+function nbBackup(){return {format:'somewhere-on-air-notebook',version:1,exportedAt:new Date().toISOString(),data:{found:Boolean(settings.found),spoiler:settings.spoiler,favorites:settings.favorites,read:settings.read,keepsakeSeen:settings.keepsakeSeen,studioVisited:settings.studioVisited,storyRead:settings.storyRead,storyStar:settings.storyStar,storyLast:settings.storyLast||'',storySize:settings.storySize,storyNight:settings.storyNight,lastPerson:settings.lastPerson||'',nbCollectedOnly:settings.nbCollectedOnly,scrapStars:settings.scrapStars,scrapNotes:settings.scrapNotes}};}
+$('nbExport').addEventListener('click',()=>{try{const blob=new Blob([JSON.stringify(nbBackup(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='somewhere_on_air_記録帳バックアップ.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);$('nbBackupStatus').textContent='記録帳のバックアップを作成しました。';}catch(e){$('nbBackupStatus').textContent='保存できませんでした。ブラウザのダウンロード権限を確認してください。';}});
+$('nbImport').addEventListener('change',async e=>{
+ const file=e.target.files?.[0];e.target.value='';if(!file)return;
+ try{
+  if(file.size>1024*1024)throw Error('ファイルが大きすぎます（上限1MB）。');
+  const loaded=JSON.parse(await file.text());if(loaded?.format!=='somewhere-on-air-notebook'||loaded.version!==1||!loaded.data||typeof loaded.data!=='object'||Array.isArray(loaded.data))throw Error('このサイトの記録帳ファイルではありません。');
+  if(!confirm('現在の読了・お気に入り・メモと、ネタバレ閲覧設定を、選んだバックアップで上書きします。よろしいですか？')){$('nbBackupStatus').textContent='読み込みを中止しました。';return;}
+  const d=loaded.data;
+  const incoming={...settings,found:true,spoiler:[0,1,2].includes(Number(d.spoiler))?Number(d.spoiler):0,
+   favorites:nbUnique(d.favorites,NB_IDS.person),read:nbUnique(d.read,NB_IDS.person),keepsakeSeen:nbUnique(d.keepsakeSeen,NB_IDS.keepsake),studioVisited:nbUnique(d.studioVisited,NB_IDS.studio),storyRead:nbUnique(d.storyRead,NB_IDS.story),storyStar:nbUnique(d.storyStar,NB_IDS.story),scrapStars:nbUnique(d.scrapStars,NB_ALL_KEYS),scrapNotes:sanitizeNbNotes(d.scrapNotes),storyLast:NB_IDS.story.includes(d.storyLast)?d.storyLast:'',storySize:[0,1,2].includes(Number(d.storySize))?Number(d.storySize):1,storyNight:Boolean(d.storyNight),lastPerson:NB_IDS.person.includes(d.lastPerson)?d.lastPerson:'',nbCollectedOnly:Boolean(d.nbCollectedOnly)};
+  incoming.keepsakeSeen=nbUnique([...incoming.keepsakeSeen,...incoming.read],NB_IDS.keepsake);
+  settings=incoming;savePrefs();spoilerSelect.value=String(settings.spoiler);$('nbCollectedOnly').checked=settings.nbCollectedOnly;renderPeople();renderStudio();renderStories();renderNotebook();$('nbBackupStatus').textContent='バックアップを読み込みました（ネタバレ設定も復元しました）。';
+ }catch(err){$('nbBackupStatus').textContent='読み込めませんでした：'+(err instanceof SyntaxError?'JSON形式を確認してください。':err.message);}
+});
+
+function restorePageFromAddress(){
+ const target=location.hash.slice(1);
+ // #main is an accessibility skip link, not a site page. Do not override it.
+ if(SITE_PAGES.includes(target))page(target,true);
+}
+window.addEventListener('hashchange',restorePageFromAddress);
+window.addEventListener('popstate',restorePageFromAddress);
+page(location.hash.slice(1)||'home',true);
+</script>
+</body></html>
